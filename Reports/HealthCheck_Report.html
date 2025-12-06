@@ -2,22 +2,50 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Linux System Health Report</title>
+<title>Linux System Health Report - LinuxMint-Thinkcentre</title>
 <style>
-/* Include all your existing CSS here (same as your original) */
+body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background:#f5f7fa; color:#222; margin:20px; }
+.header { background: linear-gradient(90deg,#e6f7ff,#f0f9ff); padding:18px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
+.title { font-size:20px; font-weight:700; margin:0; color:#0b5f86; }
+.subtitle { margin:4px 0 0 0; color:#555; font-size:13px; }
+.container { display:grid; grid-template-columns: 1fr 360px; gap:16px; margin-top:16px; }
+.panel { background:#fff; border-radius:8px; padding:14px; box-shadow:0 1px 4px rgba(14,20,24,0.06); margin-top:12px; }
+.summary { border-left:6px solid #5cb85c; }
+.summary h3 { margin:0 0 8px 0; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th, td { padding:8px 10px; border-bottom:1px solid #f0f2f5; text-align:left; vertical-align:top; }
+th { background:#f7fbff; font-weight:600; color:#0b5f86; }
+.metric { font-weight:700; color:#333; }
+.small { font-size:12px; color:#666; }
+.pre { background:#fbfbfd; padding:8px; border-radius:6px; overflow:auto; font-family:monospace; font-size:12px; white-space:pre-wrap; }
+.health-badge { display:inline-block; padding:6px 10px; border-radius:20px; color:#fff; font-weight:700; }
+.scroll-x { overflow-x:auto; }
+.red { color:#fff; background:#c23b22; padding:2px 6px; border-radius:4px; font-weight:700;}
+.orange { color:#fff; background:#ff6f00; padding:2px 6px; border-radius:4px; font-weight:700;}
+.separator { border-top:2px solid #0b5f86; margin:10px 0;}
 </style>
 </head>
 <body>
-<div>
-<h2>System Summary</h2>
+<div class="header">
+<p class="title">Linux System Health Report</p>
+<p class="subtitle"><strong>Host:</strong> LinuxMint-Thinkcentre &nbsp;&nbsp; <strong>Date:</strong> 2025-12-06 19:08:54 +0530</p>
+</div>
+
+<div class="container">
+<div class="panel summary">
+<h3>System Summary</h3>
 <table>
-<tr><td>Hostname</td><td>LinuxMint-Thinkcentre</td></tr>
-<tr><td>Kernel</td><td>6.14.0-36-generic</td></tr>
-<tr><td>CPU</td><td>12th Gen Intel(R) Core(TM) i7-12700 · 20 cores</td></tr>
-<tr><td>Total RAM</td><td>15Gi</td></tr>
-<tr><td>Boot Mode</td><td>UEFI</td></tr>
-<tr><td>Overall Health</td><td>very good (73%)</td></tr>
+<tr><th>Item</th><th>Value</th></tr>
+<tr><td class="metric">Hostname</td><td>LinuxMint-Thinkcentre</td></tr>
+<tr><td class="metric">Kernel</td><td>6.14.0-36-generic</td></tr>
+<tr><td class="metric">CPU</td><td>12th Gen Intel(R) Core(TM) i7-12700 · 20 cores</td></tr>
+<tr><td class="metric">Total RAM</td><td>15Gi</td></tr>
+<tr><td class="metric">Boot Mode</td><td>UEFI</td></tr>
+<tr><td class="metric">Overall Health</td><td><span class="health-badge" style="background:#5cb85c;">very good (72%)</span></td></tr>
 </table>
+</div>
+
+<!-- Additional sections from original script (CPU/Memory/Disk, Timeshift, Cron, etc.) should be appended here in same style -->
 </div>
 </body>
 </html>
