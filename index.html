@@ -1,113 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EZOps_ThinkCentre · Home | DevOps Monitoring & HealthCheck</title>
-  <meta name="description" content="EZOps_ThinkCentre – Visual health monitoring & automation guidance for Linux systems and applications. Linux & Application HealthCheck dashboards.">
-  <link rel="canonical" href="https://ezops-thinkcentre.netlify.app/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EZOps_ThinkCentre – Home</title>
+<meta name="description" content="Visual health monitoring & automation guidance for Linux systems and applications.">
+<link rel="canonical" href="https://ezops-thinkcentre.netlify.app/index.html">
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="EZOps_ThinkCentre · Home">
-  <meta property="og:description" content="Visual health monitoring & automation guidance for Linux systems and applications. Linux & Application HealthCheck dashboards.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ezops-thinkcentre.netlify.app/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1591696205602-5b32959f81a7?auto=format&fit=crop&w=1400&q=80">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EZOps_ThinkCentre · Home">
-  <meta name="twitter:description" content="Visual health monitoring & automation guidance for Linux systems and applications. Linux & Application HealthCheck dashboards.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1591696205602-5b32959f81a7?auto=format&fit=crop&w=1400&q=80">
+  /* Navbar */
+  header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+  header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
+  nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
+  nav a:hover, nav a.active { text-decoration:underline; }
+  nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
 
-  <link rel="stylesheet" href="assets/styles.css">
-  <style>
-    body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
+  /* Hero Section */
+  .hero {
+    text-align:center;
+    padding:120px 20px;
+    background:url('assets/images/DevOps-Hero.jpg') center/cover no-repeat;
+    color:white;
+    text-shadow:0 3px 8px rgba(0,0,0,0.7);
+    border-radius:15px;
+  }
+  .hero h1 { font-size:48px; margin-bottom:10px; }
+  .hero p { font-size:20px; margin-bottom:25px; }
+  .cta { background:#007bff; padding:14px 30px; color:white; border-radius:10px; text-decoration:none; font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s; }
+  .cta:hover { background:#005fcc; }
 
-    /* Navbar */
-    header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
-    header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
-    nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
-    nav a:hover, nav a.active { text-decoration:underline; }
-    nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
+  /* Container & Cards */
+  .container { max-width:1150px; margin:auto; padding:30px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:25px; margin-top:25px; }
+  .card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
+  .card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
+  .card h3 { color:#007bff; margin-top:15px; font-size:22px; }
+  .card p { font-size:16px; color:#555; }
+  .card .icon { font-size:50px; margin-bottom:15px; }
 
-    /* Hero Section */
-    .hero { text-align:center; padding:60px 20px 30px 20px; }
-    .hero img {
-      width:100%;
-      max-height:450px;
-      object-fit:cover;
-      border-radius:15px;
-      box-shadow:0 6px 15px rgba(0,0,0,0.25);
-      margin-bottom:20px;
-    }
-    .hero h1 { font-size:42px; margin-bottom:10px; color:#007bff; }
-    .hero p { font-size:18px; margin-bottom:25px; color:#333; }
+  footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
 
-    /* Call to Action */
-    .cta { background:#007bff; padding:14px 30px; color:white; border-radius:10px; text-decoration:none; font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s; }
-    .cta:hover { background:#005fcc; }
-
-    /* Container & Cards */
-    .container { max-width:1150px; margin:auto; padding:30px; }
-    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:25px; margin-top:25px; }
-    .card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
-    .card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
-    .card h3 { color:#007bff; margin-top:15px; font-size:22px; }
-    .card p { font-size:16px; color:#555; }
-    .card .icon { font-size:50px; margin-bottom:15px; }
-
-    /* Footer */
-    footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
-
-    @media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
-  </style>
+  @media(max-width:768px) { .hero h1 { font-size:36px; } .hero p { font-size:18px; } }
+</style>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo">⚙️ EZOps_ThinkCentre</div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="linux-healthcheck.html">Linux HealthCheck</a>
-      <a href="application-healthcheck.html">Application HealthCheck</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <button id="themeToggle" class="toggle-btn">🌙</button>
-    </nav>
-  </header>
+<header class="navbar">
+  <div class="logo">⚙️ EZOps_ThinkCentre</div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="linux-healthcheck.html">Linux HealthCheck</a>
+    <a href="application-healthcheck.html">Application HealthCheck</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button id="themeToggle" class="toggle-btn">🌙</button>
+  </nav>
+</header>
 
-  <section class="hero">
-    <img src="https://images.unsplash.com/photo-1591696205602-5b32959f81a7?auto=format&fit=crop&w=1400&q=80" alt="DevOps Monitoring Dashboard">
-    <h1>EZOps_ThinkCentre</h1>
-    <p>Visual health monitoring & automation guidance for Linux systems and applications.</p>
-    <a class="cta" href="linux-healthcheck.html">Start HealthCheck →</a>
-  </section>
+<section class="hero">
+  <h1>EZOps_ThinkCentre</h1>
+  <p>Visual health monitoring & automation guidance for Linux and Applications.</p>
+  <a class="cta" href="linux-healthcheck.html">Start HealthCheck →</a>
+</section>
 
-  <section class="cards container">
-    <div class="card">
-      <div class="icon">🐧</div>
-      <h3>Linux HealthCheck</h3>
-      <p>CPU, Memory, Disk, Network — full system diagnostics with rich insights.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🧩</div>
-      <h3>Application HealthCheck</h3>
-      <p>Service uptime, logs, dependencies, and response monitoring.</p>
-    </div>
-    <div class="card">
-      <div class="icon">📈</div>
-      <h3>Dashboards</h3>
-      <p>Rich infographic‑style dashboards with real‑time charts and visual feedback.</p>
-    </div>
-  </section>
+<section class="cards container">
+  <div class="card">
+    <div class="icon">🐧</div>
+    <h3>Linux HealthCheck</h3>
+    <p>CPU, Memory, Disk, Network — full system diagnostics with rich insights.</p>
+  </div>
+  <div class="card">
+    <div class="icon">🧩</div>
+    <h3>Application HealthCheck</h3>
+    <p>Service uptime, logs, dependencies, and response monitoring.</p>
+  </div>
+  <div class="card">
+    <div class="icon">📈</div>
+    <h3>Dashboards</h3>
+    <p>Rich infographic-style dashboards with real-time charts and visual feedback.</p>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
-  </footer>
+<footer>
+  <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/script.js"></script>
+<script src="assets/charts.js"></script>
 </body>
 </html>
 

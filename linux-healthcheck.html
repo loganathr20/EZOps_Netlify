@@ -1,58 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZOps_ThinkCentre · Linux HealthCheck | System Monitoring</title>
-<meta name="description" content="Monitor Linux system health with EZOps_ThinkCentre. Track CPU, Memory, Disk, Network, and System Load with rich dashboards and detailed reports.">
+<title>EZOps_ThinkCentre – Linux HealthCheck</title>
+<meta name="description" content="Monitor CPU, Memory, Disk, Network, and System Load for Linux systems with visual dashboards and detailed reports.">
 <link rel="canonical" href="https://ezops-thinkcentre.netlify.app/linux-healthcheck.html">
-
-<!-- Open Graph / Social Media -->
-<meta property="og:title" content="EZOps_ThinkCentre · Linux HealthCheck">
-<meta property="og:description" content="Monitor Linux system health with EZOps_ThinkCentre. Track CPU, Memory, Disk, Network, and System Load with rich dashboards and detailed reports.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ezops-thinkcentre.netlify.app/linux-healthcheck.html">
-<meta property="og:image" content="https://images.unsplash.com/photo-1581092795365-8721bb0b09ab?auto=format&fit=crop&w=1400&q=80">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EZOps_ThinkCentre · Linux HealthCheck">
-<meta name="twitter:description" content="Monitor Linux system health with EZOps_ThinkCentre. Track CPU, Memory, Disk, Network, and System Load with rich dashboards and detailed reports.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1581092795365-8721bb0b09ab?auto=format&fit=crop&w=1400&q=80">
 
 <link rel="stylesheet" href="assets/styles.css">
 <style>
-body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
+  body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
 
-/* Navbar */
-header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
-header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
-nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
-nav a:hover, nav a.active { text-decoration:underline; }
-nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
+  /* Navbar */
+  header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+  header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
+  nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
+  nav a:hover, nav a.active { text-decoration:underline; }
+  nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
 
-/* Hero Section */
-.hero { text-align:center; padding:80px 20px 60px 20px; color:white; }
-.hero img { width:100%; max-height:450px; object-fit:cover; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.25); margin-bottom:20px; }
-.hero h1 { font-size:42px; margin-bottom:10px; text-shadow:0 3px 8px rgba(0,0,0,0.7); }
-.hero p { font-size:18px; margin-bottom:25px; text-shadow:0 2px 6px rgba(0,0,0,0.6); }
+  /* Hero Section with background image */
+  .hero {
+    text-align:center;
+    padding:100px 20px;
+    background:url('assets/images/Linux-Health-Monitoring.jpg') center/cover no-repeat;
+    color:white;
+    text-shadow:0 3px 8px rgba(0,0,0,0.7);
+    border-radius:15px;
+  }
+  .hero h1 { font-size:42px; margin-bottom:10px; }
+  .hero p { font-size:18px; margin-bottom:25px; }
 
-/* Container & Cards */
-.container { max-width:1150px; margin:auto; padding:30px; }
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; margin-top:25px; }
-.card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
-.card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
-.card h3 { color:#007bff; margin-top:15px; font-size:22px; }
-.card p { font-size:16px; color:#555; }
-.card .icon { font-size:50px; margin-bottom:15px; }
-canvas { margin-top:20px; border-radius:12px; background:white; padding:15px; box-shadow:0 6px 12px rgba(0,0,0,0.1); }
-iframe { width:100%; min-height:800px; border:none; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.1); margin-top:30px; }
+  /* Container & Cards */
+  .container { max-width:1150px; margin:auto; padding:30px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; margin-top:25px; }
+  .card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
+  .card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
+  .card h3 { color:#007bff; margin-top:15px; font-size:22px; }
+  .card p { font-size:16px; color:#555; }
+  .card .icon { font-size:50px; margin-bottom:15px; }
 
-/* Footer */
-footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
+  canvas { margin-top:30px; border-radius:12px; background:white; padding:20px; box-shadow:0 6px 12px rgba(0,0,0,0.1); }
 
-@media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
+  iframe { width:100%; min-height:800px; border:none; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.1); margin-top:30px; }
+
+  /* Footer */
+  footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
+
+  @media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
 </style>
 </head>
 <body>
@@ -70,13 +64,11 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 </header>
 
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1581092795365-8721bb0b09ab?auto=format&fit=crop&w=1400&q=80" alt="Linux System Monitoring Dashboard">
   <h1>Linux System HealthCheck</h1>
   <p>Monitor CPU, Memory, Disk, Network, and System Load with visual dashboards and detailed reports.</p>
 </section>
 
 <div class="container">
-  <!-- Cards with charts -->
   <div class="cards">
     <div class="card">
       <div class="icon">🖥️</div>
@@ -104,7 +96,6 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
     </div>
   </div>
 
-  <!-- Embedded HealthCheck Report -->
   <div class="section" style="margin-top:50px;">
     <h2 style="color:#007bff; text-align:center;">Detailed HealthCheck Report</h2>
     <iframe src="Reports/HealthCheck_Report.html" title="HealthCheck Report"></iframe>
@@ -117,36 +108,19 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  const cpuCtx = document.getElementById('cpuChart').getContext('2d');
-  new Chart(cpuCtx, {
-    type: 'line',
-    data: { labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'CPU %', data:[12,35,28,45,30,50,40], borderColor:'#007bff', backgroundColor:'rgba(0,123,255,0.2)', fill:true }] },
-    options:{ responsive:true, plugins:{ legend:{ display:true } } }
-  });
+const cpuCtx = document.getElementById('cpuChart').getContext('2d');
+new Chart(cpuCtx, { type: 'line', data: { labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'CPU %', data:[12,35,28,45,30,50,40], borderColor:'#007bff', backgroundColor:'rgba(0,123,255,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
 
-  const memoryCtx = document.getElementById('memoryChart').getContext('2d');
-  new Chart(memoryCtx, {
-    type:'doughnut',
-    data:{ labels:['Used','Free'], datasets:[{ data:[65,35], backgroundColor:['#007bff','#e0e0e0'] }] },
-    options:{ responsive:true }
-  });
+const memoryCtx = document.getElementById('memoryChart').getContext('2d');
+new Chart(memoryCtx, { type:'doughnut', data:{ labels:['Used','Free'], datasets:[{ data:[65,35], backgroundColor:['#007bff','#e0e0e0'] }] }, options:{ responsive:true } });
 
-  const diskCtx = document.getElementById('diskChart').getContext('2d');
-  new Chart(diskCtx, {
-    type:'bar',
-    data:{ labels:['C:','D:','E:'], datasets:[{ label:'Disk Usage %', data:[70,45,60], backgroundColor:'#007bff' }] },
-    options:{ responsive:true, plugins:{ legend:{ display:false } } }
-  });
+const diskCtx = document.getElementById('diskChart').getContext('2d');
+new Chart(diskCtx, { type:'bar', data:{ labels:['C:','D:','E:'], datasets:[{ label:'Disk Usage %', data:[70,45,60], backgroundColor:'#007bff' }] }, options:{ responsive:true, plugins:{ legend:{ display:false } } } });
 
-  const networkCtx = document.getElementById('networkChart').getContext('2d');
-  new Chart(networkCtx, {
-    type:'line',
-    data:{ labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'Network KB/s', data:[100,150,120,180,140,200,170], borderColor:'#28a745', backgroundColor:'rgba(40,167,69,0.2)', fill:true }] },
-    options:{ responsive:true, plugins:{ legend:{ display:true } } }
-  });
+const networkCtx = document.getElementById('networkChart').getContext('2d');
+new Chart(networkCtx, { type:'line', data:{ labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'Network KB/s', data:[100,150,120,180,140,200,170], borderColor:'#28a745', backgroundColor:'rgba(40,167,69,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
 </script>
 
 </body>
 </html>
-
 
