@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZOps_ThinkCentre · Linux & Application Health Monitoring | DevOps Dashboards</title>
-<meta name="description" content="EZOps_ThinkCentre provides Linux & Application health check reports, DevOps dashboards, monitoring insights, and automation guidance for system administrators and developers.">
-<link rel="canonical" href="https://ezops-thinkcentre.netlify.app">
+<title>EZOps_ThinkCentre · Home | DevOps Monitoring</title>
+<meta name="description" content="EZOps_ThinkCentre – Visual health monitoring & automation guidance for Linux systems and applications.">
+<link rel="canonical" href="https://ezops-thinkcentre.netlify.app/">
 
 <!-- Open Graph / Social Media -->
-<meta property="og:title" content="EZOps_ThinkCentre · Linux & Application Health Monitoring | DevOps Dashboards">
-<meta property="og:description" content="EZOps_ThinkCentre provides Linux & Application health check reports, DevOps dashboards, monitoring insights, and automation guidance for system administrators and developers.">
+<meta property="og:title" content="EZOps_ThinkCentre · Home">
+<meta property="og:description" content="Visual health monitoring & automation guidance for Linux systems and applications.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ezops-thinkcentre.netlify.app">
-<meta property="og:image" content="https://images.unsplash.com/photo-1581090700227-26c2b3c88026?auto=format&fit=crop&w=1400&q=80">
+<meta property="og:url" content="https://ezops-thinkcentre.netlify.app/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1591696205602-5b32959f81a7?auto=format&fit=crop&w=1400&q=80">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EZOps_ThinkCentre · Linux & Application Health Monitoring | DevOps Dashboards">
-<meta name="twitter:description" content="EZOps_ThinkCentre provides Linux & Application health check reports, DevOps dashboards, monitoring insights, and automation guidance for system administrators and developers.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1581090700227-26c2b3c88026?auto=format&fit=crop&w=1400&q=80">
+<meta name="twitter:title" content="EZOps_ThinkCentre · Home">
+<meta name="twitter:description" content="Visual health monitoring & automation guidance for Linux systems and applications.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1591696205602-5b32959f81a7?auto=format&fit=crop&w=1400&q=80">
 
 <link rel="stylesheet" href="assets/styles.css">
 <style>
@@ -32,42 +32,28 @@ nav a:hover, nav a.active { text-decoration:underline; }
 nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
 
 /* Hero Section */
-.hero {
-    text-align:center; 
-    padding:60px 20px 40px 20px; 
-    position:relative;
-    color:white;
-}
-.hero img {
-    width:100%;
-    max-height:500px;
-    object-fit:cover;
-    border-radius:15px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.25);
-    margin-bottom:20px;
-}
-.hero h1 { font-size:48px; margin:15px 0 10px 0; text-shadow:0 3px 8px rgba(0,0,0,0.7); }
-.hero p { font-size:20px; margin-bottom:25px; text-shadow:0 2px 6px rgba(0,0,0,0.6); }
+.hero { text-align:center; padding:60px 20px 30px 20px; }
+.hero img { width:100%; max-height:450px; object-fit:cover; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.25); margin-bottom:20px; }
+.hero h1 { font-size:42px; margin-bottom:10px; color:#007bff; }
+.hero p { font-size:18px; margin-bottom:25px; color:#333; }
+
+/* Call to Action */
 .cta { background:#007bff; padding:14px 30px; color:white; border-radius:10px; text-decoration:none; font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s; }
 .cta:hover { background:#005fcc; }
 
-/* Cards */
+/* Container & Cards */
 .container { max-width:1150px; margin:auto; padding:30px; }
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px; margin-top:35px; }
-.card { background:white; padding:30px; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
-.card:hover { transform:translateY(-6px); box-shadow:0 12px 26px rgba(0,0,0,0.25); }
-.card h3 { color:#007bff; margin-top:15px; font-size:24px; font-weight:bold; }
-.card p { font-size:16px; color:#555; line-height:1.6; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:25px; margin-top:25px; }
+.card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
+.card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
+.card h3 { color:#007bff; margin-top:15px; font-size:22px; }
+.card p { font-size:16px; color:#555; }
 .card .icon { font-size:50px; margin-bottom:15px; }
 
 /* Footer */
-footer { background:#007bff; color:white; text-align:center; padding:20px; margin-top:30px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
+footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
 
-@media(max-width:768px) { 
-    .hero h1 { font-size:36px; } 
-    .hero p { font-size:18px; } 
-    .cards { gap:20px; }
-}
+@media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
 </style>
 </head>
 <body>
@@ -85,27 +71,27 @@ footer { background:#007bff; color:white; text-align:center; padding:20px; margi
 </header>
 
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1581090700227-26c2b3c88026?auto=format&fit=crop&w=1400&q=80" alt="DevOps Monitoring Dashboard">
+  <img src="https://images.unsplash.com/photo-1591696205602-5b32959f81a7?auto=format&fit=crop&w=1400&q=80" alt="DevOps Monitoring Dashboard">
   <h1>EZOps_ThinkCentre</h1>
-  <p>Linux & Application Health Monitoring | DevOps Dashboards | Automation & Insights</p>
+  <p>Visual health monitoring & automation guidance for Linux systems and applications.</p>
   <a class="cta" href="linux-healthcheck.html">Start HealthCheck →</a>
 </section>
 
 <section class="cards container">
   <div class="card">
     <div class="icon">🐧</div>
-    <h3>Comprehensive Linux HealthCheck</h3>
-    <p>Monitor CPU, Memory, Disk, Network, and system performance with detailed diagnostics and actionable insights for Linux servers.</p>
+    <h3>Linux HealthCheck</h3>
+    <p>CPU, Memory, Disk, Network — full system diagnostics with rich insights.</p>
   </div>
   <div class="card">
     <div class="icon">🧩</div>
-    <h3>Application Performance Monitoring</h3>
-    <p>Check service uptime, logs, dependencies, and response times to ensure stable application performance and detect potential issues early.</p>
+    <h3>Application HealthCheck</h3>
+    <p>Service uptime, logs, dependencies, and response monitoring.</p>
   </div>
   <div class="card">
     <div class="icon">📈</div>
-    <h3>Interactive DevOps Dashboards</h3>
-    <p>Create visual dashboards with charts, metrics, and analytics that help teams make data-driven decisions and optimize DevOps workflows.</p>
+    <h3>Dashboards</h3>
+    <p>Rich infographic-style dashboards with real-time charts and visual feedback.</p>
   </div>
 </section>
 
@@ -114,8 +100,6 @@ footer { background:#007bff; color:white; text-align:center; padding:20px; margi
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="assets/script.js"></script>
-<script src="assets/charts.js"></script>
 </body>
 </html>
 
