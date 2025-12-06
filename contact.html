@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +16,6 @@
 <meta property="og:url" content="https://ezops-thinkcentre.netlify.app/contact.html">
 <meta property="og:image" content="assets/images/Contact-Hero.jpg">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EZOps_ThinkCentre · Contact & Disclaimer">
-<meta name="twitter:description" content="Contact Loganatha Raja, author of EZOps_ThinkCentre. Learn about Linux & Application Health Monitoring, DevOps dashboards, and automation guidance.">
-<meta name="twitter:image" content="assets/images/Contact-Hero.jpg">
-
 <link rel="stylesheet" href="assets/styles.css">
 
 <style>
@@ -33,7 +28,7 @@ nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; t
 nav a:hover, nav a.active { text-decoration:underline; }
 nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
 
-/* Hero Section */
+/* Hero */
 .hero {
     text-align:center; 
     padding:100px 20px 60px 20px; 
@@ -45,7 +40,7 @@ nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cur
 .hero h1 { font-size:42px; margin-bottom:10px; }
 .hero p { font-size:18px; margin-bottom:25px; }
 
-/* Container & Sections */
+/* Container */
 .container { max-width:900px; margin:auto; padding:30px; }
 .section { background:white; padding:25px; border-radius:15px; margin-bottom:30px; box-shadow:0 6px 14px rgba(0,0,0,0.1); text-align:center; }
 .section h2 { color:#007bff; font-size:28px; margin-bottom:15px; }
@@ -62,16 +57,28 @@ nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cur
 /* Disclaimer */
 .disclaimer { font-size:14px; color:#555; background:#f0f4ff; padding:15px; border-left:4px solid #007bff; border-radius:8px; margin-top:20px; text-align:left; line-height:1.6; }
 
-/* Visitor Counter */
-.visitor-counter {
-    margin-top:16px;
-    padding:8px 12px;
-    background:#e9f4ff;
+/* Under Construction Box */
+.under-construction {
+    background:#fff4cc;
+    padding:15px;
+    border-left:4px solid #ff9800;
     border-radius:8px;
-    display:inline-block;
+    margin-bottom:25px;
+    text-align:center;
+    font-size:16px;
+    color:#b36b00;
+    font-weight:bold;
+}
+
+/* Visitor Counter */
+#visitor-box {
+    margin-top:20px;
     font-size:15px;
-    color:#003d73;
-    border:1px solid #c6e4ff;
+    color:#444;
+    background:#eaf3ff;
+    padding:10px;
+    border-radius:10px;
+    display:inline-block;
 }
 
 /* Footer */
@@ -101,7 +108,7 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 
 <section class="hero">
   <h1>Contact & Disclaimer</h1>
-  <p>Reach out to the author or review important disclaimers regarding Linux & Application Health Monitoring reports.</p>
+  <p>Reach out to the author or review important disclaimers regarding Linux & Application Health Monitoring.</p>
 </section>
 
 <div class="container">
@@ -125,30 +132,35 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
   <div class="section disclaimer">
     <h2>Disclaimer</h2>
     <p>This website report and the information provided by EZOps_ThinkCentre are for informational and educational purposes only. The author is not responsible for any actions taken based on the data or recommendations presented in the reports.</p>
-    <p>For any inquiries or clarifications, please contact using the email provided above.</p>
+    <p>For any inquiries or clarifications regarding the reports, please contact the author using the email above.</p>
+  </div>
+
+  <!-- Under Construction Message -->
+  <div class="under-construction">
+    🚧 Website Under Construction — More features and dashboards coming soon!
+  </div>
+
+  <!-- Visitor Counter -->
+  <div id="visitor-box">
+    👁️ Visitor Count: <span id="visitor-count">Loading...</span>
   </div>
 
 </div>
 
 <footer>
   <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
-
-  <!-- Visitor Counter -->
-  <div class="visitor-counter">
-    Visitors to this page: <span id="visit-count">Loading…</span>
-  </div>
 </footer>
 
 <!-- Visitor Counter Script -->
 <script>
-  fetch('https://api.countapi.xyz/hit/ezops/contactpage')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('visit-count').innerText = data.value;
-    })
-    .catch(() => {
-      document.getElementById('visit-count').innerText = "Error";
-    });
+fetch("https://api.countapi.xyz/update/ezops-thinkcentre/contact/?amount=1")
+  .then(res => res.json())
+  .then(data => {
+      document.getElementById("visitor-count").innerText = data.value;
+  })
+  .catch(err => {
+      document.getElementById("visitor-count").innerText = "Error";
+  });
 </script>
 
 </body>
