@@ -23,6 +23,7 @@
   .card p { font-size:16px; color:#555; }
   .card .icon { font-size:50px; margin-bottom:15px; }
   canvas { margin-top:30px; border-radius:12px; background:white; padding:20px; box-shadow:0 6px 12px rgba(0,0,0,0.1); }
+  iframe { width:100%; min-height:800px; border:none; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.1); margin-top:30px; }
   footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; }
   @media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
 </style>
@@ -43,10 +44,11 @@
 
 <section class="hero">
   <h1>Linux System HealthCheck</h1>
-  <p>Monitor CPU, Memory, Disk, Network, and System Load with visual dashboards.</p>
+  <p>Monitor CPU, Memory, Disk, Network, and System Load with visual dashboards and detailed reports.</p>
 </section>
 
 <div class="container">
+  <!-- Cards with charts -->
   <div class="cards">
     <div class="card">
       <div class="icon">🖥️</div>
@@ -73,6 +75,12 @@
       <canvas id="networkChart" width="300" height="200"></canvas>
     </div>
   </div>
+
+  <!-- Embedded HealthCheck Report -->
+  <div class="section" style="margin-top:50px;">
+    <h2 style="color:#007bff; text-align:center;">Detailed HealthCheck Report</h2>
+    <iframe src="Reports/HealthCheck_Report.html" title="HealthCheck Report"></iframe>
+  </div>
 </div>
 
 <footer>
@@ -82,28 +90,28 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const cpuCtx = document.getElementById('cpuChart').getContext('2d');
-  const cpuChart = new Chart(cpuCtx, {
+  new Chart(cpuCtx, {
     type: 'line',
-    data: { labels: ['0s','10s','20s','30s','40s','50s','60s'], datasets: [{ label:'CPU %', data:[12,35,28,45,30,50,40], borderColor:'#007bff', backgroundColor:'rgba(0,123,255,0.2)', fill:true }] },
-    options: { responsive:true, plugins:{ legend:{ display:true } } }
+    data: { labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'CPU %', data:[12,35,28,45,30,50,40], borderColor:'#007bff', backgroundColor:'rgba(0,123,255,0.2)', fill:true }] },
+    options:{ responsive:true, plugins:{ legend:{ display:true } } }
   });
 
   const memoryCtx = document.getElementById('memoryChart').getContext('2d');
-  const memoryChart = new Chart(memoryCtx, {
+  new Chart(memoryCtx, {
     type:'doughnut',
     data:{ labels:['Used','Free'], datasets:[{ data:[65,35], backgroundColor:['#007bff','#e0e0e0'] }] },
     options:{ responsive:true }
   });
 
   const diskCtx = document.getElementById('diskChart').getContext('2d');
-  const diskChart = new Chart(diskCtx, {
+  new Chart(diskCtx, {
     type:'bar',
     data:{ labels:['C:','D:','E:'], datasets:[{ label:'Disk Usage %', data:[70,45,60], backgroundColor:'#007bff' }] },
     options:{ responsive:true, plugins:{ legend:{ display:false } } }
   });
 
   const networkCtx = document.getElementById('networkChart').getContext('2d');
-  const networkChart = new Chart(networkCtx, {
+  new Chart(networkCtx, {
     type:'line',
     data:{ labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'Network KB/s', data:[100,150,120,180,140,200,170], borderColor:'#28a745', backgroundColor:'rgba(40,167,69,0.2)', fill:true }] },
     options:{ responsive:true, plugins:{ legend:{ display:true } } }
@@ -112,5 +120,4 @@
 
 </body>
 </html>
-
 
