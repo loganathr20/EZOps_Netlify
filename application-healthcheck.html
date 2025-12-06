@@ -1,49 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Application HealthCheck</title>
+<title>EZOps_ThinkCentre – Application HealthCheck</title>
 <link rel="stylesheet" href="assets/styles.css">
+<style>
+  body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
+  header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+  header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
+  nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
+  nav a:hover, nav a.active { text-decoration:underline; }
+  nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
+  .hero { text-align:center; padding:80px 20px; background:url('https://images.unsplash.com/photo-1581092580493-68a0b02a99cd') center/cover no-repeat; color:white; text-shadow:0 3px 8px rgba(0,0,0,0.7); }
+  .hero h1 { font-size:42px; margin-bottom:10px; }
+  .hero p { font-size:18px; margin-bottom:25px; }
+  .container { max-width:1150px; margin:auto; padding:30px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; margin-top:25px; }
+  .card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
+  .card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
+  .card h3 { color:#007bff; margin-top:15px; font-size:22px; }
+  .card p { font-size:16px; color:#555; }
+  .card .icon { font-size:50px; margin-bottom:15px; }
+  canvas { margin-top:30px; border-radius:12px; background:white; padding:20px; box-shadow:0 6px 12px rgba(0,0,0,0.1); }
+  footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; }
+  @media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
+</style>
 </head>
 <body>
+
 <header class="navbar">
-<div class="logo">⚙️ EasyDevOps</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="linux-healthcheck.html">Linux HealthCheck</a>
-<a href="application-healthcheck.html" class="active">Application HealthCheck</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<button id="themeToggle" class="toggle-btn">🌙</button>
-</nav>
+  <div class="logo">⚙️ EZOps_ThinkCentre</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="linux-healthcheck.html">Linux HealthCheck</a>
+    <a href="application-healthcheck.html" class="active">Application HealthCheck</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button id="themeToggle" class="toggle-btn">🌙</button>
+  </nav>
 </header>
-<section class="page-header banner-app">
-<h1>Application HealthCheck</h1>
-<p>Monitor logs, services and performance metrics.</p>
+
+<section class="hero">
+  <h1>Application HealthCheck</h1>
+  <p>Monitor services, uptime, logs, and response times with rich visual insights.</p>
 </section>
-<section class="grid">
-<div class="panel">
-<h2>🧩 Service Status</h2>
-<p>Check if key services are running.</p>
+
+<div class="container">
+  <div class="cards">
+    <div class="card">
+      <div class="icon">⏱️</div>
+      <h3>Uptime Monitoring</h3>
+      <p>Track uptime percentage of critical applications.</p>
+      <canvas id="uptimeChart" width="300" height="200"></canvas>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Response Time</h3>
+      <p>Measure average response times and latency.</p>
+      <canvas id="responseChart" width="300" height="200"></canvas>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Service Status</h3>
+      <p>Visualize active vs inactive services in real time.</p>
+      <canvas id="serviceChart" width="300" height="200"></canvas>
+    </div>
+    <div class="card">
+      <div class="icon">📂</div>
+      <h3>Log Analysis</h3>
+      <p>Track error logs and service events visually.</p>
+      <canvas id="logsChart" width="300" height="200"></canvas>
+    </div>
+  </div>
 </div>
-<div class="panel">
-<h2>📄 Log Monitoring</h2>
-<p>Error scans, warnings, time-based filters.</p>
-</div>
-<div class="panel">
-<h2>🚦 Response Time</h2>
-<p>Web/API application response benchmarks.</p>
-</div>
-<div class="panel">
-<h2>🔗 Dependencies</h2>
-<p>Verify all dependent services are functioning.</p>
-</div>
-</section>
+
+<footer>
+  <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="assets/script.js"></script>
-<script src="assets/charts.js"></script>
+<script>
+  const uptimeCtx = document.getElementById('uptimeChart').getContext('2d');
+  const uptimeChart = new Chart(uptimeCtx, {
+    type: 'line',
+    data: { labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], datasets:[{ label:'Uptime %', data:[99,98,100,97,99,100,98], borderColor:'#28a745', backgroundColor:'rgba(40,167,69,0.2)', fill:true }] },
+    options:{ responsive:true, plugins:{ legend:{ display:true } } }
+  });
+
+  const responseCtx = document.getElementById('responseChart').getContext('2d');
+  const responseChart = new Chart(responseCtx, {
+    type:'bar',
+    data:{ labels:['API','Web','DB','Cache'], datasets:[{ label:'Response ms', data:[120,150,90,70], backgroundColor:'#007bff' }] },
+    options:{ responsive:true, plugins:{ legend:{ display:false } } }
+  });
+
+  const serviceCtx = document.getElementById('serviceChart').getContext('2d');
+  const serviceChart = new Chart(serviceCtx, {
+    type:'doughnut',
+    data:{ labels:['Active','Inactive'], datasets:[{ data:[15,3], backgroundColor:['#28a745','#dc3545'] }] },
+    options:{ responsive:true }
+  });
+
+  const logsCtx = document.getElementById('logsChart').getContext('2d');
+  const logsChart = new Chart(logsCtx, {
+    type:'line',
+    data:{ labels:['0h','4h','8h','12h','16h','20h','24h'], datasets:[{ label:'Errors', data:[2,1,0,3,1,0,2], borderColor:'#ffc107', backgroundColor:'rgba(255,193,7,0.2)', fill:true }] },
+    options:{ responsive:true, plugins:{ legend:{ display:true } } }
+  });
+</script>
+
 </body>
 </html>
 
