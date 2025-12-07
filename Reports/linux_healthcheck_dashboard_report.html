@@ -27,19 +27,19 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <div class="summary-panel">
   <div class="summary-card">
     <h4>Overall CPU Usage</h4>
-    <p>9%</p>
+    <p>11%</p>
   </div>
   <div class="summary-card">
     <h4>Memory Usage</h4>
-    <p>41%</p>
+    <p>42%</p>
   </div>
   <div class="summary-card">
     <h4>System Uptime</h4>
-    <p>up 1 hour, 49 minutes</p>
+    <p>up 1 hour, 54 minutes</p>
   </div>
   <div class="summary-card">
     <h4>Overall Health</h4>
-    <div class="health-badge" style="background:#5cb85c;">Very Good (75%)</div>
+    <div class="health-badge" style="background:#5cb85c;">Very Good (73%)</div>
   </div>
 </div>
 
@@ -53,7 +53,7 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <div class="card">
 <h3>Memory Usage</h3>
 <canvas id="memChart"></canvas>
-<p>41% used of 15662MB</p>
+<p>42% used of 15662MB</p>
 </div>
 
 </div>
@@ -64,13 +64,13 @@ window.addEventListener('load', () => {
 
 new Chart(document.getElementById('cpuChart'), {
   type:'bar',
-  data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[3,0,0,0,-3,3,16,-3,20,32,20,40,12,6,16,0,9,9,10,3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+  data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[3,3,6,6,6,6,6,6,14,24,23,41,20,12,9,9,6,6,9,6], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
   options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true,text:'Usage %'}}}}
 });
 
 new Chart(document.getElementById('memChart'), {
   type:'doughnut',
-  data:{labels:['Used','Free'], datasets:[{data:[41,59],backgroundColor:['rgba(42,157,143,0.8)','rgba(200,200,200,0.3)']}]},
+  data:{labels:['Used','Free'], datasets:[{data:[42,58],backgroundColor:['rgba(42,157,143,0.8)','rgba(200,200,200,0.3)']}]},
   options:{responsive:true, cutout:'65%', plugins:{legend:{position:'bottom'}}}
 });
 
