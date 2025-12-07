@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EZOps_ThinkCentre – Linux HealthCheck</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+<style>
+body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
+header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; color:white; text-align:center; font-size:22px; font-weight:bold; }
+.summary-panel { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:20px; align-items:center; }
+.summary-card { background:white; padding:18px 25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); min-width:180px; text-align:center; }
+.summary-card h4 { margin:0 0 8px 0; color:#007bff; font-size:18px; }
+.summary-card p { margin:0; font-size:16px; color:#555; font-weight:bold; }
+.health-badge { padding:10px 18px; border-radius:12px; font-weight:bold; color:white; font-size:16px; }
+.container { max-width:1200px; margin:auto; padding:30px; display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
+.card { flex:1 1 400px; background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); text-align:center; transition:0.3s; }
+.card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
+.card h3 { color:#007bff; margin-bottom:15px; font-size:20px; }
+canvas { width:100% !important; height:300px !important; border-radius:12px; }
+footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:30px; border-radius:8px; }
+</style>
+</head>
+<body>
+<header class="navbar">EZOps_ThinkCentre – Linux HealthCheck</header>
+
+<div class="summary-panel">
+  <div class="summary-card">
+    <h4>Overall CPU Usage</h4>
+    <p>5%</p>
+  </div>
+  <div class="summary-card">
+    <h4>Memory Usage</h4>
+    <p>42%</p>
+  </div>
+  <div class="summary-card">
+    <h4>System Uptime</h4>
+    <p>up 1 day, 42 minutes</p>
+  </div>
+  <div class="summary-card">
+    <h4>Overall Health</h4>
+    <div class="health-badge" style="background:#5cb85c;">Very Good (76%)</div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h3>CPU Usage per Core</h3>
+<canvas id="cpuChart"></canvas>
+</div>
+
+<div class="card">
+<h3>Memory Usage</h3>
+<canvas id="memChart"></canvas>
+<p>42% used of 15662MB</p>
+</div>
+
+</div>
+
+<footer>Generated for host: LinuxMint-Thinkcentre at 2025-12-07 14:14:18 +0530</footer>
+
+<script>
+window.addEventListener('load', () => {
+
+new Chart(document.getElementById('cpuChart'), {
+  type:'bar',
+  data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,-3,0,0,-3,0,-3,0,100,0,6,0,3,0,-3,0,0,0,0,3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(194,35,34,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+  options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true,text:'Usage %'}}}}
+});
+
+new Chart(document.getElementById('memChart'), {
+  type:'doughnut',
+  data:{labels:['Used','Free'], datasets:[{data:[42,58],backgroundColor:['rgba(42,157,143,0.8)','rgba(200,200,200,0.3)']}]},
+  options:{responsive:true, cutout:'65%', plugins:{legend:{position:'bottom'}}}
+});
+
+});
+</script>
+</body>
+</html>

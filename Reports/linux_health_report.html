@@ -28,7 +28,7 @@ th { background:#f7fbff; font-weight:600; color:#0b5f86; }
 <body>
 <div class="header">
 <p class="title">Linux System Health Report</p>
-<p class="subtitle"><strong>Host:</strong> LinuxMint-Thinkcentre &nbsp;&nbsp; <strong>Date:</strong> 2025-12-07 12:37:42 +0530</p>
+<p class="subtitle"><strong>Host:</strong> LinuxMint-Thinkcentre &nbsp;&nbsp; <strong>Date:</strong> 2025-12-07 14:08:14 +0530</p>
 </div>
 <div class="container">
 <div> <!-- LEFT COLUMN -->
@@ -46,7 +46,9 @@ th { background:#f7fbff; font-weight:600; color:#0b5f86; }
 <tr><td class="metric">BIOS Version</td><td>M42KT55A</td></tr>
 <tr><td class="metric">BIOS Date</td><td>10/21/2025</td></tr>
 <tr><td class="metric">Boot Mode</td><td>UEFI</td></tr>
-<tr><td class="metric">Overall Health</td><td><span class="health-badge" style="background:#5cb85c;">very good (72%)</span></td></tr>
+<tr><td class="metric">Uptime</td><td>up 1 day, 36 minutes</td></tr>
+<tr><td class="metric">Last Boot</td><td>2025-12-06 13:32</td></tr>
+<tr><td class="metric">Overall Health</td><td><span class="health-badge" style="background:#5cb85c;">very good (70%)</span></td></tr>
 </table>
 </div>
 
@@ -55,7 +57,7 @@ th { background:#f7fbff; font-weight:600; color:#0b5f86; }
 <h3>CPU & Load</h3>
 <table>
 <tr><th>Metric</th><th>Value</th></tr>
-<tr><td>Load (1 min)</td><td>1.37</td></tr>
+<tr><td>Load (1 min)</td><td>2.05</td></tr>
 <tr><td>CPU Score</td><td>100%</td></tr>
 </table>
 </div>
@@ -65,10 +67,10 @@ th { background:#f7fbff; font-weight:600; color:#0b5f86; }
 <h3>Memory & Swap</h3>
 <table>
 <tr><th>Metric</th><th>Value</th></tr>
-<tr><td>Memory Used</td><td>39%</td></tr>
-<tr><td>Swap Used</td><td>25%</td></tr>
-<tr><td>Memory Score</td><td>61%</td></tr>
-<tr><td>Swap Score</td><td>50%</td></tr>
+<tr><td>Memory Used</td><td>44%</td></tr>
+<tr><td>Swap Used</td><td>32%</td></tr>
+<tr><td>Memory Score</td><td>56%</td></tr>
+<tr><td>Swap Score</td><td>36%</td></tr>
 </table>
 </div>
 
@@ -77,10 +79,10 @@ th { background:#f7fbff; font-weight:600; color:#0b5f86; }
 <h3>Disk Usage</h3>
 <table>
 <tr><th>Filesystem</th><th>Type</th><th>Size</th><th>Used</th><th>Avail</th><th>Use%</th><th>Mount</th></tr>
-<tr><td>tmpfs</td><td>tmpfs</td><td>1.6G</td><td>19M</td><td>1.6G</td><td>2%</td><td>/run</td></tr>
-<tr><td>/dev/sda3</td><td>ext4</td><td>285G</td><td>183G</td><td>88G</td><td>68%</td><td>/</td></tr>
-<tr><td>tmpfs</td><td>tmpfs</td><td>7.7G</td><td>82M</td><td>7.6G</td><td>2%</td><td>/dev/shm</td></tr>
-<tr><td>tmpfs</td><td>tmpfs</td><td>5.0M</td><td>16K</td><td>5.0M</td><td>1%</td><td>/run/lock</td></tr>
+<tr><td>tmpfs</td><td>tmpfs</td><td>1.6G</td><td>28M</td><td>1.6G</td><td>2%</td><td>/run</td></tr>
+<tr><td>/dev/sda3</td><td>ext4</td><td>285G</td><td>189G</td><td>82G</td><td>70%</td><td>/</td></tr>
+<tr><td>tmpfs</td><td>tmpfs</td><td>7.7G</td><td>79M</td><td>7.6G</td><td>2%</td><td>/dev/shm</td></tr>
+<tr><td>tmpfs</td><td>tmpfs</td><td>5.0M</td><td>20K</td><td>5.0M</td><td>1%</td><td>/run/lock</td></tr>
 <tr><td>efivarfs</td><td>efivarfs</td><td>192K</td><td>133K</td><td>55K</td><td>71%</td><td>/sys/firmware/efi/efivars</td></tr>
 <tr><td>/dev/nvme0n1p1</td><td>vfat</td><td>96M</td><td>59M</td><td>38M</td><td>61%</td><td>/boot/efi</td></tr>
 <tr><td>tmpfs</td><td>tmpfs</td><td>1.6G</td><td>26M</td><td>1.6G</td><td>2%</td><td>/run/user/1000</td></tr>
@@ -88,7 +90,7 @@ th { background:#f7fbff; font-weight:600; color:#0b5f86; }
 <tr><td>/dev/sdc1</td><td>fuseblk</td><td>932G</td><td>860G</td><td>72G</td><td>93%</td><td>/media/lraja/My Passport</td></tr>
 <tr><td>/dev/sda2</td><td>fuseblk</td><td>629G</td><td>496G</td><td>133G</td><td>79%</td><td>/media/lraja/DDrive_SSD_SATA</td></tr>
 </table>
-<p class="small">Root usage: 68% — Disk Score: 32%</p>
+<p class="small">Root usage: 70% — Disk Score: 30%</p>
 </div>
 
 <!-- Application Health Check -->
@@ -105,21 +107,21 @@ th { background:#f7fbff; font-weight:600; color:#0b5f86; }
 <!-- Timeshift Snapshots -->
 <div class="panel">
 <h3>Timeshift Snapshots</h3>
-<div class="pre">Mounted '/dev/sda3' at '/run/timeshift/954422/backup'
+<div class="pre">Mounted '/dev/sda3' at '/run/timeshift/1047171/backup'
 Device : /dev/sda3
 UUID   : f50ee506-ad66-4613-9090-07fa1b917646
-Path   : /run/timeshift/954422/backup
+Path   : /run/timeshift/1047171/backup
 Mode   : RSYNC
 Status : OK
-5 snapshots, 93.5 GB free
+5 snapshots, 87.5 GB free
 
 Num     Name                 Tags  Description             
 ------------------------------------------------------------------------------
 0    >  2025-12-05_09-33-56  M                             
-1    >  2025-12-06_13-35-08  B     Auto Boot Snapshot      
-2    >  2025-12-06_13-52-14  O W   Auto 12 Hour Snapshot   
-3    >  2025-12-07_02-03-54  O     Auto 12 Hour Snapshot   
-4    >  2025-12-07_04-20-01  O     Auto 12 Hour Snapshot   </div>
+1    >  2025-12-06_13-52-14  O W   Auto 12 Hour Snapshot   
+2    >  2025-12-07_02-03-54  O     Auto 12 Hour Snapshot   
+3    >  2025-12-07_04-20-01  O     Auto 12 Hour Snapshot   
+4    >  2025-12-07_13-20-01  O     Auto 12 Hour Snapshot   </div>
 </div>
 
 <!-- Filesystem Inode Usage -->
@@ -127,13 +129,13 @@ Num     Name                 Tags  Description
 <h3>Filesystem Inode Usage</h3>
 <table>
 <tr><th>Filesystem</th><th>Inodes Used</th><th>Inodes Free</th><th>Use%</th><th>Mounted on</th></tr>
-<tr><td>tmpfs</td><td>1393</td><td>2003456</td><td>1%</td><td>/run</td></tr>
-<tr><td>/dev/sda3</td><td>4713379</td><td>14308445</td><td>25%</td><td>/</td></tr>
-<tr><td>tmpfs</td><td>330</td><td>2004519</td><td>1%</td><td>/dev/shm</td></tr>
-<tr><td>tmpfs</td><td>8</td><td>2004841</td><td>1%</td><td>/run/lock</td></tr>
+<tr><td>tmpfs</td><td>1396</td><td>2003453</td><td>1%</td><td>/run</td></tr>
+<tr><td>/dev/sda3</td><td>4717595</td><td>14304229</td><td>25%</td><td>/</td></tr>
+<tr><td>tmpfs</td><td>362</td><td>2004487</td><td>1%</td><td>/dev/shm</td></tr>
+<tr><td>tmpfs</td><td>9</td><td>2004840</td><td>1%</td><td>/run/lock</td></tr>
 <tr><td>efivarfs</td><td>0</td><td>0</td><td>-</td><td>/sys/firmware/efi/efivars</td></tr>
 <tr><td>/dev/nvme0n1p1</td><td>0</td><td>0</td><td>-</td><td>/boot/efi</td></tr>
-<tr><td>tmpfs</td><td>322</td><td>400647</td><td>1%</td><td>/run/user/1000</td></tr>
+<tr><td>tmpfs</td><td>324</td><td>400645</td><td>1%</td><td>/run/user/1000</td></tr>
 <tr><td>/dev/sdb1</td><td>0</td><td>0</td><td>-</td><td>/media/lraja/BALENO</td></tr>
 <tr><td>/dev/sdc1</td><td>3235104</td><td>74999816</td><td>5%</td><td>/media/lraja/My</td></tr>
 <tr><td>/dev/sda2</td><td>163177</td><td>140194139</td><td>1%</td><td>/media/lraja/DDrive_SSD_SATA</td></tr>
@@ -311,16 +313,16 @@ SHELL=/bin/sh
 <!-- Disk I/O Statistics -->
 <div class="panel">
 <h3>Disk I/O Statistics</h3>
-<div class="pre">Linux 6.14.0-36-generic (LinuxMint-Thinkcentre) 	12/07/2025 	_x86_64_	(20 CPU)
+<div class="pre">Linux 6.14.0-36-generic (LinuxMint-Thinkcentre) 	07/12/25 	_x86_64_	(20 CPU)
 
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           1.17    0.00    0.38    0.25    0.00   98.19
+           1.24    0.00    0.39    0.29    0.00   98.07
 
 Device            r/s     rkB/s   rrqm/s  %rrqm r_await rareq-sz     w/s     wkB/s   wrqm/s  %wrqm w_await wareq-sz     d/s     dkB/s   drqm/s  %drqm d_await dareq-sz     f/s f_await  aqu-sz  %util
-nvme0n1          0.01      0.25     0.01  39.20    5.03    19.66    0.00      0.00     0.00   0.00   46.00     0.50    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00
-sda             62.62    825.67    23.59  27.36    0.47    13.18   13.59    828.39    90.71  86.97    7.17    60.93    0.00      0.00     0.00   0.00    0.00     0.00    2.07    1.29    0.13   1.78
-sdb              0.00      0.14     0.18  98.29    4.56    44.74    0.00      0.00     0.00   0.00    4.00     0.50    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00
-sdc              0.01      0.42     0.00   0.00   12.54    45.71    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.01</div>
+nvme0n1          0.01      0.26     0.01  35.67    5.17    18.80    0.00      0.00     0.00   0.00   46.00     0.50    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00
+sda             66.23    990.01    26.46  28.55    0.55    14.95   14.38    959.38   101.83  87.62    7.57    66.70    0.00      0.00     0.00   0.00    0.00     0.00    2.08    1.38    0.15   1.96
+sdb              0.00      0.16     0.17  97.27    3.82    34.47    0.00      0.00     0.00   0.00    4.00     0.50    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00
+sdc              0.01      0.42     0.00   0.00   10.41    39.22    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.01</div>
 </div>
 
 <!-- Active Network Connections -->
@@ -336,26 +338,26 @@ udp   UNCONN     0      0                                       127.0.0.54:53   
 udp   UNCONN     0      0                                    127.0.0.53%lo:53                                     0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=14)) 
 udp   ESTAB      0      0                     192.168.1.16%wlx98038eb487bc:68                                 192.168.1.1:67   users:(("NetworkManager",pid=1335,fd=28))  
 udp   UNCONN     0      0                                             [::]:5353                                      [::]:*    users:(("avahi-daemon",pid=1109,fd=13))    
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:38670               [2404:6800:4007:836::200e]:443  users:(("chrome",pid=3101,fd=19))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:46880               [2404:6800:4007:800::2003]:443  users:(("chrome",pid=3100,fd=28))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:55300               [2404:6800:4007:811::2003]:443  users:(("chrome",pid=3101,fd=19))          
 udp   UNCONN     0      0                                             [::]:39062                                     [::]:*    users:(("avahi-daemon",pid=1109,fd=15))    
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:56424               [2404:6800:4007:800::2004]:443  users:(("chrome",pid=3100,fd=21))          
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:40163               [2404:6800:4007:83b::200a]:443  users:(("chrome",pid=3101,fd=59))          
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:40181               [2404:6800:4007:836::200a]:443  users:(("chrome",pid=3101,fd=118))         
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:49100                    [2401:4900:50:9::7c9]:53   users:(("systemd-resolve",pid=1064,fd=21)) 
 udp   UNCONN     0      0      [fe80::6726:e9eb:2fb1:8317]%wlx98038eb487bc:546                                       [::]:*    users:(("NetworkManager",pid=1335,fd=22))  
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:50121               [2404:6800:4007:800::2004]:443  users:(("chrome",pid=3101,fd=82))          
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:42211               [2404:6800:4007:80e::200e]:443  users:(("chrome",pid=3101,fd=31))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:34285               [2404:6800:4007:833::200e]:443  users:(("chrome",pid=3101,fd=32))          
 udp   UNCONN     0      0                                                *:1716                                         *:*    users:(("kdeconnectd",pid=2613,fd=20))     
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:59849               [2404:6800:4007:80b::200a]:443  users:(("chrome",pid=3101,fd=28))          
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:59993               [2404:6800:4007:835::2003]:443  users:(("chrome",pid=3101,fd=33))          
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:44585                 [2404:6800:4013:804::5e]:443  users:(("chrome",pid=3101,fd=30))          
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:52949               [2404:6800:4007:821::2003]:443  users:(("chrome",pid=3101,fd=37))          
-udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:45288               [2404:6800:4007:833::200e]:443  users:(("chrome",pid=3101,fd=52))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:59066               [2404:6800:4009:805::200a]:443  users:(("chrome",pid=3101,fd=45))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:52749               [2404:6800:4007:81b::2004]:443  users:(("chrome",pid=3101,fd=21))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:53429               [2404:6800:4007:832::2003]:443  users:(("chrome",pid=3101,fd=28))          
 tcp   LISTEN     0      4096                                 127.0.0.53%lo:53                                     0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=15)) 
 tcp   LISTEN     0      4096                                    127.0.0.54:53                                     0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=17)) 
 tcp   LISTEN     0      4096                                     127.0.0.1:631                                    0.0.0.0:*    users:(("cupsd",pid=461080,fd=7))          
-tcp   LISTEN     0      4096                                       0.0.0.0:22                                     0.0.0.0:*    users:(("systemd",pid=1,fd=119))           
-tcp   ESTAB      0      0                                     192.168.1.16:57026                           35.215.235.162:443  users:(("chrome",pid=3101,fd=43))          </div>
+tcp   LISTEN     0      4096                                       0.0.0.0:22                                     0.0.0.0:*    users:(("systemd",pid=1,fd=117))           
+tcp   ESTAB      0      0                                     192.168.1.16:35032                           34.120.208.123:443  users:(("thunderbird-bin",pid=2640,fd=87)) 
+tcp   ESTAB      0      0                                     192.168.1.16:50556                            140.82.112.25:443  users:(("chrome",pid=3101,fd=33))          
+tcp   LISTEN     0      50                                               *:8081                                         *:*    users:(("java",pid=1482,fd=9))             
+tcp   LISTEN     0      100                                              *:8080                                         *:*    users:(("java",pid=1533,fd=44))            
+tcp   LISTEN     0      4096                                         [::1]:631                                       [::]:*    users:(("cupsd",pid=461080,fd=6))          
+tcp   LISTEN     0      1                               [::ffff:127.0.0.1]:8005                                         *:*    users:(("java",pid=1533,fd=52))            
+tcp   LISTEN     0      50                                               *:1716                                         *:*    users:(("kdeconnectd",pid=2613,fd=21))     </div>
 </div>
 
 <!-- Open Ports & Listening Services -->
@@ -376,7 +378,7 @@ udp   UNCONN 0      0                                                *:1716     
 tcp   LISTEN 0      4096                                 127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=15))
 tcp   LISTEN 0      4096                                    127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=17))
 tcp   LISTEN 0      4096                                     127.0.0.1:631        0.0.0.0:*    users:(("cupsd",pid=461080,fd=7))         
-tcp   LISTEN 0      4096                                       0.0.0.0:22         0.0.0.0:*    users:(("systemd",pid=1,fd=119))          
+tcp   LISTEN 0      4096                                       0.0.0.0:22         0.0.0.0:*    users:(("systemd",pid=1,fd=117))          
 tcp   LISTEN 0      50                                               *:8081             *:*    users:(("java",pid=1482,fd=9))            
 tcp   LISTEN 0      100                                              *:8080             *:*    users:(("java",pid=1533,fd=44))           
 tcp   LISTEN 0      4096                                         [::1]:631           [::]:*    users:(("cupsd",pid=461080,fd=6))         
@@ -389,32 +391,32 @@ tcp   LISTEN 0      4096                                          [::]:22       
 <div class="panel">
 <h3>Top Memory-consuming Processes (top 10)</h3>
 <div class="pre">    PID    PPID CMD                         %MEM %CPU
-   3635    2931 /opt/google/chrome/chrome -  4.5  3.6
-   2640    2194 /usr/lib/thunderbird/thunde  2.9  2.3
-   1482       1 /usr/bin/java -Djava.awt.he  2.1  0.3
- 892810    2930 /opt/google/chrome/chrome -  2.0  0.6
-   4431    2844 /proc/self/exe --type=rende  1.9  0.0
-   2630    2194 /opt/google/chrome/chrome    1.8  0.6
- 892877    2930 /opt/google/chrome/chrome -  1.6  0.5
-   4808    2930 /opt/google/chrome/chrome -  1.5  0.1
- 892620    2930 /opt/google/chrome/chrome -  1.5  0.4
-   4822    2930 /opt/google/chrome/chrome -  1.4  0.0</div>
+   3635    2931 /opt/google/chrome/chrome -  6.6  4.0
+   1482       1 /usr/bin/java -Djava.awt.he  3.3  0.3
+   2640    2194 /usr/lib/thunderbird/thunde  2.9  2.4
+ 892810    2930 /opt/google/chrome/chrome -  1.9  0.3
+   2630    2194 /opt/google/chrome/chrome    1.5  0.6
+ 892877    2930 /opt/google/chrome/chrome -  1.5  0.2
+   4431    2844 /proc/self/exe --type=rende  1.5  0.0
+   4220    3795 /app/whatsapp-desktop-linux  1.5  0.1
+ 892620    2930 /opt/google/chrome/chrome -  1.5  0.2
+   4808    2930 /opt/google/chrome/chrome -  1.5  0.1</div>
 </div>
 
 <!-- Top CPU-consuming Processes (top 10) -->
 <div class="panel">
 <h3>Top CPU-consuming Processes (top 10)</h3>
 <div class="pre">    PID    PPID CMD                         %CPU %MEM
- 954424  954190 /usr/lib/jvm/jdk-21-oracle-  268  0.5
-   2652    2194 /usr/bin/gnome-system-monit  4.2  0.6
-   3635    2931 /opt/google/chrome/chrome -  3.6  4.5
- 954044    2930 /opt/google/chrome/chrome -  2.8  0.5
-   2640    2194 /usr/lib/thunderbird/thunde  2.3  2.9
- 286644       1 cinnamon -r                  2.2  1.2
- 946574    2930 /opt/google/chrome/chrome -  2.0  1.4
- 953374  947977 gedit /home/lraja/Github/Mi  1.6  0.4
-   1938    1930 /usr/lib/xorg/Xorg -core :0  1.1  0.3
-   2615    2194 /usr/bin/cairo-dock          0.8  0.4</div>
+   2652    2194 /usr/bin/gnome-system-monit  4.5  0.6
+   3635    2931 /opt/google/chrome/chrome -  4.0  6.6
+ 286644       1 cinnamon -r                  2.7  1.0
+   2640    2194 /usr/lib/thunderbird/thunde  2.4  2.9
+   1938    1930 /usr/lib/xorg/Xorg -core :0  1.2  0.3
+   2615    2194 /usr/bin/cairo-dock          1.1  0.4
+   2630    2194 /opt/google/chrome/chrome    0.6  1.5
+   3085    2900 /opt/google/chrome/chrome -  0.6  0.5
+   2167    2151 /usr/bin/pipewire-pulse      0.5  0.1
+ 947977    2151 /usr/libexec/gnome-terminal  0.4  0.3</div>
 </div>
 
 <!-- Detailed Failed Services -->
@@ -434,36 +436,56 @@ Legend: LOAD   → Reflects whether the unit definition was properly loaded.
 <!-- Uptime & Last Boot -->
 <div class="panel">
 <h3>Uptime & Last Boot</h3>
-<div class="pre">Uptime: up 23 hours, 5 minutes
+<div class="pre">Uptime: up 1 day, 36 minutes
 Last boot:          system boot  2025-12-06 13:32</div>
 </div>
 
 <!-- Last 20 sudo commands -->
 <div class="panel">
 <h3>Last 20 sudo commands</h3>
-<div class="pre">Dec 07 12:22:43 LinuxMint-Thinkcentre sudo[939239]:     root : TTY=pts/2 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/systemctl daemon-reload
-Dec 07 12:28:17 LinuxMint-Thinkcentre sudo[943706]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/su
-Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[947991]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl daemon-reload
-Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[948100]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now new_timeshift-8h.timer
-Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[948186]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now new_timeshift-boot.timer
-Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[948272]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now timeshift-cleanup.timer
-Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[948365]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now linux_hardware_report.timer
-Dec 07 12:34:02 LinuxMint-Thinkcentre sudo[948453]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl daemon-reload
-Dec 07 12:34:02 LinuxMint-Thinkcentre sudo[948538]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl list-timers --all
-Dec 07 12:34:02 LinuxMint-Thinkcentre sudo[948542]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/chmod +x /usr/local/bin/linux_hardware_report.sh
-Dec 07 12:34:02 LinuxMint-Thinkcentre sudo[948545]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/local/bin/linux_hardware_report.sh
-Dec 07 12:34:41 LinuxMint-Thinkcentre sudo[951709]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/chmod +x /usr/local/bin/timeshift_cleanup_cron.sh
-Dec 07 12:34:41 LinuxMint-Thinkcentre sudo[951712]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/local/bin/timeshift_cleanup_cron.sh
-Dec 07 12:34:44 LinuxMint-Thinkcentre sudo[951858]:     root : TTY=pts/2 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/timeshift --delete --snapshot 2025-12-06_11-19-10
-Dec 07 12:35:38 LinuxMint-Thinkcentre sudo[952462]:    lraja : PWD=/home/lraja ; USER=root ; COMMAND=/usr/lib/linuxmint/mintUpdate/dpkg_lock_check.sh
-Dec 07 12:36:58 LinuxMint-Thinkcentre sudo[953572]:    lraja : TTY=pts/1 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_hardware_report.sh
-Dec 07 12:37:17 LinuxMint-Thinkcentre sudo[953755]:    lraja : TTY=pts/1 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_hardware_report.sh
-Dec 07 12:37:20 LinuxMint-Thinkcentre sudo[953785]:    lraja : TTY=pts/1 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/su
-Dec 07 12:37:21 LinuxMint-Thinkcentre sudo[953806]:     root : TTY=pts/4 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_hardware_report.sh
-Dec 07 12:37:42 LinuxMint-Thinkcentre sudo[953962]:     root : TTY=pts/4 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/local/bin/linux_hardware_report.sh</div>
+<div class="pre">Dec 07 13:56:06 LinuxMint-Thinkcentre sudo[1038022]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 13:56:29 LinuxMint-Thinkcentre sudo[1038210]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 13:57:13 LinuxMint-Thinkcentre sudo[1038662]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 13:57:52 LinuxMint-Thinkcentre sudo[1039054]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 14:00:06 LinuxMint-Thinkcentre sudo[1040512]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 14:00:30 LinuxMint-Thinkcentre sudo[1040739]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 14:03:16 LinuxMint-Thinkcentre sudo[1042833]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 14:03:36 LinuxMint-Thinkcentre sudo[1043007]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 14:04:55 LinuxMint-Thinkcentre sudo[1044178]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 14:05:31 LinuxMint-Thinkcentre sudo[1044534]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 14:06:52 LinuxMint-Thinkcentre sudo[1045498]:     root : TTY=pts/5 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_healthcheck_dashboard_report.sh
+Dec 07 14:08:13 LinuxMint-Thinkcentre sudo[1046190]:    lraja : TTY=pts/4 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl daemon-reload
+Dec 07 14:08:13 LinuxMint-Thinkcentre sudo[1046309]:    lraja : TTY=pts/4 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now new_timeshift-8h.timer
+Dec 07 14:08:13 LinuxMint-Thinkcentre sudo[1046397]:    lraja : TTY=pts/4 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now new_timeshift-boot.timer
+Dec 07 14:08:13 LinuxMint-Thinkcentre sudo[1046491]:    lraja : TTY=pts/4 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now timeshift-cleanup.timer
+Dec 07 14:08:13 LinuxMint-Thinkcentre sudo[1046578]:    lraja : TTY=pts/4 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now linux_hardware_report.timer
+Dec 07 14:08:14 LinuxMint-Thinkcentre sudo[1046666]:    lraja : TTY=pts/4 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl daemon-reload
+Dec 07 14:08:14 LinuxMint-Thinkcentre sudo[1046752]:    lraja : TTY=pts/4 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl list-timers --all
+Dec 07 14:08:14 LinuxMint-Thinkcentre sudo[1046756]:    lraja : TTY=pts/4 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/chmod +x /usr/local/bin/linux_hardware_report.sh
+Dec 07 14:08:14 LinuxMint-Thinkcentre sudo[1046759]:    lraja : TTY=pts/4 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/local/bin/linux_hardware_report.sh</div>
 </div>
 
+
 <!-- Package Manager Health -->
+<div class="panel">
+  <h3>Package Manager Health</h3>
+  <div class="pre" style="background:#fbfbfd; padding:8px; border-radius:6px; overflow:auto; font-family:monospace; font-size:12px; white-space:pre-wrap;">
+Listing...
+  </div>
+</div>
+
+<!-- DNS Resolution Test -->
+<div class="panel">
+  <h3>DNS Resolution Test</h3>
+  <div class="pre" style="background:#fbfbfd; padding:8px; border-radius:6px; overflow:auto; font-family:monospace; font-size:12px; white-space:pre-wrap;">
+142.250.206.14
+  </div>
+  <p class="small" style="margin-top:6px; color:#555;">Resolved IP: 142.250.206.14</p>
+</div>
+
+
+
+<!-- Package Manager Health 
 <div class="panel">
 <h3>Package Manager Health</h3>
 <div class="pre">
@@ -471,27 +493,28 @@ Listing...
 </div>
 </div>
 
-<!-- DNS Resolution Test -->
+<!-- DNS Resolution Test 
 <div class="panel">
 <h3>DNS Resolution Test</h3>
 <div class="pre">
-142.250.206.78
+142.250.206.14
 </div>
-</div>
+</div>  -->
+
 
 <!-- Disk I/O / Latency Snapshot -->
 <div class="panel">
 <h3>Disk I/O / Latency Snapshot</h3>
-<div class="pre">4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=1 time=182.5 us (warmup)
-4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=2 time=286.9 us
-4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=3 time=199.3 us
-4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=4 time=196.7 us
-4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=5 time=269.0 us
+<div class="pre">4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=1 time=112.5 us (warmup)
+4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=2 time=149.2 us
+4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=3 time=211.3 us
+4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=4 time=194.8 us
+4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=5 time=164.6 us
 
 --- / (ext4 /dev/sda3 284.6 GiB) ioping statistics ---
-4 requests completed in 952.0 us, 16 KiB read, 4.20 k iops, 16.4 MiB/s
+4 requests completed in 720.0 us, 16 KiB read, 5.55 k iops, 21.7 MiB/s
 generated 5 requests in 4.00 s, 20 KiB, 1 iops, 5.00 KiB/s
-min/avg/max/mdev = 196.7 us / 238.0 us / 286.9 us / 40.5 us</div>
+min/avg/max/mdev = 149.2 us / 180.0 us / 211.3 us / 24.4 us</div>
 </div>
 
 <!-- Kernel dmesg Errors / Warnings (last 200 lines) -->
@@ -500,12 +523,21 @@ min/avg/max/mdev = 196.7 us / 238.0 us / 286.9 us / 40.5 us</div>
 <div class="pre">No errors/warnings in last 200 lines</div>
 </div>
 
-<!-- Disclaimer -->
+
+<!-- Disclaimer & Contact Panel -->
 <div class="panel">
-<h3>Disclaimer</h3>
-<p class="small">Contact: Author: Loganatha Raja &nbsp;&nbsp; Email: loganathr@gmail.com</p>
-<p class="small">This report is for informational purposes only.</p>
+  <h3>Disclaimer & Contact</h3>
+  <p class="small" style="line-height:1.5;">
+    <strong>Author:</strong> Loganatha Raja<br>
+    <strong>Email:</strong> <a href="mailto:loganathr@gmail.com" style="color:#0b5f86; text-decoration:none;">loganathr@gmail.com</a>
+  </p>
+  <p class="small" style="line-height:1.5; margin-top:8px;">
+    This website report and the information provided are <strong>for informational and educational purposes only.</strong><br>
+    For any inquiries or clarifications regarding the reports, please contact the author using the email above.
+  </p>
 </div>
+
+
 
 </div> <!-- END LEFT COLUMN -->
 
@@ -516,14 +548,14 @@ min/avg/max/mdev = 196.7 us / 238.0 us / 286.9 us / 40.5 us</div>
 <table>
 <tr><th>Metric</th><th>Score</th></tr>
 <tr><td>CPU</td><td>100%</td></tr>
-<tr><td>Memory</td><td>61%</td></tr>
-<tr><td>Swap</td><td>50%</td></tr>
-<tr><td>Disk</td><td>32%</td></tr>
+<tr><td>Memory</td><td>56%</td></tr>
+<tr><td>Swap</td><td>36%</td></tr>
+<tr><td>Disk</td><td>30%</td></tr>
 <tr><td>SMART</td><td>100%</td></tr>
 <tr><td>Temperature</td><td>100%</td></tr>
 <tr><td>Failed Services</td><td>80%</td></tr>
 <tr><td>Critical Logs</td><td>0%</td></tr>
-<tr><td><b>Overall Health</b></td><td><span class="health-badge" style="background:#5cb85c;">72%</span></td></tr>
+<tr><td><b>Overall Health</b></td><td><span class="health-badge" style="background:#5cb85c;">70%</span></td></tr>
 </table>
 </div>
 </div> <!-- END RIGHT COLUMN -->
