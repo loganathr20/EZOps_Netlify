@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZOps_ThinkCentre – Linux HealthCheck Dashboard</title>
+<title>Linux HealthCheck Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+
 <style>
 body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
-header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; color:white; text-align:center; font-size:22px; font-weight:bold; }
 
 .info-bar {
   text-align:center;
-  padding:10px;
-  font-size:15px;
-  color:#444;
+  padding:12px;
+  font-size:16px;
+  color:#333;
   background:#dce7ff;
   border-bottom:2px solid #bcd0ff;
   font-weight:600;
@@ -35,33 +35,30 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 </style>
 </head>
 <body>
-
-   
-
-
 <div class="info-bar">
-    Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp; Report Generated: <b>2025-12-07 19:23:01 +0530</b>
+    Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp;
+    Report Generated: <b>2025-12-07 19:36:22 +0530</b>
 </div>
 
 <div class="summary-panel">
   <div class="summary-card">
     <h4>Overall CPU Usage</h4>
-    <p>3%</p>
+    <p>5%</p>
   </div>
 
   <div class="summary-card">
     <h4>Memory Usage</h4>
-    <p>39%</p>
+    <p>40%</p>
   </div>
 
   <div class="summary-card">
     <h4>System Uptime</h4>
-    <p>up 2 hours, 17 minutes</p>
+    <p>up 2 hours, 30 minutes</p>
   </div>
 
   <div class="summary-card">
     <h4>Overall Health</h4>
-    <div class="health-badge" style="background:#5cb85c;">Very Good (79%)</div>
+    <div class="health-badge" style="background:#5cb85c;">Very Good (77%)</div>
   </div>
 </div>
 
@@ -75,7 +72,7 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <div class="card">
 <h3>Memory Usage</h3>
 <canvas id="memChart"></canvas>
-<p>39% used of 15662MB</p>
+<p>40% used of 15662MB</p>
 </div>
 
 </div>
@@ -85,13 +82,29 @@ window.addEventListener('load', () => {
 
 new Chart(document.getElementById('cpuChart'), {
   type:'bar',
-  data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[3,-3,0,0,0,3,0,3,6,9,26,0,0,-3,0,3,12,0,3,3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
-  options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true,text:'Usage %'}}}}
+  data:{
+    labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"],
+    datasets:[{
+      label:'CPU %',
+      data:[6,0,0,-3,3,3,6,-3,6,12,12,6,6,-3,12,6,15,16,0,3],
+      backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]
+    }]
+  },
+  options:{
+    responsive:true,
+    scales:{y:{beginAtZero:true, max:100, title:{display:true, text:'Usage %'}}}
+  }
 });
 
 new Chart(document.getElementById('memChart'), {
   type:'doughnut',
-  data:{labels:['Used','Free'], datasets:[{data:[39,61], backgroundColor:['rgba(42,157,143,0.8)','rgba(200,200,200,0.3)']}]},
+  data:{
+    labels:['Used','Free'],
+    datasets:[{
+      data:[40, 60],
+      backgroundColor:['rgba(42,157,143,0.8)','rgba(200,200,200,0.3)']
+    }]
+  },
   options:{responsive:true, cutout:'65%', plugins:{legend:{position:'bottom'}}}
 });
 
