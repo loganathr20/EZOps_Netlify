@@ -3,16 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZOps_ThinkCentre –  Linux HealthCheck Dashboard </title>
+<title>EZOps_ThinkCentre – Linux HealthCheck Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
 <style>
 body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
 header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; color:white; text-align:center; font-size:22px; font-weight:bold; }
+
+.info-bar {
+  text-align:center;
+  padding:10px;
+  font-size:15px;
+  color:#444;
+  background:#dce7ff;
+  border-bottom:2px solid #bcd0ff;
+  font-weight:600;
+}
+
 .summary-panel { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:20px; align-items:center; }
 .summary-card { background:white; padding:18px 25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); min-width:180px; text-align:center; }
 .summary-card h4 { margin:0 0 8px 0; color:#007bff; font-size:18px; }
 .summary-card p { margin:0; font-size:16px; color:#555; font-weight:bold; }
+
 .health-badge { padding:10px 18px; border-radius:12px; font-weight:bold; color:white; font-size:16px; }
+
 .container { max-width:1200px; margin:auto; padding:30px; display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
 .card { flex:1 1 400px; background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); text-align:center; transition:0.3s; }
 .card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
@@ -22,26 +35,32 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 </style>
 </head>
 <body>
-<header class="navbar">EZOps_ThinkCentre – Linux HealthCheck Dash Board </header>
 
-<test>
+<header class="navbar">EZOps_ThinkCentre – Linux HealthCheck Dash Board</header>
+
+<div class="info-bar">
+    Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp; Report Generated: <b>2025-12-07 19:19:13 +0530</b>
+</div>
 
 <div class="summary-panel">
   <div class="summary-card">
     <h4>Overall CPU Usage</h4>
-    <p>11%</p>
+    <p>1%</p>
   </div>
+
   <div class="summary-card">
     <h4>Memory Usage</h4>
-    <p>42%</p>
+    <p>40%</p>
   </div>
+
   <div class="summary-card">
     <h4>System Uptime</h4>
-    <p>up 1 hour, 54 minutes</p>
+    <p>up 2 hours, 13 minutes</p>
   </div>
+
   <div class="summary-card">
     <h4>Overall Health</h4>
-    <div class="health-badge" style="background:#5cb85c;">Very Good (73%)</div>
+    <div class="health-badge" style="background:#5cb85c;">Very Good (79%)</div>
   </div>
 </div>
 
@@ -55,28 +74,28 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <div class="card">
 <h3>Memory Usage</h3>
 <canvas id="memChart"></canvas>
-<p>42% used of 15662MB</p>
+<p>40% used of 15662MB</p>
 </div>
 
 </div>
-
 
 <script>
 window.addEventListener('load', () => {
 
 new Chart(document.getElementById('cpuChart'), {
   type:'bar',
-  data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[3,3,6,6,6,6,6,6,14,24,23,41,20,12,9,9,6,6,9,6], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+  data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,3,12,0,3,-3,3,-3,3,3,0,6,0,0,0,-3,0,3,3,-3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
   options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true,text:'Usage %'}}}}
 });
 
 new Chart(document.getElementById('memChart'), {
   type:'doughnut',
-  data:{labels:['Used','Free'], datasets:[{data:[42,58],backgroundColor:['rgba(42,157,143,0.8)','rgba(200,200,200,0.3)']}]},
+  data:{labels:['Used','Free'], datasets:[{data:[40,60], backgroundColor:['rgba(42,157,143,0.8)','rgba(200,200,200,0.3)']}]},
   options:{responsive:true, cutout:'65%', plugins:{legend:{position:'bottom'}}}
 });
 
 });
 </script>
+
 </body>
 </html>
