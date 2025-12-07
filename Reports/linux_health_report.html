@@ -1,0 +1,533 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Linux System Health Report - LinuxMint-Thinkcentre</title>
+<style>
+body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background:#f5f7fa; color:#222; margin:20px; }
+.header { background: linear-gradient(90deg,#e6f7ff,#f0f9ff); padding:18px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
+.title { font-size:20px; font-weight:700; margin:0; color:#0b5f86; }
+.subtitle { margin:4px 0 0 0; color:#555; font-size:13px; }
+.container { display:grid; grid-template-columns: 1fr 360px; gap:16px; margin-top:16px; }
+.panel { background:#fff; border-radius:8px; padding:14px; box-shadow:0 1px 4px rgba(14,20,24,0.06); margin-top:12px; }
+.summary { border-left:6px solid #5cb85c; }
+.summary h3 { margin:0 0 8px 0; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th, td { padding:8px 10px; border-bottom:1px solid #f0f2f5; text-align:left; vertical-align:top; }
+th { background:#f7fbff; font-weight:600; color:#0b5f86; }
+.metric { font-weight:700; color:#333; }
+.small { font-size:12px; color:#666; }
+.pre { background:#fbfbfd; padding:8px; border-radius:6px; overflow:auto; font-family:monospace; font-size:12px; white-space:pre-wrap; }
+.health-badge { display:inline-block; padding:6px 10px; border-radius:20px; color:#fff; font-weight:700; }
+.scroll-x { overflow-x:auto; }
+.red { color:#fff; background:#c23b22; padding:2px 6px; border-radius:4px; font-weight:700;}
+.orange { color:#fff; background:#ff6f00; padding:2px 6px; border-radius:4px; font-weight:700;}
+.separator { border-top:2px solid #0b5f86; margin:10px 0;}
+</style>
+</head>
+<body>
+<div class="header">
+<p class="title">Linux System Health Report</p>
+<p class="subtitle"><strong>Host:</strong> LinuxMint-Thinkcentre &nbsp;&nbsp; <strong>Date:</strong> 2025-12-07 12:37:42 +0530</p>
+</div>
+<div class="container">
+<div> <!-- LEFT COLUMN -->
+
+<!-- System Summary -->
+<div class="panel summary">
+<h3>System Summary</h3>
+<table>
+<tr><th>Item</th><th>Value</th></tr>
+<tr><td class="metric">Hostname</td><td>LinuxMint-Thinkcentre</td></tr>
+<tr><td class="metric">Kernel</td><td>6.14.0-36-generic</td></tr>
+<tr><td class="metric">CPU</td><td>12th Gen Intel(R) Core(TM) i7-12700 · 20 cores</td></tr>
+<tr><td class="metric">Total RAM</td><td>15Gi</td></tr>
+<tr><td class="metric">BIOS Vendor</td><td>LENOVO</td></tr>
+<tr><td class="metric">BIOS Version</td><td>M42KT55A</td></tr>
+<tr><td class="metric">BIOS Date</td><td>10/21/2025</td></tr>
+<tr><td class="metric">Boot Mode</td><td>UEFI</td></tr>
+<tr><td class="metric">Overall Health</td><td><span class="health-badge" style="background:#5cb85c;">very good (72%)</span></td></tr>
+</table>
+</div>
+
+<!-- CPU & Load -->
+<div class="panel">
+<h3>CPU & Load</h3>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Load (1 min)</td><td>1.37</td></tr>
+<tr><td>CPU Score</td><td>100%</td></tr>
+</table>
+</div>
+
+<!-- Memory & Swap -->
+<div class="panel">
+<h3>Memory & Swap</h3>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Memory Used</td><td>39%</td></tr>
+<tr><td>Swap Used</td><td>25%</td></tr>
+<tr><td>Memory Score</td><td>61%</td></tr>
+<tr><td>Swap Score</td><td>50%</td></tr>
+</table>
+</div>
+
+<!-- Disk Usage -->
+<div class="panel">
+<h3>Disk Usage</h3>
+<table>
+<tr><th>Filesystem</th><th>Type</th><th>Size</th><th>Used</th><th>Avail</th><th>Use%</th><th>Mount</th></tr>
+<tr><td>tmpfs</td><td>tmpfs</td><td>1.6G</td><td>19M</td><td>1.6G</td><td>2%</td><td>/run</td></tr>
+<tr><td>/dev/sda3</td><td>ext4</td><td>285G</td><td>183G</td><td>88G</td><td>68%</td><td>/</td></tr>
+<tr><td>tmpfs</td><td>tmpfs</td><td>7.7G</td><td>82M</td><td>7.6G</td><td>2%</td><td>/dev/shm</td></tr>
+<tr><td>tmpfs</td><td>tmpfs</td><td>5.0M</td><td>16K</td><td>5.0M</td><td>1%</td><td>/run/lock</td></tr>
+<tr><td>efivarfs</td><td>efivarfs</td><td>192K</td><td>133K</td><td>55K</td><td>71%</td><td>/sys/firmware/efi/efivars</td></tr>
+<tr><td>/dev/nvme0n1p1</td><td>vfat</td><td>96M</td><td>59M</td><td>38M</td><td>61%</td><td>/boot/efi</td></tr>
+<tr><td>tmpfs</td><td>tmpfs</td><td>1.6G</td><td>26M</td><td>1.6G</td><td>2%</td><td>/run/user/1000</td></tr>
+<tr><td>/dev/sdb1</td><td>vfat</td><td>30G</td><td>19G</td><td>11G</td><td>63%</td><td>/media/lraja/BALENO MOV</td></tr>
+<tr><td>/dev/sdc1</td><td>fuseblk</td><td>932G</td><td>860G</td><td>72G</td><td>93%</td><td>/media/lraja/My Passport</td></tr>
+<tr><td>/dev/sda2</td><td>fuseblk</td><td>629G</td><td>496G</td><td>133G</td><td>79%</td><td>/media/lraja/DDrive_SSD_SATA</td></tr>
+</table>
+<p class="small">Root usage: 68% — Disk Score: 32%</p>
+</div>
+
+<!-- Application Health Check -->
+<div class="panel">
+<h3>Application Health Check</h3>
+<table>
+<tr><th>Application</th><th>Status</th><th>Since</th></tr>
+<tr><td>Jenkins</td><td><span style="color:#fff; background:#c23b22; padding:3px 8px; border-radius:12px; font-weight:700;">STOPPED</span></td><td>-</td></tr>
+<tr><td>Tomcat</td><td><span style="color:#fff; background:#c23b22; padding:3px 8px; border-radius:12px; font-weight:700;">STOPPED</span></td><td>-</td></tr>
+<tr><td>Jira</td><td><span style="color:#fff; background:#c23b22; padding:3px 8px; border-radius:12px; font-weight:700;">STOPPED</span></td><td>-</td></tr>
+</table>
+</div>
+
+<!-- Timeshift Snapshots -->
+<div class="panel">
+<h3>Timeshift Snapshots</h3>
+<div class="pre">Mounted '/dev/sda3' at '/run/timeshift/954422/backup'
+Device : /dev/sda3
+UUID   : f50ee506-ad66-4613-9090-07fa1b917646
+Path   : /run/timeshift/954422/backup
+Mode   : RSYNC
+Status : OK
+5 snapshots, 93.5 GB free
+
+Num     Name                 Tags  Description             
+------------------------------------------------------------------------------
+0    >  2025-12-05_09-33-56  M                             
+1    >  2025-12-06_13-35-08  B     Auto Boot Snapshot      
+2    >  2025-12-06_13-52-14  O W   Auto 12 Hour Snapshot   
+3    >  2025-12-07_02-03-54  O     Auto 12 Hour Snapshot   
+4    >  2025-12-07_04-20-01  O     Auto 12 Hour Snapshot   </div>
+</div>
+
+<!-- Filesystem Inode Usage -->
+<div class="panel">
+<h3>Filesystem Inode Usage</h3>
+<table>
+<tr><th>Filesystem</th><th>Inodes Used</th><th>Inodes Free</th><th>Use%</th><th>Mounted on</th></tr>
+<tr><td>tmpfs</td><td>1393</td><td>2003456</td><td>1%</td><td>/run</td></tr>
+<tr><td>/dev/sda3</td><td>4713379</td><td>14308445</td><td>25%</td><td>/</td></tr>
+<tr><td>tmpfs</td><td>330</td><td>2004519</td><td>1%</td><td>/dev/shm</td></tr>
+<tr><td>tmpfs</td><td>8</td><td>2004841</td><td>1%</td><td>/run/lock</td></tr>
+<tr><td>efivarfs</td><td>0</td><td>0</td><td>-</td><td>/sys/firmware/efi/efivars</td></tr>
+<tr><td>/dev/nvme0n1p1</td><td>0</td><td>0</td><td>-</td><td>/boot/efi</td></tr>
+<tr><td>tmpfs</td><td>322</td><td>400647</td><td>1%</td><td>/run/user/1000</td></tr>
+<tr><td>/dev/sdb1</td><td>0</td><td>0</td><td>-</td><td>/media/lraja/BALENO</td></tr>
+<tr><td>/dev/sdc1</td><td>3235104</td><td>74999816</td><td>5%</td><td>/media/lraja/My</td></tr>
+<tr><td>/dev/sda2</td><td>163177</td><td>140194139</td><td>1%</td><td>/media/lraja/DDrive_SSD_SATA</td></tr>
+</table>
+</div>
+
+<!-- Last 5 Reboots -->
+<div class="panel">
+<h3>Last 5 Reboots</h3>
+<div class="pre">runlevel (to lvl 5)   6.14.0-36-generi Sat Dec  6 13:32   still running
+lraja    tty7         :0               Sat Dec  6 13:32    gone - no logout
+reboot   system boot  6.14.0-36-generi Sat Dec  6 13:32   still running
+shutdown system down  6.14.0-36-generi Sat Dec  6 13:31 - 13:32  (00:00)
+runlevel (to lvl 5)   6.14.0-36-generi Fri Dec  5 09:40 - 13:31 (1+03:50)</div>
+</div>
+
+<!-- Cron Jobs -->
+<div class="panel">
+<h3>Cron Jobs (all users)</h3>
+<div class="pre">
+==== /etc/crontab ====
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+# You can also override PATH, but by default, newer versions inherit it from the environment
+#PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+
+17 *	* * *	root	cd / &amp;&amp; run-parts --report /etc/cron.hourly
+25 4	* * *	root	test -x /usr/sbin/anacron || { cd / &amp;&amp; run-parts --report /etc/cron.daily; }
+25 13   * * *   root    test -x /usr/sbin/anacron || { cd / &amp;&amp; run-parts --report /etc/cron.daily; }
+47 6	* * 7	root	test -x /usr/sbin/anacron || { cd / &amp;&amp; run-parts --report /etc/cron.weekly; }
+52 6	1 * *	root	test -x /usr/sbin/anacron || { cd / &amp;&amp; run-parts --report /etc/cron.monthly; }
+
+
+# Timeshift Check
+# 0 * * * * root /usr/bin/timeshift --check --scripted &gt;&gt; /var/log/timeshift-hourly.log 2&gt;&amp;1
+44 10 * * * root /usr/bin/timeshift --check --scripted 
+55 16 * * * root /usr/bin/timeshift --check --scripted 
+55 03 * * * root /usr/bin/timeshift --check --scripted
+
+
+
+# Timeshift create Others
+# 0 13 * * * root /usr/local/bin/New_timeshift-job.sh Boottime &gt;&gt; /var/log/new_timeshift-boot.log 2&gt;&amp;1
+20 13 * * * root /usr/local/bin/New_timeshift-job.sh Other &gt;&gt; /var/log/new_timeshift-other.log 2&gt;&amp;1
+20 04 * * * root /usr/local/bin/New_timeshift-job.sh Other &gt;&gt; /var/log/new_timeshift-other.log 2&gt;&amp;1
+
+
+# cleanup script on demand if disk space below 100 GB
+
+
+# Timeshift Cleanup
+# @reboot root /usr/local/bin/timeshift_cleanup_cron.sh &gt;&gt; /var/log/timeshift_cleanup_cron.log 2&gt;&amp;1
+# 0 * * * * root /usr/local/bin/timeshift_cleanup_cron.sh &gt;&gt; /var/log/timeshift_cleanup_cron.log 2&gt;&amp;1
+# */20 * * * * root /usr/local/bin/timeshift_cleanup_cron.sh &gt;&gt; /var/log/timeshift_cleanup_cron.log 2&gt;&amp;1
+# 06 13 * * * root /usr/local/bin/timeshift_cleanup_cron.sh &gt;&gt; /var/log/timeshift_cleanup_cron.log 2&gt;&amp;1
+
+45 13 * * * root /usr/local/bin/timeshift_cleanup_cron.sh &gt;&gt; /var/log/timeshift_cleanup_cron.log 2&gt;&amp;1
+
+# 50 10 * * * root /usr/local/bin/timeshift_cleanup_cron.sh &gt;&gt; /var/log/timeshift_cleanup_cron.log 2&gt;&amp;1
+
+# 15 12 * * * root /usr/local/bin/timeshift_cleanup_cron.sh 
+
+# 50 15 * * * root /usr/local/bin/timeshift_cleanup_cron.sh 
+
+# 25 22 * * * root /usr/local/bin/timeshift_cleanup_cron.sh 
+
+25 2 * * * root /usr/local/bin/timeshift_cleanup_cron.sh                                            
+
+# Linux Hardware Report - Performance
+
+25 22 * * * root /usr/local/bin/linux_hardware_report.sh
+
+# 25 11 * * * root /usr/local/bin/linux_hardware_report.sh 
+                                           
+
+<div class="separator"></div>
+
+==== User Cron Jobs ====
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+# @reboot /usr/bin/timeshift --check --scripted >> /var/log/timeshift-boot.log 2>&1
+
+# 0 * * * * /usr/bin/timeshift --check --scripted >> /var/log/timeshift-hourly.log 2>&1
+# 0 * * * * /usr/bin/timeshift --check --scripted >> /var/log/timeshift-hourly.log 2>&1
+
+# 0 */5 * * * /usr/local/bin/New_timeshift-job.sh
+
+# 0 */1 * * * /usr/local/bin/cleanup_timeshift.sh
+
+# 0 * * * * DISPLAY=:0 cinnamon --replace > /tmp/cinnamon-restart.log 2>&1
+# */35 * * * * DISPLAY=:0 cinnamon --replace > /tmp/cinnamon-restart.log 2>&1
+
+# @reboot DISPLAY=:0 cinnamon --replace > /tmp/cinnamon-restart.log 2>&1
+
+
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+
+# 30 4 * * 1 [ -x /sbin/badblocks ] && [ $(date +\%d) -le 7 ] && /sbin/badblocks /dev/sda3
+
+# 0 * * * * /usr/bin/timeshift --check --scripted >> /var/log/timeshift-hourly.log 2>&1
+# 0 13 * * * /usr/local/bin/New_timeshift-job.sh Boottime >> /var/log/new_timeshift-boot.log 2>&1
+# 30 13 * * * /usr/local/bin/New_timeshift-job.sh Other >> /var/log/new_timeshift-other.log 2>&1
+
+# cleanup script on demand if disk space below 100 GB
+
+# @reboot /usr/local/bin/timeshift_cleanup_cron.sh >> /var/log/timeshift_cleanup_cron.log 2>&1
+
+# 0 * * * * /usr/local/bin/timeshift_cleanup_cron.sh >> /var/log/timeshift_cleanup_cron.log 2>&1
+
+# @reboot sleep 60 && DISPLAY=:0 cinnamon --replace
+
+# */30 * * * * DISPLAY=:0 cinnamon --replace
+</div>
+</div>
+
+<!-- Disk I/O Statistics -->
+<div class="panel">
+<h3>Disk I/O Statistics</h3>
+<div class="pre">Linux 6.14.0-36-generic (LinuxMint-Thinkcentre) 	12/07/2025 	_x86_64_	(20 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.17    0.00    0.38    0.25    0.00   98.19
+
+Device            r/s     rkB/s   rrqm/s  %rrqm r_await rareq-sz     w/s     wkB/s   wrqm/s  %wrqm w_await wareq-sz     d/s     dkB/s   drqm/s  %drqm d_await dareq-sz     f/s f_await  aqu-sz  %util
+nvme0n1          0.01      0.25     0.01  39.20    5.03    19.66    0.00      0.00     0.00   0.00   46.00     0.50    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00
+sda             62.62    825.67    23.59  27.36    0.47    13.18   13.59    828.39    90.71  86.97    7.17    60.93    0.00      0.00     0.00   0.00    0.00     0.00    2.07    1.29    0.13   1.78
+sdb              0.00      0.14     0.18  98.29    4.56    44.74    0.00      0.00     0.00   0.00    4.00     0.50    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00
+sdc              0.01      0.42     0.00   0.00   12.54    45.71    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.01</div>
+</div>
+
+<!-- Active Network Connections -->
+<div class="panel">
+<h3>Active Network Connections</h3>
+<div class="pre">Netid State      Recv-Q Send-Q                               Local Address:Port                              Peer Address:PortProcess                                     
+udp   UNCONN     0      0                                      224.0.0.251:5353                                   0.0.0.0:*    users:(("chrome",pid=2630,fd=107))         
+udp   UNCONN     0      0                                      224.0.0.251:5353                                   0.0.0.0:*    users:(("chrome",pid=3101,fd=23))          
+udp   UNCONN     0      0                                      224.0.0.251:5353                                   0.0.0.0:*    users:(("chrome",pid=3100,fd=59))          
+udp   UNCONN     0      0                                          0.0.0.0:5353                                   0.0.0.0:*    users:(("avahi-daemon",pid=1109,fd=12))    
+udp   UNCONN     0      0                                          0.0.0.0:32772                                  0.0.0.0:*    users:(("avahi-daemon",pid=1109,fd=14))    
+udp   UNCONN     0      0                                       127.0.0.54:53                                     0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=16)) 
+udp   UNCONN     0      0                                    127.0.0.53%lo:53                                     0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=14)) 
+udp   ESTAB      0      0                     192.168.1.16%wlx98038eb487bc:68                                 192.168.1.1:67   users:(("NetworkManager",pid=1335,fd=28))  
+udp   UNCONN     0      0                                             [::]:5353                                      [::]:*    users:(("avahi-daemon",pid=1109,fd=13))    
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:38670               [2404:6800:4007:836::200e]:443  users:(("chrome",pid=3101,fd=19))          
+udp   UNCONN     0      0                                             [::]:39062                                     [::]:*    users:(("avahi-daemon",pid=1109,fd=15))    
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:56424               [2404:6800:4007:800::2004]:443  users:(("chrome",pid=3100,fd=21))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:40163               [2404:6800:4007:83b::200a]:443  users:(("chrome",pid=3101,fd=59))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:40181               [2404:6800:4007:836::200a]:443  users:(("chrome",pid=3101,fd=118))         
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:49100                    [2401:4900:50:9::7c9]:53   users:(("systemd-resolve",pid=1064,fd=21)) 
+udp   UNCONN     0      0      [fe80::6726:e9eb:2fb1:8317]%wlx98038eb487bc:546                                       [::]:*    users:(("NetworkManager",pid=1335,fd=22))  
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:50121               [2404:6800:4007:800::2004]:443  users:(("chrome",pid=3101,fd=82))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:42211               [2404:6800:4007:80e::200e]:443  users:(("chrome",pid=3101,fd=31))          
+udp   UNCONN     0      0                                                *:1716                                         *:*    users:(("kdeconnectd",pid=2613,fd=20))     
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:59849               [2404:6800:4007:80b::200a]:443  users:(("chrome",pid=3101,fd=28))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:59993               [2404:6800:4007:835::2003]:443  users:(("chrome",pid=3101,fd=33))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:44585                 [2404:6800:4013:804::5e]:443  users:(("chrome",pid=3101,fd=30))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:52949               [2404:6800:4007:821::2003]:443  users:(("chrome",pid=3101,fd=37))          
+udp   ESTAB      0      0        [2401:4900:884c:35fe:614e:c51e:9d37:420d]:45288               [2404:6800:4007:833::200e]:443  users:(("chrome",pid=3101,fd=52))          
+tcp   LISTEN     0      4096                                 127.0.0.53%lo:53                                     0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=15)) 
+tcp   LISTEN     0      4096                                    127.0.0.54:53                                     0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=17)) 
+tcp   LISTEN     0      4096                                     127.0.0.1:631                                    0.0.0.0:*    users:(("cupsd",pid=461080,fd=7))          
+tcp   LISTEN     0      4096                                       0.0.0.0:22                                     0.0.0.0:*    users:(("systemd",pid=1,fd=119))           
+tcp   ESTAB      0      0                                     192.168.1.16:57026                           35.215.235.162:443  users:(("chrome",pid=3101,fd=43))          </div>
+</div>
+
+<!-- Open Ports & Listening Services -->
+<div class="panel">
+<h3>Open Ports & Listening Services</h3>
+<div class="pre">Netid State  Recv-Q Send-Q                               Local Address:Port  Peer Address:PortProcess                                    
+udp   UNCONN 0      0                                      224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=2630,fd=107))        
+udp   UNCONN 0      0                                      224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=3101,fd=23))         
+udp   UNCONN 0      0                                      224.0.0.251:5353       0.0.0.0:*    users:(("chrome",pid=3100,fd=59))         
+udp   UNCONN 0      0                                          0.0.0.0:5353       0.0.0.0:*    users:(("avahi-daemon",pid=1109,fd=12))   
+udp   UNCONN 0      0                                          0.0.0.0:32772      0.0.0.0:*    users:(("avahi-daemon",pid=1109,fd=14))   
+udp   UNCONN 0      0                                       127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=16))
+udp   UNCONN 0      0                                    127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=14))
+udp   UNCONN 0      0                                             [::]:5353          [::]:*    users:(("avahi-daemon",pid=1109,fd=13))   
+udp   UNCONN 0      0                                             [::]:39062         [::]:*    users:(("avahi-daemon",pid=1109,fd=15))   
+udp   UNCONN 0      0      [fe80::6726:e9eb:2fb1:8317]%wlx98038eb487bc:546           [::]:*    users:(("NetworkManager",pid=1335,fd=22)) 
+udp   UNCONN 0      0                                                *:1716             *:*    users:(("kdeconnectd",pid=2613,fd=20))    
+tcp   LISTEN 0      4096                                 127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=15))
+tcp   LISTEN 0      4096                                    127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=1064,fd=17))
+tcp   LISTEN 0      4096                                     127.0.0.1:631        0.0.0.0:*    users:(("cupsd",pid=461080,fd=7))         
+tcp   LISTEN 0      4096                                       0.0.0.0:22         0.0.0.0:*    users:(("systemd",pid=1,fd=119))          
+tcp   LISTEN 0      50                                               *:8081             *:*    users:(("java",pid=1482,fd=9))            
+tcp   LISTEN 0      100                                              *:8080             *:*    users:(("java",pid=1533,fd=44))           
+tcp   LISTEN 0      4096                                         [::1]:631           [::]:*    users:(("cupsd",pid=461080,fd=6))         
+tcp   LISTEN 0      1                               [::ffff:127.0.0.1]:8005             *:*    users:(("java",pid=1533,fd=52))           
+tcp   LISTEN 0      50                                               *:1716             *:*    users:(("kdeconnectd",pid=2613,fd=21))    
+tcp   LISTEN 0      4096                                          [::]:22            [::]:*    users:(("systemd",pid=1,fd=120))          </div>
+</div>
+
+<!-- Top Memory-consuming Processes (top 10) -->
+<div class="panel">
+<h3>Top Memory-consuming Processes (top 10)</h3>
+<div class="pre">    PID    PPID CMD                         %MEM %CPU
+   3635    2931 /opt/google/chrome/chrome -  4.5  3.6
+   2640    2194 /usr/lib/thunderbird/thunde  2.9  2.3
+   1482       1 /usr/bin/java -Djava.awt.he  2.1  0.3
+ 892810    2930 /opt/google/chrome/chrome -  2.0  0.6
+   4431    2844 /proc/self/exe --type=rende  1.9  0.0
+   2630    2194 /opt/google/chrome/chrome    1.8  0.6
+ 892877    2930 /opt/google/chrome/chrome -  1.6  0.5
+   4808    2930 /opt/google/chrome/chrome -  1.5  0.1
+ 892620    2930 /opt/google/chrome/chrome -  1.5  0.4
+   4822    2930 /opt/google/chrome/chrome -  1.4  0.0</div>
+</div>
+
+<!-- Top CPU-consuming Processes (top 10) -->
+<div class="panel">
+<h3>Top CPU-consuming Processes (top 10)</h3>
+<div class="pre">    PID    PPID CMD                         %CPU %MEM
+ 954424  954190 /usr/lib/jvm/jdk-21-oracle-  268  0.5
+   2652    2194 /usr/bin/gnome-system-monit  4.2  0.6
+   3635    2931 /opt/google/chrome/chrome -  3.6  4.5
+ 954044    2930 /opt/google/chrome/chrome -  2.8  0.5
+   2640    2194 /usr/lib/thunderbird/thunde  2.3  2.9
+ 286644       1 cinnamon -r                  2.2  1.2
+ 946574    2930 /opt/google/chrome/chrome -  2.0  1.4
+ 953374  947977 gedit /home/lraja/Github/Mi  1.6  0.4
+   1938    1930 /usr/lib/xorg/Xorg -core :0  1.1  0.3
+   2615    2194 /usr/bin/cairo-dock          0.8  0.4</div>
+</div>
+
+<!-- Detailed Failed Services -->
+<div class="panel">
+<h3>Detailed Failed Services</h3>
+<div class="pre">  UNIT                          LOAD   ACTIVE SUB    DESCRIPTION
+● casper-md5check.service       loaded failed failed casper-md5check Verify Live ISO checksums
+● linux_hardware_report.service loaded failed failed Linux Hardware Health Report Service
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+2 loaded units listed.</div>
+</div>
+
+<!-- Uptime & Last Boot -->
+<div class="panel">
+<h3>Uptime & Last Boot</h3>
+<div class="pre">Uptime: up 23 hours, 5 minutes
+Last boot:          system boot  2025-12-06 13:32</div>
+</div>
+
+<!-- Last 20 sudo commands -->
+<div class="panel">
+<h3>Last 20 sudo commands</h3>
+<div class="pre">Dec 07 12:22:43 LinuxMint-Thinkcentre sudo[939239]:     root : TTY=pts/2 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/systemctl daemon-reload
+Dec 07 12:28:17 LinuxMint-Thinkcentre sudo[943706]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/su
+Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[947991]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl daemon-reload
+Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[948100]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now new_timeshift-8h.timer
+Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[948186]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now new_timeshift-boot.timer
+Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[948272]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now timeshift-cleanup.timer
+Dec 07 12:34:01 LinuxMint-Thinkcentre sudo[948365]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl enable --now linux_hardware_report.timer
+Dec 07 12:34:02 LinuxMint-Thinkcentre sudo[948453]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl daemon-reload
+Dec 07 12:34:02 LinuxMint-Thinkcentre sudo[948538]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/systemctl list-timers --all
+Dec 07 12:34:02 LinuxMint-Thinkcentre sudo[948542]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/chmod +x /usr/local/bin/linux_hardware_report.sh
+Dec 07 12:34:02 LinuxMint-Thinkcentre sudo[948545]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/local/bin/linux_hardware_report.sh
+Dec 07 12:34:41 LinuxMint-Thinkcentre sudo[951709]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/chmod +x /usr/local/bin/timeshift_cleanup_cron.sh
+Dec 07 12:34:41 LinuxMint-Thinkcentre sudo[951712]:    lraja : TTY=pts/0 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/local/bin/timeshift_cleanup_cron.sh
+Dec 07 12:34:44 LinuxMint-Thinkcentre sudo[951858]:     root : TTY=pts/2 ; PWD=/home/lraja ; USER=root ; COMMAND=/usr/bin/timeshift --delete --snapshot 2025-12-06_11-19-10
+Dec 07 12:35:38 LinuxMint-Thinkcentre sudo[952462]:    lraja : PWD=/home/lraja ; USER=root ; COMMAND=/usr/lib/linuxmint/mintUpdate/dpkg_lock_check.sh
+Dec 07 12:36:58 LinuxMint-Thinkcentre sudo[953572]:    lraja : TTY=pts/1 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_hardware_report.sh
+Dec 07 12:37:17 LinuxMint-Thinkcentre sudo[953755]:    lraja : TTY=pts/1 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_hardware_report.sh
+Dec 07 12:37:20 LinuxMint-Thinkcentre sudo[953785]:    lraja : TTY=pts/1 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/su
+Dec 07 12:37:21 LinuxMint-Thinkcentre sudo[953806]:     root : TTY=pts/4 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/nano /usr/local/bin/linux_hardware_report.sh
+Dec 07 12:37:42 LinuxMint-Thinkcentre sudo[953962]:     root : TTY=pts/4 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/local/bin/linux_hardware_report.sh</div>
+</div>
+
+<!-- Package Manager Health -->
+<div class="panel">
+<h3>Package Manager Health</h3>
+<div class="pre">
+Listing...
+</div>
+</div>
+
+<!-- DNS Resolution Test -->
+<div class="panel">
+<h3>DNS Resolution Test</h3>
+<div class="pre">
+142.250.206.78
+</div>
+</div>
+
+<!-- Disk I/O / Latency Snapshot -->
+<div class="panel">
+<h3>Disk I/O / Latency Snapshot</h3>
+<div class="pre">4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=1 time=182.5 us (warmup)
+4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=2 time=286.9 us
+4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=3 time=199.3 us
+4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=4 time=196.7 us
+4 KiB <<< / (ext4 /dev/sda3 284.6 GiB): request=5 time=269.0 us
+
+--- / (ext4 /dev/sda3 284.6 GiB) ioping statistics ---
+4 requests completed in 952.0 us, 16 KiB read, 4.20 k iops, 16.4 MiB/s
+generated 5 requests in 4.00 s, 20 KiB, 1 iops, 5.00 KiB/s
+min/avg/max/mdev = 196.7 us / 238.0 us / 286.9 us / 40.5 us</div>
+</div>
+
+<!-- Kernel dmesg Errors / Warnings (last 200 lines) -->
+<div class="panel">
+<h3>Kernel dmesg Errors / Warnings (last 200 lines)</h3>
+<div class="pre">No errors/warnings in last 200 lines</div>
+</div>
+
+<!-- Disclaimer -->
+<div class="panel">
+<h3>Disclaimer</h3>
+<p class="small">Contact: Author: Loganatha Raja &nbsp;&nbsp; Email: loganathr@gmail.com</p>
+<p class="small">This report is for informational purposes only.</p>
+</div>
+
+</div> <!-- END LEFT COLUMN -->
+
+<!-- RIGHT COLUMN / SIDEBAR -->
+<div> 
+<div class="panel">
+<h3>Hardware Health Summary</h3>
+<table>
+<tr><th>Metric</th><th>Score</th></tr>
+<tr><td>CPU</td><td>100%</td></tr>
+<tr><td>Memory</td><td>61%</td></tr>
+<tr><td>Swap</td><td>50%</td></tr>
+<tr><td>Disk</td><td>32%</td></tr>
+<tr><td>SMART</td><td>100%</td></tr>
+<tr><td>Temperature</td><td>100%</td></tr>
+<tr><td>Failed Services</td><td>80%</td></tr>
+<tr><td>Critical Logs</td><td>0%</td></tr>
+<tr><td><b>Overall Health</b></td><td><span class="health-badge" style="background:#5cb85c;">72%</span></td></tr>
+</table>
+</div>
+</div> <!-- END RIGHT COLUMN -->
+
+</div> <!-- END CONTAINER -->
+</body>
+</html>
