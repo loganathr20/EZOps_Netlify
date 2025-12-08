@@ -27,23 +27,23 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <body>
 <div class="info-bar">
     Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp;
-    Report Generated: <b>2025-12-08 10:37:36 +0530</b>
+    Report Generated: <b>2025-12-08 10:44:15 +0530</b>
 </div>
 
 <div class="summary-panel">
-  <div class="summary-card"><h4>System Uptime</h4><p>up 47 minutes (Boot: 2025-12-08 09:50)</p></div>
+  <div class="summary-card"><h4>System Uptime</h4><p>up 53 minutes (Boot: 2025-12-08 09:50)</p></div>
   <div class="summary-card"><h4>Overall CPU Usage</h4><p>1%</p></div>
   <div class="summary-card"><h4>Memory Usage</h4><p>33%</p></div>
   <div class="summary-card"><h4>Swap Usage</h4><p>13%</p></div>
-  <div class="summary-card"><h4>Overall Health</h4><div class="health-badge" style="background:#f0ad4e;">Good (57%)</div></div>
+  <div class="summary-card"><h4>Overall Health</h4><div class="health-badge" style="background:#2a9d8f;">Excellent (83%)</div></div>
 </div>
 
 <div class="container">
-<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.90, 1.13, 1.21</p></div>
+<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.95, 1.14, 1.19</p></div>
 <div class="card"><h3>Memory & Swap Usage</h3><canvas id="memChart"></canvas><p>33% used of 15662MB, Swap: 13% of 13349MB</p></div>
 <div class="card"><h3>Disk Usage</h3><pre style="text-align:left;">tmpfs           1.6G   13M  1.6G   1% /run
 /dev/sda3       285G  200G   71G  74% /
-tmpfs           7.7G   88M  7.6G   2% /dev/shm
+tmpfs           7.7G   98M  7.6G   2% /dev/shm
 tmpfs           5.0M   16K  5.0M   1% /run/lock
 efivarfs        192K  133K   55K  71% /sys/firmware/efi/efivars
 /dev/nvme0n1p1   96M   59M   38M  61% /boot/efi
@@ -54,40 +54,40 @@ tmpfs           1.6G   29M  1.6G   2% /run/user/1000
 <div class="card"><h3>Hardware Health Summary</h3>
 <table>
 <tr><th>Metric</th><th>Score (%)</th></tr>
-<tr><td>CPU</td><td>1%</td></tr>
-<tr><td>Memory</td><td>33%</td></tr>
-<tr><td>Swap</td><td>13%</td></tr>
-<tr><td>Disk</td><td>26%</td></tr>
-<tr><td>SMART</td><td>100%</td></tr>
-<tr><td>Temperature</td><td>100%</td></tr>
-<tr><td>Failed Services</td><td>99%</td></tr>
-<tr><td>Critical Logs</td><td>89%</td></tr>
-<tr><th>Overall Health</th><th>57%</th></tr>
+<tr><td>CPU</td><td style="color:green">99%</td></tr>
+<tr><td>Memory</td><td style="color:orange">67%</td></tr>
+<tr><td>Swap</td><td style="color:green">87%</td></tr>
+<tr><td>Disk</td><td style="color:red">26%</td></tr>
+<tr><td>SMART</td><td style="color:green">100%</td></tr>
+<tr><td>Temperature</td><td style="color:green">100%</td></tr>
+<tr><td>Failed Services</td><td style="color:green">99%</td></tr>
+<tr><td>Critical Logs</td><td style="color:green">89%</td></tr>
+<tr><th>Overall Health</th><th>83%</th></tr>
 </table>
 </div>
 
 <div class="card"><h3>Top 10 Memory-Consuming Processes</h3><table><tr><th>PID</th><th>PPID</th><th>CMD</th><th>%MEM</th><th>%CPU</th></tr>
-<tr><td>2645</td><td>2196</td><td>/usr/lib/thunderbird/thunde</td><td>3.3%</td><td>4.8%</td></tr>
-<tr><td>6208</td><td>2942</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>2.1%</td></tr>
-<tr><td>1481</td><td>1</td><td>/usr/bin/java</td><td>-Djava.awt.he%</td><td>2.0%</td></tr>
-<tr><td>2638</td><td>2196</td><td>/opt/google/chrome/chrome</td><td>1.9%</td><td>1.3%</td></tr>
-<tr><td>3892</td><td>2943</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>1.8%</td></tr>
-<tr><td>6146</td><td>2942</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>1.7%</td></tr>
-<tr><td>6136</td><td>2942</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>1.6%</td></tr>
-<tr><td>6394</td><td>2942</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>1.6%</td></tr>
-<tr><td>2624</td><td>2196</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>1.3%</td></tr>
-<tr><td>6110</td><td>2942</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>1.3%</td></tr></table></div>
+<tr><td>2645</td><td>2196</td><td>/usr/lib/thunderbird/thunde</td><td style="color:green">3.3%</td><td>4.5%</td></tr>
+<tr><td>6208</td><td>2942</td><td>/opt/google/chrome/chrome</td><td style="color:green">-%</td><td>2.1%</td></tr>
+<tr><td>1481</td><td>1</td><td>/usr/bin/java</td><td style="color:green">-Djava.awt.he%</td><td>2.0%</td></tr>
+<tr><td>3892</td><td>2943</td><td>/opt/google/chrome/chrome</td><td style="color:green">-%</td><td>2.0%</td></tr>
+<tr><td>2638</td><td>2196</td><td>/opt/google/chrome/chrome</td><td style="color:green">1.9%</td><td>1.2%</td></tr>
+<tr><td>6146</td><td>2942</td><td>/opt/google/chrome/chrome</td><td style="color:green">-%</td><td>1.7%</td></tr>
+<tr><td>6136</td><td>2942</td><td>/opt/google/chrome/chrome</td><td style="color:green">-%</td><td>1.7%</td></tr>
+<tr><td>6394</td><td>2942</td><td>/opt/google/chrome/chrome</td><td style="color:green">-%</td><td>1.6%</td></tr>
+<tr><td>6110</td><td>2942</td><td>/opt/google/chrome/chrome</td><td style="color:green">-%</td><td>1.3%</td></tr>
+<tr><td>2624</td><td>2196</td><td>/opt/google/chrome/chrome</td><td style="color:green">-%</td><td>1.3%</td></tr></table></div>
 <div class="card"><h3>Top 10 CPU-Consuming Processes</h3><table><tr><th>PID</th><th>PPID</th><th>CMD</th><th>%MEM</th><th>%CPU</th></tr>
-<tr><td>2664</td><td>2196</td><td>/usr/bin/gnome-system-monit</td><td>0.8%</td><td>11.8%</td></tr>
-<tr><td>5841</td><td>1</td><td>cinnamon</td><td>-r%</td><td>1.0%</td></tr>
-<tr><td>2645</td><td>2196</td><td>/usr/lib/thunderbird/thunde</td><td>3.3%</td><td>4.8%</td></tr>
-<tr><td>3892</td><td>2943</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>1.8%</td></tr>
-<tr><td>1935</td><td>1927</td><td>/usr/lib/xorg/Xorg</td><td>-core%</td><td>:0%</td></tr>
-<tr><td>3059</td><td>2906</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>1.0%</td></tr>
-<tr><td>2620</td><td>2196</td><td>/usr/bin/cairo-dock</td><td>0.6%</td><td>1.6%</td></tr>
-<tr><td>2638</td><td>2196</td><td>/opt/google/chrome/chrome</td><td>1.9%</td><td>1.3%</td></tr>
-<tr><td>1481</td><td>1</td><td>/usr/bin/java</td><td>-Djava.awt.he%</td><td>2.0%</td></tr>
-<tr><td>6208</td><td>2942</td><td>/opt/google/chrome/chrome</td><td>-%</td><td>2.1%</td></tr></table></div>
+<tr><td>2664</td><td>2196</td><td>/usr/bin/gnome-system-monit</td><td>0.9%</td><td style="color:green">11.5%</td></tr>
+<tr><td>5841</td><td>1</td><td>cinnamon</td><td>-r%</td><td style="color:green">1.1%</td></tr>
+<tr><td>3892</td><td>2943</td><td>/opt/google/chrome/chrome</td><td>-%</td><td style="color:green">2.0%</td></tr>
+<tr><td>2645</td><td>2196</td><td>/usr/lib/thunderbird/thunde</td><td>3.3%</td><td style="color:green">4.5%</td></tr>
+<tr><td>1935</td><td>1927</td><td>/usr/lib/xorg/Xorg</td><td>-core%</td><td style="color:red">:0%</td></tr>
+<tr><td>3059</td><td>2906</td><td>/opt/google/chrome/chrome</td><td>-%</td><td style="color:green">1.0%</td></tr>
+<tr><td>2620</td><td>2196</td><td>/usr/bin/cairo-dock</td><td>0.6%</td><td style="color:green">1.5%</td></tr>
+<tr><td>2638</td><td>2196</td><td>/opt/google/chrome/chrome</td><td>1.9%</td><td style="color:green">1.2%</td></tr>
+<tr><td>1481</td><td>1</td><td>/usr/bin/java</td><td>-Djava.awt.he%</td><td style="color:green">2.0%</td></tr>
+<tr><td>57392</td><td>2159</td><td>/usr/libexec/gnome-terminal</td><td>0.2%</td><td style="color:green">0.8%</td></tr></table></div>
 
 </div>
 
@@ -95,7 +95,7 @@ tmpfs           1.6G   29M  1.6G   2% /run/user/1000
 window.addEventListener('load', () => {
 new Chart(document.getElementById('cpuChart'), {
   type:'bar',
-  data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[3,-3,3,0,-3,-3,0,0,9,3,3,3,6,0,0,3,9,6,3,-3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+  data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,0,3,3,0,-3,0,0,0,6,6,18,0,-3,0,0,6,0,0,0], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
   options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true, text:'Usage %'}}}}
 });
 new Chart(document.getElementById('memChart'), {
