@@ -5,11 +5,20 @@
 # Ignore ONLY this file
 Reports/linux_health_report.html
 
-# Ignore other health report files by pattern,
-# BUT exclude linux_healthcheck_dashboard_report.html
+# ===========================================
+# PROJECT-SPECIFIC IGNORES
+# ===========================================
+
+# 1) Ignore ONLY this specific file
+Reports/linux_health_report.html
+
+# 2) Ignore general report patterns
 Reports/*_report.html
 Reports/*health*.html
+
+# 3) EXCEPTION — do NOT ignore this file
 !Reports/linux_healthcheck_dashboard_report.html
+
 
 # ===========================================
 # SYSTEM FILES
