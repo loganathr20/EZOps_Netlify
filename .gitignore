@@ -1,0 +1,62 @@
+# ===========================================
+# PROJECT-SPECIFIC IGNORES
+# ===========================================
+
+# Ignore ONLY this file
+Reports/linux_health_report.html
+
+# Ignore other health report files by pattern,
+# BUT exclude linux_healthcheck_dashboard_report.html
+Reports/*_report.html
+Reports/*health*.html
+!Reports/linux_healthcheck_dashboard_report.html
+
+# ===========================================
+# SYSTEM FILES
+# ===========================================
+
+# Linux temporary files
+*.swp
+*.swo
+*.tmp
+*~
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# ===========================================
+# LOGS
+# ===========================================
+
+*.log
+logs/
+*.out
+
+# ===========================================
+# PYTHON (if used)
+__pycache__/
+*.pyc
+*.pyo
+
+# ===========================================
+# NODE / FRONTEND (if applicable)
+node_modules/
+npm-debug.log
+dist/
+build/
+
+# ===========================================
+# LOCAL ENV
+.env
+.env.local
+*.pid
+
+# ===========================================
+# BACKUP / MISC
+*.bak
+*.old
+*.orig
+
