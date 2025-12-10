@@ -25,23 +25,23 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <body>
 <div class="info-bar">
     Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp;
-    Report Generated: <b>2025-12-10 12:58:43 +0530</b>
+    Report Generated: <b>2025-12-10 13:05:07 +0530</b>
 </div>
 
 <div class="summary-panel">
-  <div class="summary-card"><h4>System Uptime</h4><p>up 20 hours, 38 minutes (Boot: 2025-12-09 16:19)</p></div>
-  <div class="summary-card"><h4>Overall CPU Usage</h4><p>0%</p></div>
+  <div class="summary-card"><h4>System Uptime</h4><p>up 20 hours, 45 minutes (Boot: 2025-12-09 16:19)</p></div>
+  <div class="summary-card"><h4>Overall CPU Usage</h4><p>1%</p></div>
   <div class="summary-card"><h4>Memory Usage</h4><p>44%</p></div>
   <div class="summary-card"><h4>Swap Usage</h4><p>11%</p></div>
   <div class="summary-card"><h4>Overall Health</h4><div class="health-badge" style="background:#5cb85c;">Very Good (72%)</div></div>
 </div>
 
 <div class="container">
-<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 1.08, 0.88, 0.54</p></div>
+<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.94, 0.99, 0.71</p></div>
 <div class="card"><h3>Memory & Swap Usage</h3><canvas id="memSwapChart"></canvas><p>Memory: 44% of 15662MB, Swap: 11% of 13349MB</p></div>
 <div class="card"><h3>Disk Usage</h3><pre>tmpfs           1.6G   21M  1.6G   2% /run
 /dev/sda3       285G  193G   78G  72% /
-tmpfs           7.7G   90M  7.6G   2% /dev/shm
+tmpfs           7.7G   87M  7.6G   2% /dev/shm
 tmpfs           5.0M   20K  5.0M   1% /run/lock
 efivarfs        192K  131K   57K  70% /sys/firmware/efi/efivars
 /dev/nvme0n1p1   96M   59M   38M  61% /boot/efi
@@ -52,7 +52,7 @@ tmpfs           1.6G   26M  1.6G   2% /run/user/1000
 <div class="card"><h3>Hardware Health Summary</h3>
 <table>
 <tr><th>Metric</th><th>Score (%)</th></tr>
-<tr><td>CPU</td><td style="color:green">100%</td></tr>
+<tr><td>CPU</td><td style="color:green">99%</td></tr>
 <tr><td>Memory</td><td style="color:orange">56%</td></tr>
 <tr><td>Swap</td><td style="color:green">89%</td></tr>
 <tr><td>Disk</td><td style="color:red">28%</td></tr>
@@ -65,25 +65,25 @@ tmpfs           1.6G   26M  1.6G   2% /run/user/1000
 </div>
 
 <div class="card"><h3>Top 10 Memory-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
- 350528  350096 /opt/google/chrome/chrome -  3.5  3.6
-   2721    2248 /usr/lib/thunderbird/thunde  3.4  2.3
+ 350528  350096 /opt/google/chrome/chrome -  3.9  4.2
+   2721    2248 /usr/lib/thunderbird/thunde  3.3  2.3
    1528       1 /usr/bin/java -Djava.awt.he  2.7  0.2
- 443211       1 /opt/google/chrome/chrome h  2.1  0.9
+ 443211       1 /opt/google/chrome/chrome h  2.1  0.8
  443548  443231 /opt/google/chrome/chrome -  2.1  0.3
    4751    2930 /proc/self/exe --type=rende  2.0  0.0
    4557    4096 /app/whatsapp-desktop-linux  2.0  0.1
  443583  443231 /opt/google/chrome/chrome -  1.9  0.4
- 443575  443231 /opt/google/chrome/chrome -  1.8  0.2
+ 443575  443231 /opt/google/chrome/chrome -  1.7  0.2
    2732    2248 /usr/bin/gnome-system-monit  1.7  2.6</pre></div>
 <div class="card"><h3>Top 10 CPU-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
- 448098       1 cinnamon -r                  1.4  5.7
- 350528  350096 /opt/google/chrome/chrome -  3.5  3.6
+ 448098       1 cinnamon -r                  1.4  6.0
+ 350528  350096 /opt/google/chrome/chrome -  3.9  4.2
    2732    2248 /usr/bin/gnome-system-monit  1.7  2.6
-   2721    2248 /usr/lib/thunderbird/thunde  3.4  2.3
- 443211       1 /opt/google/chrome/chrome h  2.1  0.9
- 443256  443228 /opt/google/chrome/chrome -  1.3  0.8
- 493729  493728 /bin/bash /usr/local/bin/li  0.0  0.7
- 350122  350093 /opt/google/chrome/chrome -  1.2  0.6
+   2721    2248 /usr/lib/thunderbird/thunde  3.3  2.3
+ 443211       1 /opt/google/chrome/chrome h  2.1  0.8
+ 443256  443228 /opt/google/chrome/chrome -  1.3  0.7
+ 498331  498330 /bin/bash /usr/local/bin/li  0.0  0.7
+ 350122  350093 /opt/google/chrome/chrome -  1.2  0.7
    1594    1573 /usr/lib/xorg/Xorg -core :0  0.5  0.6
  443262  443211 /opt/google/chrome/chrome -  0.8  0.5</pre></div>
 
@@ -93,20 +93,26 @@ tmpfs           1.6G   26M  1.6G   2% /run/user/1000
 window.addEventListener('load', () => {
     new Chart(document.getElementById('cpuChart'), {
         type:'bar',
-        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[3,-3,0,0,0,0,-3,0,0,0,3,-3,-3,0,0,0,3,0,6,3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,-3,3,3,0,3,-3,-3,6,0,6,0,0,0,3,0,3,3,0,6], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
         options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true, text:'Usage %'}}}}
     });
 
-    // Single Doughnut with Inner Ring = Memory, Outer Ring = Swap
+    // Concentric Doughnut: Inner = Swap, Outer = Memory
     new Chart(document.getElementById('memSwapChart'), {
         type:'doughnut',
         data:{
-            labels:['Memory Used','Memory Free','Swap Used','Swap Free'],
+            labels:['Swap Used','Swap Free','Memory Used','Memory Free'],
             datasets:[
                 {
-                    label:'Memory & Swap',
-                    data:[44, 56, 11, 89],
-                    backgroundColor:['rgba(42,157,143,0.8)','rgba(200,200,200,0.3)','rgba(255,165,0,0.8)','rgba(200,200,200,0.2)'],
+                    label:'Memory',
+                    data:[44, 56],
+                    backgroundColor:['rgba(42,157,143,0.8)','rgba(200,200,200,0.3)'],
+                    borderWidth:1
+                },
+                {
+                    label:'Swap',
+                    data:[11, 89],
+                    backgroundColor:['rgba(255,165,0,0.8)','rgba(200,200,200,0.2)'],
                     borderWidth:1
                 }
             ]
