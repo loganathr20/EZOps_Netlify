@@ -27,11 +27,11 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <body>
 <div class="info-bar">
     Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp;
-    Report Generated: <b>2025-12-10 15:37:41 +0530</b>
+    Report Generated: <b>2025-12-10 15:46:27 +0530</b>
 </div>
 
 <div class="summary-panel">
-  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 23 hours, 17 minutes</p><p>Boot: 2025-12-09 16:19</p></div>
+  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 23 hours, 26 minutes</p><p>Boot: 2025-12-09 16:19</p></div>
   <div class="summary-card"><h4>Overall CPU Usage</h4><p>2%</p></div>
   <div class="summary-card"><h4>Memory Usage</h4><p>37%</p></div>
   <div class="summary-card"><h4>Swap Usage</h4><p>23%</p></div>
@@ -40,7 +40,7 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 </div>
 
 <div class="container">
-<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.44, 0.58, 0.68</p></div>
+<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.52, 0.70, 0.71</p></div>
 <div class="card"><h3>Memory & Swap Usage</h3><canvas id="memSwapChart"></canvas><p>Memory: 37% of 15662MB, Swap: 23% of 13349MB</p></div>
 <div class="card"><h3>Disk Usage</h3><pre>tmpfs           1.6G   21M  1.6G   2% /run
 /dev/sda3       285G  202G   69G  75% /
@@ -68,27 +68,27 @@ tmpfs           1.6G   26M  1.6G   2% /run/user/1000
 </div>
 
 <div class="card"><h3>Top 10 Memory-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
- 350528  350096 /opt/google/chrome/chrome -  2.9  4.4
+ 350528  350096 /opt/google/chrome/chrome -  2.7  4.4
    2721    2248 /usr/lib/thunderbird/thunde  2.4  2.3
    1528       1 /usr/bin/java -Djava.awt.he  2.0  0.2
- 443548  443231 /opt/google/chrome/chrome -  1.9  0.2
    4751    2930 /proc/self/exe --type=rende  1.9  0.0
+ 443548  443231 /opt/google/chrome/chrome -  1.8  0.2
    4557    4096 /app/whatsapp-desktop-linux  1.7  0.1
  443583  443231 /opt/google/chrome/chrome -  1.6  0.2
  443211       1 /opt/google/chrome/chrome h  1.6  0.7
-   2732    2248 /usr/bin/gnome-system-monit  1.5  3.3
+   2732    2248 /usr/bin/gnome-system-monit  1.6  3.4
  443575  443231 /opt/google/chrome/chrome -  1.5  0.1</pre></div>
 <div class="card"><h3>Top 10 CPU-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
- 538001       1 cinnamon -r                  1.4  7.3
- 350528  350096 /opt/google/chrome/chrome -  2.9  4.4
-   2732    2248 /usr/bin/gnome-system-monit  1.5  3.3
+ 538001       1 cinnamon -r                  1.4  7.6
+ 350528  350096 /opt/google/chrome/chrome -  2.7  4.4
+   2732    2248 /usr/bin/gnome-system-monit  1.6  3.4
    2721    2248 /usr/lib/thunderbird/thunde  2.4  2.3
+ 618239  443231 /opt/google/chrome/chrome -  0.5  1.7
+ 611574  568584 xed linux_healthcheck_dashb  0.5  1.6
  443256  443228 /opt/google/chrome/chrome -  0.8  0.9
- 443849  443231 /opt/google/chrome/chrome -  1.1  0.9
+ 443849  443231 /opt/google/chrome/chrome -  0.9  0.9
  350122  350093 /opt/google/chrome/chrome -  0.8  0.8
-   1594    1573 /usr/lib/xorg/Xorg -core :0  0.5  0.8
- 443211       1 /opt/google/chrome/chrome h  1.6  0.7
- 611121  611120 /bin/bash /usr/local/bin/li  0.0  0.7</pre></div>
+   1594    1573 /usr/lib/xorg/Xorg -core :0  0.5  0.8</pre></div>
 
 </div>
 
@@ -97,7 +97,7 @@ tmpfs           1.6G   26M  1.6G   2% /run/user/1000
 window.addEventListener('load', () => {
     new Chart(document.getElementById('cpuChart'), {
         type:'bar',
-        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[3,-3,0,0,0,3,3,3,-3,3,6,9,3,-3,6,3,0,3,6,6], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,3,6,3,-3,3,0,3,0,9,3,0,20,-3,0,3,3,0,0,9], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
         options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true, text:'Usage %'}}}}
     });
 
@@ -110,7 +110,7 @@ window.addEventListener('load', () => {
                 {
                     label:'Memory',
                     data:[37, 63],
-                    backgroundColor: ['rgba(42,157,143,0.9)', 'rgba(180,180,180,0.9)'], // light grey
+                    backgroundColor: ['rgba(220,53,69,0.7)', 'rgba(40,167,69,0.5)'], // Red for used, Green for free
                     borderWidth:1,
                     radius: '90%',
                     innerRadius: '85%' // Outer ring thinner
@@ -118,7 +118,7 @@ window.addEventListener('load', () => {
                 {
                     label:'Swap',
                     data:[23, 77],
-                    backgroundColor:['rgba(255,165,0,0.9)','rgba(170,170,170,0.5)'],
+                    backgroundColor:['rgba(220,53,69,0.7)','rgba(40,167,69,0.5)'],
                     borderWidth:1,
                     radius: '85%',
                     innerRadius: '80%' // Inner ring starts at 50% of outer ring
@@ -134,10 +134,10 @@ window.addEventListener('load', () => {
                     labels: {
                         generateLabels: function(chart) {
                             const colors = [
-                              {text: 'Memory Used', fillStyle: 'rgba(42,157,143,0.9)'},
-                              {text: 'Memory Free', fillStyle: 'rgba(180,180,180,0.25)'},
-                              {text: 'Swap Used', fillStyle: 'rgba(255,165,0,0.9)'},
-                              {text: 'Swap Free', fillStyle: 'rgba(160,160,160,0.12)'}
+                              {text: 'Memory Used', fillStyle: 'rgba(220,53,69,0.7)'},
+                              {text: 'Memory Free', fillStyle: 'rgba(40,167,69,0.5)'},
+                              {text: 'Swap Used', fillStyle: 'rgba(220,53,69,0.7)'},
+                              {text: 'Swap Free', fillStyle: 'rgba(40,167,69,0.5)'}
                             ];
                             return colors.map(c => ({
                               text: c.text,
