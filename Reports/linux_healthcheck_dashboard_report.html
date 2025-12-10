@@ -27,12 +27,12 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <body>
 <div class="info-bar">
     Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp;
-    Report Generated: <b>2025-12-10 15:14:19 +0530</b>
+    Report Generated: <b>2025-12-10 15:23:13 +0530</b>
 </div>
 
 <div class="summary-panel">
-  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 22 hours, 54 minutes</p><p>Boot: 2025-12-09 16:19</p></div>
-  <div class="summary-card"><h4>Overall CPU Usage</h4><p>1%</p></div>
+  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 23 hours, 3 minutes</p><p>Boot: 2025-12-09 16:19</p></div>
+  <div class="summary-card"><h4>Overall CPU Usage</h4><p>0%</p></div>
   <div class="summary-card"><h4>Memory Usage</h4><p>38%</p></div>
   <div class="summary-card"><h4>Swap Usage</h4><p>23%</p></div>
   <div class="summary-card"><h4>GPU</h4><p>Usage: N/A%<br>Temp: N/A°C</p></div>
@@ -40,11 +40,11 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 </div>
 
 <div class="container">
-<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.68, 0.90, 0.80</p></div>
+<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.60, 0.75, 0.79</p></div>
 <div class="card"><h3>Memory & Swap Usage</h3><canvas id="memSwapChart"></canvas><p>Memory: 38% of 15662MB, Swap: 23% of 13349MB</p></div>
 <div class="card"><h3>Disk Usage</h3><pre>tmpfs           1.6G   21M  1.6G   2% /run
 /dev/sda3       285G  202G   69G  75% /
-tmpfs           7.7G  104M  7.6G   2% /dev/shm
+tmpfs           7.7G   91M  7.6G   2% /dev/shm
 tmpfs           5.0M   20K  5.0M   1% /run/lock
 efivarfs        192K  131K   57K  70% /sys/firmware/efi/efivars
 /dev/nvme0n1p1   96M   59M   38M  61% /boot/efi
@@ -55,7 +55,7 @@ tmpfs           1.6G   26M  1.6G   2% /run/user/1000
 <div class="card"><h3>Hardware Health Summary</h3>
 <table class="table-fixed">
 <tr><th>Metric</th><th>Score (%)</th></tr>
-<tr><td>CPU</td><td style="color:green">99%</td></tr>
+<tr><td>CPU</td><td style="color:green">100%</td></tr>
 <tr><td>Memory</td><td style="color:orange">62%</td></tr>
 <tr><td>Swap</td><td style="color:orange">77%</td></tr>
 <tr><td>Disk</td><td style="color:red">25%</td></tr>
@@ -69,34 +69,35 @@ tmpfs           1.6G   26M  1.6G   2% /run/user/1000
 
 <div class="card"><h3>Top 10 Memory-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
  350528  350096 /opt/google/chrome/chrome -  3.9  4.2
-   2721    2248 /usr/lib/thunderbird/thunde  2.3  2.3
+   2721    2248 /usr/lib/thunderbird/thunde  2.4  2.3
    1528       1 /usr/bin/java -Djava.awt.he  2.0  0.2
- 443548  443231 /opt/google/chrome/chrome -  1.8  0.2
-   4751    2930 /proc/self/exe --type=rende  1.8  0.0
+ 443548  443231 /opt/google/chrome/chrome -  1.9  0.2
+   4751    2930 /proc/self/exe --type=rende  1.9  0.0
    4557    4096 /app/whatsapp-desktop-linux  1.7  0.1
  443583  443231 /opt/google/chrome/chrome -  1.6  0.2
  443211       1 /opt/google/chrome/chrome h  1.6  0.7
  443575  443231 /opt/google/chrome/chrome -  1.5  0.1
-   2732    2248 /usr/bin/gnome-system-monit  1.4  3.2</pre></div>
+   2732    2248 /usr/bin/gnome-system-monit  1.5  3.2</pre></div>
 <div class="card"><h3>Top 10 CPU-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
- 538001       1 cinnamon -r                  1.4  6.3
+ 538001       1 cinnamon -r                  1.4  6.8
  350528  350096 /opt/google/chrome/chrome -  3.9  4.2
-   2732    2248 /usr/bin/gnome-system-monit  1.4  3.2
-   2721    2248 /usr/lib/thunderbird/thunde  2.3  2.3
- 584882  568584 xed linux_healthcheck_dashb  0.4  1.2
- 594843  443231 /opt/google/chrome/chrome -  0.5  1.2
+   2732    2248 /usr/bin/gnome-system-monit  1.5  3.2
+   2721    2248 /usr/lib/thunderbird/thunde  2.4  2.3
+ 584882  568584 xed linux_healthcheck_dashb  0.4  1.4
  443256  443228 /opt/google/chrome/chrome -  0.8  0.9
- 443849  443231 /opt/google/chrome/chrome -  0.9  0.8
+ 443849  443231 /opt/google/chrome/chrome -  0.8  0.9
+ 601394  601393 /bin/bash /usr/local/bin/li  0.0  0.9
  350122  350093 /opt/google/chrome/chrome -  0.8  0.8
    1594    1573 /usr/lib/xorg/Xorg -core :0  0.5  0.7</pre></div>
 
 </div>
 
+
 <script>
 window.addEventListener('load', () => {
     new Chart(document.getElementById('cpuChart'), {
         type:'bar',
-        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,3,3,0,3,0,3,0,0,0,3,0,9,3,-3,-3,0,-3,3,3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,3,3,-3,0,3,0,-3,0,9,3,0,0,3,3,-3,-3,0,0,0], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
         options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true, text:'Usage %'}}}}
     });
 
@@ -109,8 +110,7 @@ window.addEventListener('load', () => {
                 {
                     label:'Memory',
                     data:[38, 62],
-                    backgroundColor: ['rgba(42,157,143,0.9)', 'rgba(100,100,100,0.9)'], // dark grey
-                    // backgroundColor:['rgba(42,157,143,0.9)','rgba(220,220,220,0.5)'],
+                    backgroundColor: ['rgba(42,157,143,0.9)', 'rgba(180,180,180,0.9)'], // light grey
                     borderWidth:1,
                     radius: '90%',
                     innerRadius: '85%' // Outer ring thinner
@@ -118,7 +118,7 @@ window.addEventListener('load', () => {
                 {
                     label:'Swap',
                     data:[23, 77],
-                    backgroundColor:['rgba(255,165,0,0.9)','rgba(200,200,200,0.5)'],
+                    backgroundColor:['rgba(255,165,0,0.9)','rgba(170,170,170,0.5)'],
                     borderWidth:1,
                     radius: '85%',
                     innerRadius: '80%' // Inner ring starts at 50% of outer ring
@@ -135,9 +135,9 @@ window.addEventListener('load', () => {
                         generateLabels: function(chart) {
                             const colors = [
                               {text: 'Memory Used', fillStyle: 'rgba(42,157,143,0.9)'},
-                              {text: 'Memory Free', fillStyle: 'rgba(200,200,200,0.25)'},
+                              {text: 'Memory Free', fillStyle: 'rgba(180,180,180,0.25)'},
                               {text: 'Swap Used', fillStyle: 'rgba(255,165,0,0.9)'},
-                              {text: 'Swap Free', fillStyle: 'rgba(200,200,200,0.12)'}
+                              {text: 'Swap Free', fillStyle: 'rgba(160,160,160,0.12)'}
                             ];
                             return colors.map(c => ({
                               text: c.text,
@@ -157,8 +157,12 @@ window.addEventListener('load', () => {
             }
         }
     });
-});
+}); 
 </script>
+
+
+
+
 
 <footer>&copy; EZOps ThinkCentre - Linux HealthCheck Dashboard</footer>
 </body>
