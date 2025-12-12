@@ -60,7 +60,7 @@
     text-align:center; 
     padding:20px 10px 60px 10px; 
     color:white;
-    background:url('assets/images/Linux-Health-Monitoring.jpg') center/cover no-repeat;
+    background:url('assets/images/Application-Builds.jpg') center/cover no-repeat;
     text-shadow:0 3px 8px rgba(0,0,0,0.7);
     border-radius:15px;
   }
@@ -88,7 +88,7 @@
 </style>
 </head>
 <body>
-<!-- <button class="floating-back-btn" onclick="history.back()">⬅</button> -->
+<button class="floating-back-btn" onclick="history.back()">⬅</button> 
 <header class="navbar">
   <div class="logo">⚙️ EZOps_ThinkCentre</div>
   <nav>
@@ -103,12 +103,12 @@
 </header>
 
 <section class="hero">
-  <h1>EZOps_ThinkCentre – Linux HealthCheck Dash Board</h1>
+  <h1>EZOps_ThinkCentre – Application Build Dashboard</h1>
   <p>Monitor CPU, Memory, Disk, Network, and System Load with visual dashboards and detailed reports.</p>
 </section>
 
 <div class="section" style="margin-top:1px;">
-  <iframe src="Reports/linux_healthcheck_dashboard_report.html" title="Linux HealthCheck Dashboard"></iframe>
+  <iframe src="http://localhost:8081/" title="Application Build Dashboard"></iframe>
 </div>
 
 <!-- This is a comment 
@@ -141,3 +141,4 @@ new Chart(networkCtx, { type:'line', data:{ labels:['0s','10s','20s','30s','40s'
 
 </body>
 </html>
+
