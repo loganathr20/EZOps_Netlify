@@ -95,20 +95,23 @@
     <a href="index.html">Home</a>
     <a href="linux-healthcheck.html" class="active">Linux HealthCheck</a>
     <a href="application-healthcheck.html">Application HealthCheck</a>
-    <a href="application-build.html">Application Build Server</a>
+    <!--  <a href="http://linuxmint-thinkcentre:8081/" target="_blank">  Application Build Server </a> -->
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <button id="themeToggle" class="toggle-btn">🌙</button>
   </nav>
 </header>
 
+
+<!--
 <section class="hero">
-  <h1>EZOps_ThinkCentre – Application Build Dashboard</h1>
-  <p>Monitor CPU, Memory, Disk, Network, and System Load with visual dashboards and detailed reports.</p>
-</section>
+  <h1>EZOps_ThinkCentre – Jenkins Application Build Dashboard</h1>
+  <p>Monitor CPU, Memory, Disk, Network, and System Load with visual dashboards and detailed reports.</p> 
+</section> 
+-->
 
 <div class="section" style="margin-top:1px;">
-  <iframe src="http://localhost:8081/" title="Application Build Dashboard"></iframe>
+  <iframe src="http://linuxmint-thinkcentre:8081/" title="Application Build Dashboard"></iframe>
 </div>
 
 <!-- This is a comment 
@@ -120,24 +123,11 @@
 
 -->
 
+</section>
+
 <footer>
   <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-const cpuCtx = document.getElementById('cpuChart').getContext('2d');
-new Chart(cpuCtx, { type: 'line', data: { labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'CPU %', data:[12,35,28,45,30,50,40], borderColor:'#007bff', backgroundColor:'rgba(0,123,255,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
-
-const memoryCtx = document.getElementById('memoryChart').getContext('2d');
-new Chart(memoryCtx, { type:'doughnut', data:{ labels:['Used','Free'], datasets:[{ data:[65,35], backgroundColor:['#007bff','#e0e0e0'] }] }, options:{ responsive:true } });
-
-const diskCtx = document.getElementById('diskChart').getContext('2d');
-new Chart(diskCtx, { type:'bar', data:{ labels:['C:','D:','E:'], datasets:[{ label:'Disk Usage %', data:[70,45,60], backgroundColor:'#007bff' }] }, options:{ responsive:true, plugins:{ legend:{ display:false } } } });
-
-const networkCtx = document.getElementById('networkChart').getContext('2d');
-new Chart(networkCtx, { type:'line', data:{ labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'Network KB/s', data:[100,150,120,180,140,200,170], borderColor:'#28a745', backgroundColor:'rgba(40,167,69,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
-</script>
 
 </body>
 </html>
