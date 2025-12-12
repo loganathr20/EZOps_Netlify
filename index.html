@@ -10,10 +10,23 @@
 
 <link rel="stylesheet" href="assets/styles.css">
 <style>
-  body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
+  body {
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:#eef3ff;
+    color:#333;
+  }
 
   /* Navbar */
-  header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+  header.navbar {
+    background:linear-gradient(90deg,#007bff,#3399ff);
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:white;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  }
   header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
   nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
   nav a:hover, nav a.active { text-decoration:underline; }
@@ -30,21 +43,67 @@
   }
   .hero h1 { font-size:48px; margin-bottom:10px; }
   .hero p { font-size:20px; margin-bottom:25px; }
-  .cta { background:#007bff; padding:14px 30px; color:white; border-radius:10px; text-decoration:none; font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s; }
-  .cta:hover { background:#005fcc; }
 
   /* Container & Cards */
   .container { max-width:1150px; margin:auto; padding:30px; }
   .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:25px; margin-top:25px; }
-  .card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
-  .card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
-  .card h3 { color:#007bff; margin-top:15px; font-size:22px; }
-  .card p { font-size:16px; color:#555; }
-  .card .icon { font-size:50px; margin-bottom:15px; }
 
-  footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
+  /* Clickable Cards */
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+  }
+  .card-link .card {
+    background: linear-gradient(145deg,#ffffff,#f3f7ff);
+    border-radius: 15px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    border: 1px solid #e5e5e5;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-link .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  }
+  .card-link .icon { font-size:50px; margin-bottom:15px; }
+  .card-link h3 { color:#007bff; font-size:22px; margin:10px 0; }
+  .card-link p { font-size:16px; color:#555; min-height:50px; }
 
-  @media(max-width:768px) { .hero h1 { font-size:36px; } .hero p { font-size:18px; } }
+  /* Subtle arrow on hover */
+  .card-link::after {
+    content: '→';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #007bff;
+    opacity: 0;
+    transition: opacity 0.3s ease, right 0.3s ease;
+  }
+  .card-link:hover::after {
+    opacity: 1;
+    right: 15px;
+  }
+
+  footer {
+    background:#007bff;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:50px;
+    box-shadow:0 -4px 12px rgba(0,0,0,0.2);
+    font-size:16px;
+    border-radius:8px;
+  }
+
+  @media(max-width:768px) {
+    .hero h1 { font-size:36px; }
+    .hero p { font-size:18px; }
+  }
 </style>
 </head>
 <body>
@@ -64,29 +123,33 @@
 <section class="hero">
   <h1>EZOps_ThinkCentre</h1>
   <p>Visual health monitoring & automation guidance for Linux and Applications.</p>
-  <a class="cta" href="linux-healthcheck.html">Start HealthCheck →</a>
 </section>
 
 <section class="cards container">
-  <a href="linux-healthcheck.html" class="card">
-    <div class="icon">🐧</div>
-    <h3>Linux HealthCheck</h3>
-    <p>CPU, Memory, Disk, Network — full system diagnostics with rich insights.</p>
+  <a href="linux-healthcheck.html" class="card-link">
+    <div class="card">
+      <div class="icon">🐧</div>
+      <h3>Linux HealthCheck</h3>
+      <p>CPU, Memory, Disk, Network — full system diagnostics with rich insights.</p>
+    </div>
   </a>
 
-  <a href="application-healthcheck.html" class="card">
-    <div class="icon">🧩</div>
-    <h3>Application HealthCheck</h3>
-    <p>Service uptime, logs, dependencies, and response monitoring.</p>
+  <a href="application-healthcheck.html" class="card-link">
+    <div class="card">
+      <div class="icon">🧩</div>
+      <h3>Application HealthCheck</h3>
+      <p>Service uptime, logs, dependencies, and response monitoring.</p>
+    </div>
   </a>
 
-  <div class="card">
-    <div class="icon">📈</div>
-    <h3>Dashboards</h3>
-    <p>Rich infographic-style dashboards with real-time charts and visual feedback.</p>
-  </div>
+  <a href="#" class="card-link">
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>Dashboards</h3>
+      <p>Rich infographic-style dashboards with real-time charts and visual feedback.</p>
+    </div>
+  </a>
 </section>
-
 
 <footer>
   <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
@@ -97,5 +160,4 @@
 <script src="assets/charts.js"></script>
 </body>
 </html>
-
 
