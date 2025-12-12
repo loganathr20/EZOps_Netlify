@@ -18,6 +18,8 @@ Reports/*health*.html
 
 # 3) EXCEPTION — do NOT ignore this file
 !Reports/linux_healthcheck_dashboard_report.html
+!Reports/Application_healthcheck_dashboard_report.html
+
 
 
 # ===========================================
