@@ -144,7 +144,7 @@ nav .toggle-btn {
   font-size:22px;
   min-width:30px;
 }
-
+.step-0 { border-left:4px solid #6f42c1; }
 .step-1 { border-left:4px solid #6f42c1; }
 .step-2 { border-left:4px solid #28a745; }
 .step-3 { border-left:4px solid #17a2b8; }
@@ -234,13 +234,23 @@ footer {
       <h3>⚡ How It Works</h3>
       <ul class="automation-steps">
 
+        <li class="step-0">
+          <span class="step-icon">🔄</span>
+            <div>
+              <strong>Clone / Sync Repository</strong><br>
+              <span class="inline-code">git clone https://github.com/loganathr20/Lightweight-Automation.git </span> (first run) or
+              <span class="inline-code">git pull</span> (subsequent runs) before executing automation scripts.
+          </div>
+        </li>
+
+
         <li class="step-1">
           <span class="step-icon">📂</span>
           <div>
             <strong>Open Trigger File</strong><br>
             <a class="git-link" target="_blank"
-              href="https://github.com/loganathr20/Lightweight-Automation/Trigger_healthdashboard.txt">
-              https://github.com/loganathr20/Lightweight-Automation/Trigger_healthdashboard.txt
+              href="https://github.com/loganathr20/Lightweight-Automation/blob/master/Trigger_healthdashboard.txt">
+              https://github.com/loganathr20/Lightweight-Automation/blob/develop/Trigger_healthdashboard.txt
             </a>
           </div>
         </li>
