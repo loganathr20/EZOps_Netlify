@@ -1,179 +1,336 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="refresh" content="200">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZOps_ThinkCentre – Metrics </title>
-<link rel="stylesheet" href="assets/styles.css">
+<title>EZOps_ThinkCentre – Metrics</title>
+
 <style>
-  body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
-  
-      /* Floating Back Button */
-  .floating-back-btn {
-      position:fixed;
-      top:20px;
-      left:20px;
-      width:45px;
-      height:45px;
-      background:#007bff;
-      color:white;
-      border:none;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      cursor:pointer;
-      z-index:9999;
-      box-shadow:0 4px 12px rgba(0,0,0,0.25);
-      transition:0.3s;
-  }
-  .floating-back-btn:hover {
-      transform:scale(1.1);
-      background:#005fcc;
-  }
-  
-  
-  header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
-  header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
-  nav a { color:white; margin-left:20px; text-decoration:none; font-weight:bold; transition:0.3s; }
-  nav a:hover, nav a.active { text-decoration:underline; }
-  nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
-  /* .hero { text-align:center; padding:100px 30px; background:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d') center/cover no-repeat; color:white; text-shadow:0 3px 8px rgba(0,0,0,0.7); }
-  /* Hero */
- .hero {
-    text-align:center; 
-    padding:20px 10px 60px 10px; 
-    color:white;
-    background:url('assets/images/Metrics.jpg') center/cover no-repeat;
-    text-shadow:0 3px 8px rgba(0,0,0,0.7);
-    border-radius:15px;
-  }
-  .hero h1 { font-size:42px; margin-bottom:10px; }
-  .hero p { font-size:18px; margin-bottom:25px; }
-  .container { max-width:1300px; margin:auto; padding:10px; }
-  .section { background:white; padding:10px; border-radius:15px; margin-bottom:10px; box-shadow:0 6px 14px rgba(0,0,0,0.1); }
-  .section h2 { color:#007bff; font-size:28px; margin-bottom:15px; text-align:center; }
-  .section p { font-size:16px; color:#555; line-height:1.6; text-align:justify; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:25px; }
-  .card { background:#f7faff; padding:20px; border-radius:12px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; }
-  .card:hover { transform:translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.15); }
-  .card .icon { font-size:40px; margin-bottom:12px; }
-  .card h3 { color:#007bff; font-size:20px; margin-bottom:8px; }
-  .card p { font-size:14px; color:#555; }
-  footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; }
-  @media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
+body {
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  background:#eef3ff;
+  color:#333;
+}
+
+/* Navbar */
+header.navbar {
+  background:linear-gradient(90deg,#007bff,#3399ff);
+  padding:18px 25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:white;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+header .logo { font-size:26px; font-weight:bold; }
+nav a {
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+nav a.active, nav a:hover { text-decoration:underline; }
+nav .toggle-btn {
+  background:none;
+  border:none;
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+}
+
+/* Hero */
+.hero {
+  text-align:center;
+  padding:30px 20px 70px;
+  color:white;
+  background:#2a5bd7;
+  text-shadow:0 3px 8px rgba(0,0,0,0.6);
+  border-radius:0 0 20px 20px;
+}
+.hero h1 { font-size:42px; }
+.hero p { font-size:18px; max-width:900px; margin:auto; }
+
+/* Layout */
+.container { max-width:1300px; margin:auto; padding:20px; }
+.section {
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  margin-bottom:25px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.1);
+}
+.section h2 {
+  color:#007bff;
+  font-size:28px;
+  margin-bottom:10px;
+  text-align:center;
+}
+.section p { color:#555; line-height:1.6; }
+
+/* Cards */
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+  margin-top:25px;
+}
+.card {
+  background:#f7faff;
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+.card .icon { font-size:38px; margin-bottom:12px; }
+.card h3 { color:#007bff; font-size:18px; }
+.card p { font-size:14px; }
+
+/* Clickable Card */
+.card-link {
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
+/* Environment Badge */
+.env-badge {
+  display:inline-block;
+  padding:4px 12px;
+  border-radius:20px;
+  font-size:12px;
+  background:#007bff;
+  color:white;
+  margin-bottom:10px;
+}
+
+/* Automation Section */
+.automation-box {
+  margin-top:20px;
+  background:#f9fbff;
+  border-left:6px solid #007bff;
+  border-radius:12px;
+  padding:22px;
+}
+
+.automation-box h3 {
+  margin-top:0;
+  color:#0056b3;
+}
+
+.automation-steps {
+  list-style:none;
+  padding:0;
+  margin:20px 0 0;
+}
+
+.automation-steps li {
+  background:white;
+  padding:16px;
+  margin-bottom:14px;
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  display:flex;
+  gap:12px;
+}
+
+.step-icon {
+  font-size:22px;
+  min-width:30px;
+}
+
+.step-1 { border-left:4px solid #6f42c1; }
+.step-2 { border-left:4px solid #28a745; }
+.step-3 { border-left:4px solid #17a2b8; }
+.step-4 { border-left:4px solid #ffc107; }
+.step-5 { border-left:4px solid #dc3545; }
+
+/* Git URL Highlight */
+.git-link {
+  display:inline-block;
+  margin-top:6px;
+  padding:6px 10px;
+  background:#24292e;
+  color:white;
+  border-radius:6px;
+  font-size:13px;
+  text-decoration:none;
+  word-break:break-all;
+}
+.git-link:hover { background:#000; }
+
+/* Inline code */
+.inline-code {
+  background:#eef2ff;
+  padding:3px 6px;
+  border-radius:6px;
+  font-family:Consolas, monospace;
+  color:#5c2d91;
+  font-weight:bold;
+}
+
+/* Footer */
+footer {
+  background:#007bff;
+  color:white;
+  text-align:center;
+  padding:18px;
+  font-size:15px;
+}
+
+@media(max-width:768px){
+  .hero h1 { font-size:32px; }
+  .hero p { font-size:16px; }
+}
 </style>
 </head>
+
 <body>
-<!-- <button class="floating-back-btn" onclick="history.back()">⬅</button> -->
+
 <header class="navbar">
   <div class="logo">⚙️ EZOps_ThinkCentre</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="linux-healthcheck.html">Linux HealthCheck</a>
     <a href="application-healthcheck.html">Application HealthCheck</a>
-    <!--  <a href="http://linuxmint-thinkcentre:8081/" target="_blank">  Application Build Server </a> -->
     <a href="Metrics.html" class="active">Metrics</a>
-    <!-- <a href="About.html">About</a> -->
     <a href="contact.html">Contact</a>
-    <button id="themeToggle" class="toggle-btn">🌙</button>
+    <button class="toggle-btn">🌙</button>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Documentation and Metrics </h1>
-  <p>Our mission is to simplify DevOps with clear, visual monitoring and actionable insights for Linux systems and applications.</p>
+  <h1>Documentation & Metrics</h1>
+  <p>Clear insights, visual dashboards, and lightweight automation across environments.</p>
 </section>
 
 <div class="container">
-  
+
+  <!-- Metrics -->
   <div class="section">
     <div class="cards">
-      <div class="card">
-        <div class="icon">
-          <img src="assets/images/ReleaseMetrics.jpg" alt="ReleaseMetrics.jpg Icon" width="40" height="40">
-        </div>
-        <h3>Release Metrics</h3>
-        <p>Track Completed Releases dashboards.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">
-           <img src="assets/images/Release-Calander.jpg" alt="Release-Calander Icon" width="40" height="40">
-        </div>
-        <h3>Release Calander</h3>
-        <p>Monitor Release Calander amd Upcoming Releases.</p>
-      </div>
-      
-      <div class="card">
-        <div class="icon">📊</div>
-        <h3>Kanban Dashboards</h3>
-        <p>Charts and infographics for Kanban Dashboards.</p>
-      </div>
-      
-      <div class="card">
-        <div class="icon">
-            <img src="assets/images/jira_icon.jpg" alt="jira  Icon" width="40" height="40">
-        </div>
-        <h3>Tracking - Jira</h3>
-        <p> Issues and Release Tracking - Jira Dashboard.</p>
-      </div>
-      
-      <div class="card">
-        <div class="icon">
-            <img src="assets/images/buildlog_icon.jpg" alt="jira  Icon" width="40" height="40">
-        </div>
-        <h3>DEV Environment </h3>
-        <p>DEV Environment Build Logs </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">
-            <img src="assets/images/buildlog_icon.jpg" alt="jira  Icon" width="40" height="40">
-        </div>
-        <h3>SIT Environment </h3>
-        <p>SIT Environment Build Logs </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">
-            <img src="assets/images/buildlog_icon.jpg" alt="jira  Icon" width="40" height="40">
-        </div>
-        <h3>UAT Environment </h3>
-        <p>UAT Environment Build Logs </p>
-      </div>
-
+      <div class="card"><div class="icon">📈</div><h3>Release Metrics</h3><p>Track completed releases and trends.</p></div>
+      <div class="card"><div class="icon">🗓️</div><h3>Release Calendar</h3><p>Upcoming and historical releases.</p></div>
+      <div class="card"><div class="icon">📊</div><h3>Kanban Dashboards</h3><p>Work progress visualization.</p></div>
+      <div class="card"><div class="icon">🔍</div><h3>Jira Tracking</h3><p>Issue and release dashboards.</p></div>
     </div>
   </div>
-  
-  <div class="section">
-    <h2>Lightweight Automation </h2>
-    <p>Read me for Lightweight Automation Instructions.</p>
 
-    <p> Lightweight Automation uses Github Triggers to Trigger the build and share logs. </p>
-    <p> Set trigger to "true" and your email in https://github.com/loganathr20/EZOps_Netlify/blob/develop/Trigger_linuxhealth.txt. </p>  
-    <p> Update and commit to Github </p>  
-    <p> Build will trigger in the server as per cron schedule (usually 2 to 10 mins from the time of commit) 
-    <p> Build Logs will be shared thru email set in trigger file and in Webpage. </p> 
+  <!-- Lightweight Automation -->
+  <div class="section">
+    <h2>Lightweight Automation</h2>
+    <p>
+      GitHub-triggered automation for builds and logs —
+      <strong>simple, reliable, and Jenkins-free</strong>.
+    </p>
+
+    <div class="automation-box">
+      <h3>⚡ How It Works</h3>
+      <ul class="automation-steps">
+
+        <li class="step-1">
+          <span class="step-icon">📂</span>
+          <div>
+            <strong>Open Trigger File</strong><br>
+            <a class="git-link" target="_blank"
+              href="https://github.com/loganathr20/EZOps_Netlify/blob/develop/Trigger_healthdashboard.txt">
+              https://github.com/loganathr20/EZOps_Netlify/blob/develop/Trigger_healthdashboard.txt
+            </a>
+          </div>
+        </li>
+
+        <li class="step-2">
+          <span class="step-icon">✏️</span>
+          <div>
+            <strong>Enable Trigger</strong><br>
+            Set <span class="inline-code">trigger=true</span> and update your email address.
+          </div>
+        </li>
+
+        <li class="step-3">
+          <span class="step-icon">✅</span>
+          <div>
+            <strong>Commit Changes</strong><br>
+            Save and commit the updated trigger file to GitHub.
+          </div>
+        </li>
+
+        <li class="step-4">
+          <span class="step-icon">⏱️</span>
+          <div>
+            <strong>Cron Detects & Triggers Build</strong><br>
+            Cron polls the repo and triggers build automatically
+            (typically within 2–10 minutes).
+          </div>
+        </li>
+
+        <li class="step-5">
+          <span class="step-icon">📬</span>
+          <div>
+            <strong>Logs Delivered</strong><br>
+            Build logs are delivered via email and published on the dashboard.
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <h3 style="text-align:center;margin-top:35px;color:#444;">
+      Environment Build Logs
+    </h3>
+
+    <div class="cards">
+      <a href="dev-build-logs.html" class="card-link">
+        <div class="card">
+          <span class="env-badge">DEV</span>
+          <div class="icon">🧪</div>
+          <h3>Development</h3>
+          <p>Developer builds and early validation logs.</p>
+        </div>
+      </a>
+
+      <a href="sit-build-logs.html" class="card-link">
+        <div class="card">
+          <span class="env-badge">SIT</span>
+          <div class="icon">🔗</div>
+          <h3>System Integration</h3>
+          <p>Integrated environment builds.</p>
+        </div>
+      </a>
+
+      <a href="uat-build-logs.html" class="card-link">
+        <div class="card">
+          <span class="env-badge">UAT</span>
+          <div class="icon">✅</div>
+          <h3>User Acceptance</h3>
+          <p>Pre-production validation builds.</p>
+        </div>
+      </a>
+    </div>
   </div>
 
+  <!-- About -->
   <div class="section">
-    <h2>About Us & Our Vision </h2>
-    <p>EZOps_ThinkCentre is built for DevOps professionals and system administrators who need a clear, reliable, and visually engaging platform. We combine modern design, intuitive dashboards, and powerful data visualization to make system monitoring effortless.</p>
-
-    <p>Our aims to provide an intuitive and centralized platform for monitoring system health, optimizing performance, and identifying bottlenecks. We focus on Linux and Application environments to empower DevOps engineers, Application Team with actionable insights.</p>
+    <h2>About Us & Vision</h2>
+    <p>
+      EZOps_ThinkCentre provides a centralized, visual, and lightweight
+      DevOps platform focused on clarity, automation, and operational excellence.
+    </p>
   </div>
+
 </div>
 
 <footer>
-  <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
+  © 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone
 </footer>
 
 </body>
 </html>
-
 
 
