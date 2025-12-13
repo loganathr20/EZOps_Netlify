@@ -1,5 +1,5 @@
 
-Trigger=true
+Trigger=running
 
 Email=loganathr@gmail.com
 
