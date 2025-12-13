@@ -53,7 +53,7 @@
   }
   .hero h1 { font-size:42px; margin-bottom:10px; }
   .hero p { font-size:18px; margin-bottom:25px; }
-  .container { max-width:1500px; margin:auto; padding:10px; }
+  .container { max-width:1300px; margin:auto; padding:10px; }
   .section { background:white; padding:10px; border-radius:15px; margin-bottom:10px; box-shadow:0 6px 14px rgba(0,0,0,0.1); }
   .section h2 { color:#007bff; font-size:28px; margin-bottom:15px; text-align:center; }
   .section p { font-size:16px; color:#555; line-height:1.6; text-align:justify; }
@@ -121,8 +121,50 @@
         <h3>Tracking - Jira</h3>
         <p> Issues and Release Tracking - Jira Dashboard.</p>
       </div>
+
+      <div class="card">
+        <div class="icon">
+            <img src="assets/images/light-automation.jpg" alt="jira  Icon" width="40" height="40">
+        </div>
+        <h3>Lightweight Automation Instructions</h3>
+        <p>Read me for Lightweight Automation Instructions.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+            <img src="assets/images/buildlog_icon.jpg" alt="jira  Icon" width="40" height="40">
+        </div>
+        <h3>DEV Environment </h3>
+        <p>DEV Environment Build Logs </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+            <img src="assets/images/buildlog_icon.jpg" alt="jira  Icon" width="40" height="40">
+        </div>
+        <h3>SIT Environment </h3>
+        <p>SIT Environment Build Logs </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+            <img src="assets/images/buildlog_icon.jpg" alt="jira  Icon" width="40" height="40">
+        </div>
+        <h3>UAT Environment </h3>
+        <p>UAT Environment Build Logs </p>
+      </div>
+
     </div>
   </div>
+  
+  <div class="section">
+    <h2>Lightweight Automation Instructions </h2>
+    <p> Lightweight Automation uses Github Triggers to Trigger the build and share logs. </p>
+    <p> Set trigger to "true" and email in https://github.com/loganathr20/EZOps_Netlify/blob/develop/Trigger_linuxhealth.txt. </p>  
+    <p> Update and commit to Github </p>  
+    <p> Build will trigger in the server as per cron schedule (usually 2 to 10 mins from the time of commit) 
+    <p> Build Logs will be shared thru email set in trigger file and in Webpage. </p> 
+  /div>
 
   <div class="section">
     <h2>About Us & Our Vision </h2>
