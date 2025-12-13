@@ -11,6 +11,7 @@ Reports/linux_health_report.html
 
 # 1) Ignore ONLY this specific file
 Reports/linux_health_report.html
+Trigger_linuxhealth.txt
 
 # 2) Ignore general report patterns
 Reports/*_report.html
