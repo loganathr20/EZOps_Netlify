@@ -1,5 +1,5 @@
 
-Trigger=false
+Trigger=true
 
 Email=loganathr@gmail.com
 
