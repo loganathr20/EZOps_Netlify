@@ -111,6 +111,20 @@
     .hero h1 { font-size:36px; }
     .hero p { font-size:18px; }
   }
+
+  .try-it {
+    color: red;
+    font-weight: bold;
+    margin-left: 6px;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
 </style>
 </head>
 <body>
@@ -190,7 +204,7 @@
       <h3>Lightweight Automation</h3>
       <p>
         Lightweight Automation uses Github triggers to build Jenkins Jobs.
-        <span style="color: red; font-weight: bold;"> *** Try it  *** </span>
+        <span class="try-it">Try it</span>
       </p>
     </div>
   </a>
