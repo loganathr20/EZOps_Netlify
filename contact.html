@@ -116,6 +116,21 @@ footer { background:#007bff; color:white; text-align:center; padding:3px; margin
     .hero p { font-size:16px; } 
     .contact-info { grid-template-columns:1fr; } 
 }
+
+  .Under-cons {
+    color: red;
+    font-weight: bold;
+    margin-left: 6px;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
 </style>
 </head>
 
@@ -167,7 +182,7 @@ footer { background:#007bff; color:white; text-align:center; padding:3px; margin
 
   <!-- Under Construction Message -->
   <div class="under-construction">
-    🚧 Website Under Construction — More features and dashboards coming soon!
+    <span class="Under-cons">*** 🚧 Website Under Construction — More features and dashboards coming soon! *** </span>
   </div>
 
   <!-- Visitor Counter -->
