@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -80,17 +79,18 @@ pipeline {
             mail to: 'loganathr20@gmail.com',
                  subject: "✅ EZOPS Deployment SUCCESS",
                  body: """
-                    EZOPS Deployment Successful
+EZOPS Deployment Successful
 
-                    App       : EZOPS
-                    Branch    : ${env.GIT_BRANCH}
-                    Job       : ${env.JOB_NAME}
-                    Build     : #${env.BUILD_NUMBER}
-                    Node      : ${env.NODE_NAME}
-                    Time      : ${TIMESTAMP}
-                    URL:
-                    http://localhost:8080/ezops/
-                    """
+App       : EZOPS
+Branch    : ${env.GIT_BRANCH}
+Job       : ${env.JOB_NAME}
+Build     : #${env.BUILD_NUMBER}
+Node      : ${env.NODE_NAME}
+Time      : ${TIMESTAMP}
+
+URL:
+http://localhost:8080/ezops/
+"""
         }
 
         /* -------------------------------------------------
@@ -116,17 +116,17 @@ pipeline {
             mail to: 'loganathr20@gmail.com',
                  subject: "❌ EZOPS Deployment FAILED (Rollback Executed)",
                  body: """
-                    EZOPS Deployment FAILED
+EZOPS Deployment FAILED
 
-                    App       : EZOPS
-                    Branch    : ${env.GIT_BRANCH}
-                    Job       : ${env.JOB_NAME}
-                    Build     : #${env.BUILD_NUMBER}
-                    Time      : ${TIMESTAMP}
+App       : EZOPS
+Branch    : ${env.GIT_BRANCH}
+Job       : ${env.JOB_NAME}
+Build     : #${env.BUILD_NUMBER}
+Time      : ${TIMESTAMP}
 
-                    Rollback was attempted.
-                    Check Jenkins logs immediately.
-                    """
+Rollback was attempted.
+Check Jenkins logs immediately.
+"""
         }
     }
 }
