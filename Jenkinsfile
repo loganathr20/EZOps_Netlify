@@ -12,7 +12,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main',
+                git branch: 'develop',
                     url: 'https://github.com/loganathr20/EZOps_Netlify.git'
             }
         }
