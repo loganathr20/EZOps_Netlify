@@ -10,13 +10,29 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        /* -------------------------------------------------
+           CLEAN WORKSPACE (CRITICAL)
+           Prevents cross-repo contamination
+        ------------------------------------------------- */
+        stage('Clean Workspace') {
             steps {
-                git branch: 'develop',
-                    url: 'https://github.com/loganathr20/EZOps_Netlify.git'
+                cleanWs()
             }
         }
 
+        /* -------------------------------------------------
+           CHECKOUT FROM SCM
+           Uses branch defined in Jenkins job (develop)
+        ------------------------------------------------- */
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        /* -------------------------------------------------
+           BACKUP EXISTING DEPLOYMENT
+        ------------------------------------------------- */
         stage('Backup Existing Site') {
             steps {
                 sh '''
@@ -26,73 +42,93 @@ pipeline {
                     echo "Creating backup..."
                     tar -czf ${BACKUP_DIR}/${APP_NAME}_${TIMESTAMP}.tar.gz -C ${DEPLOY_DIR} .
                 else
-                    echo "First deployment — no backup required"
+                    echo "First deployment — skipping backup"
                 fi
                 '''
             }
         }
 
+        /* -------------------------------------------------
+           DEPLOY TO TOMCAT
+        ------------------------------------------------- */
         stage('Deploy to Tomcat') {
             steps {
                 sh '''
-                echo "Deploying EZOPS to Tomcat..."
+                echo "Deploying EZOPS static site..."
 
                 mkdir -p ${DEPLOY_DIR}
                 rm -rf ${DEPLOY_DIR}/*
 
-                rsync -av --exclude='.git' ./ ${DEPLOY_DIR}/
+                # Copy repo contents (exclude git metadata)
+                rsync -av --delete --exclude='.git' ./ ${DEPLOY_DIR}/
+
                 chmod -R 755 ${DEPLOY_DIR}
 
-                echo "Deployment successful"
+                echo "Deployment completed successfully"
                 '''
             }
         }
     }
 
     post {
+
+        /* -------------------------------------------------
+           SUCCESS
+        ------------------------------------------------- */
         success {
             mail to: 'loganathr20@gmail.com',
                  subject: "✅ EZOPS Deployment SUCCESS",
                  body: """
-Deployment completed successfully.
+EZOPS Deployment Successful
 
-App     : EZOPS
-Server  : ${env.NODE_NAME}
-Time    : ${TIMESTAMP}
-URL     : http://localhost:8080/ezops/
+App       : EZOPS
+Branch    : ${env.GIT_BRANCH}
+Job       : ${env.JOB_NAME}
+Build     : #${env.BUILD_NUMBER}
+Node      : ${env.NODE_NAME}
+Time      : ${TIMESTAMP}
+
+URL:
+http://localhost:8080/ezops/
 """
         }
 
+        /* -------------------------------------------------
+           FAILURE + ROLLBACK
+        ------------------------------------------------- */
         failure {
-            echo "❌ Deployment failed — rolling back"
+            echo "❌ Deployment failed — starting rollback"
 
             sh '''
             if ls ${BACKUP_DIR}/*.tar.gz >/dev/null 2>&1; then
                 LATEST_BACKUP=$(ls -t ${BACKUP_DIR}/*.tar.gz | head -1)
-                echo "Restoring $LATEST_BACKUP"
+                echo "Restoring backup: $LATEST_BACKUP"
 
                 rm -rf ${DEPLOY_DIR}/*
                 tar -xzf "$LATEST_BACKUP" -C ${DEPLOY_DIR}
 
                 echo "Rollback completed"
             else
-                echo "No backup available — rollback skipped"
+                echo "No backup found — rollback skipped"
             fi
             '''
 
-            mail to: 'you@example.com',
-                 subject: "❌ EZOPS Deployment FAILED (Rollback Applied)",
+            mail to: 'loganathr20@gmail.com',
+                 subject: "❌ EZOPS Deployment FAILED (Rollback Executed)",
                  body: """
-Deployment FAILED.
+EZOPS Deployment FAILED
 
-App     : EZOPS
-Server  : ${env.NODE_NAME}
-Time    : ${TIMESTAMP}
-Rollback: Attempted
+App       : EZOPS
+Branch    : ${env.GIT_BRANCH}
+Job       : ${env.JOB_NAME}
+Build     : #${env.BUILD_NUMBER}
+Time      : ${TIMESTAMP}
 
+Rollback was attempted.
 Check Jenkins logs immediately.
 """
         }
     }
 }
+
 
