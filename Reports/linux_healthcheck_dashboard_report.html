@@ -27,12 +27,12 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <body>
 <div class="info-bar">
     Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp;
-    Report Generated: <b>2025-12-20 09:50:03 +0530</b>
+    Report Generated: <b>2025-12-20 09:55:01 +0530</b>
 </div>
 
 <div class="summary-panel">
-  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 2 days, 24 minutes</p><p>Boot: 2025-12-18 09:25</p></div>
-  <div class="summary-card"><h4>Overall CPU Usage</h4><p>2%</p></div>
+  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 2 days, 29 minutes</p><p>Boot: 2025-12-18 09:25</p></div>
+  <div class="summary-card"><h4>Overall CPU Usage</h4><p>1%</p></div>
   <div class="summary-card"><h4>Memory Usage</h4><p>40%</p></div>
   <div class="summary-card"><h4>Swap Usage</h4><p>19%</p></div>
   <div class="summary-card"><h4>GPU</h4><p>Usage: N/A%<br>Temp: N/A°C</p></div>
@@ -40,11 +40,11 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 </div>
 
 <div class="container">
-<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.35, 0.45, 0.63</p></div>
+<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.32, 0.49, 0.60</p></div>
 <div class="card"><h3>Memory & Swap Usage</h3><canvas id="memSwapChart"></canvas><p>Memory: 40% of 15662MB, Swap: 19% of 13349MB</p></div>
 <div class="card"><h3>Disk Usage</h3><pre>tmpfs           1.6G   27M  1.6G   2% /run
 /dev/sda3       285G  198G   73G  74% /
-tmpfs           7.7G   63M  7.6G   1% /dev/shm
+tmpfs           7.7G   61M  7.6G   1% /dev/shm
 tmpfs           5.0M   20K  5.0M   1% /run/lock
 efivarfs        192K  133K   55K  71% /sys/firmware/efi/efivars
 /dev/nvme0n1p1   96M   59M   38M  61% /boot/efi
@@ -55,7 +55,7 @@ tmpfs           1.6G   27M  1.6G   2% /run/user/1000
 <div class="card"><h3>Hardware Health Summary</h3>
 <table class="table-fixed">
 <tr><th>Metric</th><th>Score (%)</th></tr>
-<tr><td>CPU</td><td style="color:green">98%</td></tr>
+<tr><td>CPU</td><td style="color:green">99%</td></tr>
 <tr><td>Memory</td><td style="color:orange">60%</td></tr>
 <tr><td>Swap</td><td style="color:green">81%</td></tr>
 <tr><td>Disk</td><td style="color:red">26%</td></tr>
@@ -77,17 +77,17 @@ tmpfs           1.6G   27M  1.6G   2% /run/user/1000
   59276   58220 /opt/google/chrome/chrome -  1.7  0.1
   58917   58220 /opt/google/chrome/chrome -  1.6  0.0
  673987   58220 /opt/google/chrome/chrome -  1.5  0.0
- 837032   58220 /opt/google/chrome/chrome -  1.5  0.4</pre></div>
+ 837032   58220 /opt/google/chrome/chrome -  1.5  0.3</pre></div>
 <div class="card"><h3>Top 10 CPU-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
- 861540       1 cinnamon -r                  1.4  9.3
+ 861540       1 cinnamon -r                  1.4  8.8
    7647       1 /usr/bin/gnome-system-monit  1.0  3.1
+ 878401       1 /usr/lib/jvm/jdk-21-oracle-  1.2  1.6
   58245   58217 /opt/google/chrome/chrome -  0.9  1.5
- 866569   58220 /opt/google/chrome/chrome -  1.4  1.5
+ 866569   58220 /opt/google/chrome/chrome -  1.4  1.0
    7414       1 /usr/lib/thunderbird/thunde  2.0  0.9
  794979   58220 /opt/google/chrome/chrome -  1.0  0.8
    1943    1936 /usr/lib/xorg/Xorg -core :0  0.3  0.7
- 877136  877057 /bin/bash /usr/local/bin/li  0.0  0.7
- 867968       1 /usr/lib/jvm/jdk-21-oracle-  1.3  0.6
+ 879917  879915 /bin/bash /usr/local/bin/li  0.0  0.7
  851994  851685 /proc/self/exe --type=rende  2.7  0.6</pre></div>
 
 </div>
@@ -97,7 +97,7 @@ tmpfs           1.6G   27M  1.6G   2% /run/user/1000
 window.addEventListener('load', () => {
     new Chart(document.getElementById('cpuChart'), {
         type:'bar',
-        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,0,0,0,0,0,3,0,16,0,12,-3,0,0,3,3,6,0,0,0], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[3,0,0,3,0,6,3,-3,3,3,6,9,0,-3,0,3,0,3,3,0], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
         options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true, text:'Usage %'}}}}
     });
 
