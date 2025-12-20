@@ -10,29 +10,18 @@ pipeline {
 
     stages {
 
-        /* -------------------------------------------------
-           CLEAN WORKSPACE (CRITICAL)
-           Prevents cross-repo contamination
-        ------------------------------------------------- */
         stage('Clean Workspace') {
             steps {
                 cleanWs()
             }
         }
 
-        /* -------------------------------------------------
-           CHECKOUT FROM SCM
-           Uses branch defined in Jenkins job (develop)
-        ------------------------------------------------- */
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        /* -------------------------------------------------
-           BACKUP EXISTING DEPLOYMENT
-        ------------------------------------------------- */
         stage('Backup Existing Site') {
             steps {
                 sh '''
@@ -48,9 +37,6 @@ pipeline {
             }
         }
 
-        /* -------------------------------------------------
-           DEPLOY TO TOMCAT
-        ------------------------------------------------- */
         stage('Deploy to Tomcat') {
             steps {
                 sh '''
@@ -59,12 +45,24 @@ pipeline {
                 mkdir -p ${DEPLOY_DIR}
                 rm -rf ${DEPLOY_DIR}/*
 
-                # Copy repo contents (exclude git metadata)
                 rsync -av --delete --exclude='.git' ./ ${DEPLOY_DIR}/
-
                 chmod -R 755 ${DEPLOY_DIR}
 
                 echo "Deployment completed successfully"
+                '''
+            }
+        }
+
+        /* -------------------------------------------------
+           RESTART TOMCAT (ADDED)
+        ------------------------------------------------- */
+        stage('Restart Tomcat') {
+            steps {
+                sh '''
+                echo "Restarting Tomcat..."
+                sudo systemctl restart tomcat
+                sleep 10
+                systemctl is-active tomcat
                 '''
             }
         }
@@ -72,9 +70,6 @@ pipeline {
 
     post {
 
-        /* -------------------------------------------------
-           SUCCESS
-        ------------------------------------------------- */
         success {
             mail to: 'loganathr20@gmail.com',
                  subject: "✅ EZOPS Deployment SUCCESS",
@@ -93,9 +88,6 @@ http://localhost:8080/ezops/
 """
         }
 
-        /* -------------------------------------------------
-           FAILURE + ROLLBACK
-        ------------------------------------------------- */
         failure {
             echo "❌ Deployment failed — starting rollback"
 
@@ -108,6 +100,7 @@ http://localhost:8080/ezops/
                 tar -xzf "$LATEST_BACKUP" -C ${DEPLOY_DIR}
 
                 echo "Rollback completed"
+                sudo systemctl restart tomcat
             else
                 echo "No backup found — rollback skipped"
             fi
@@ -125,10 +118,12 @@ Build     : #${env.BUILD_NUMBER}
 Time      : ${TIMESTAMP}
 
 Rollback was attempted.
+Tomcat restarted.
 Check Jenkins logs immediately.
 """
         }
     }
 }
+
 
 
