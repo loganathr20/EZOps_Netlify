@@ -27,24 +27,24 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <body>
 <div class="info-bar">
     Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp;
-    Report Generated: <b>2025-12-21 11:08:54 +0530</b>
+    Report Generated: <b>2025-12-21 11:19:15 +0530</b>
 </div>
 
 <div class="summary-panel">
-  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 15 hours, 11 minutes</p><p>Boot: 2025-12-20 19:57</p></div>
-  <div class="summary-card"><h4>Overall CPU Usage</h4><p>7%</p></div>
-  <div class="summary-card"><h4>Memory Usage</h4><p>39%</p></div>
+  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 15 hours, 21 minutes</p><p>Boot: 2025-12-20 19:57</p></div>
+  <div class="summary-card"><h4>Overall CPU Usage</h4><p>1%</p></div>
+  <div class="summary-card"><h4>Memory Usage</h4><p>40%</p></div>
   <div class="summary-card"><h4>Swap Usage</h4><p>20%</p></div>
   <div class="summary-card"><h4>GPU</h4><p>Usage: N/A%<br>Temp: N/A°C</p></div>
   <div class="summary-card"><h4>Overall Health</h4><div class="health-badge" style="background:#5cb85c;">Very Good (68%)</div></div>
 </div>
 
 <div class="container">
-<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 1.38, 2.02, 1.60</p></div>
-<div class="card"><h3>Memory & Swap Usage</h3><canvas id="memSwapChart"></canvas><p>Memory: 39% of 15662MB, Swap: 20% of 13349MB</p></div>
+<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 0.80, 1.04, 1.35</p></div>
+<div class="card"><h3>Memory & Swap Usage</h3><canvas id="memSwapChart"></canvas><p>Memory: 40% of 15662MB, Swap: 20% of 13349MB</p></div>
 <div class="card"><h3>Disk Usage</h3><pre>tmpfs           1.6G   13M  1.6G   1% /run
 /dev/sda3       285G  191G   80G  71% /
-tmpfs           7.7G  124M  7.6G   2% /dev/shm
+tmpfs           7.7G   99M  7.6G   2% /dev/shm
 tmpfs           5.0M   16K  5.0M   1% /run/lock
 efivarfs        192K  133K   55K  71% /sys/firmware/efi/efivars
 /dev/nvme0n1p1   96M   59M   38M  61% /boot/efi
@@ -55,40 +55,40 @@ tmpfs           1.6G   27M  1.6G   2% /run/user/1000
 <div class="card"><h3>Hardware Health Summary</h3>
 <table class="table-fixed">
 <tr><th>Metric</th><th>Score (%)</th></tr>
-<tr><td>CPU</td><td style="color:green">93%</td></tr>
-<tr><td>Memory</td><td style="color:orange">61%</td></tr>
+<tr><td>CPU</td><td style="color:green">99%</td></tr>
+<tr><td>Memory</td><td style="color:orange">60%</td></tr>
 <tr><td>Swap</td><td style="color:green">80%</td></tr>
 <tr><td>Disk</td><td style="color:red">29%</td></tr>
 <tr><td>SMART</td><td style="color:orange">50%</td></tr>
 <tr><td>Temperature</td><td style="color:green">100%</td></tr>
 <tr><td>Failed Services</td><td style="color:green">99%</td></tr>
-<tr><td>Critical Logs</td><td style="color:red">32%</td></tr>
+<tr><td>Critical Logs</td><td style="color:red">31%</td></tr>
 <tr><th>Overall Health</th><th>68%</th></tr>
 </table>
 </div>
 
 <div class="card"><h3>Top 10 Memory-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
  187899       1 /usr/bin/java -Djava.awt.he  5.4  1.6
- 177776  177474 /opt/google/chrome/chrome -  2.6  4.5
+ 177776  177474 /opt/google/chrome/chrome -  3.2  4.5
+ 282013    2979 /opt/google/chrome/chrome -  2.6  3.6
    2686    2234 /usr/lib/thunderbird/thunde  2.2  0.4
- 282013    2979 /opt/google/chrome/chrome -  2.1  7.5
    2677    2234 /opt/google/chrome/chrome    1.9  0.4
- 202317    2979 /opt/google/chrome/chrome -  1.9  0.7
- 282408    2979 /opt/google/chrome/chrome -  1.6  3.8
- 282126    2979 /opt/google/chrome/chrome -  1.6  2.5
-   4953    2979 /opt/google/chrome/chrome -  1.6  0.0
- 282937    2979 /opt/google/chrome/chrome -  1.6  3.6</pre></div>
+ 202317    2979 /opt/google/chrome/chrome -  1.7  0.7
+ 282937    2979 /opt/google/chrome/chrome -  1.7  1.5
+ 282126    2979 /opt/google/chrome/chrome -  1.6  1.5
+ 282408    2979 /opt/google/chrome/chrome -  1.6  1.6
+   4953    2979 /opt/google/chrome/chrome -  1.5  0.0</pre></div>
 <div class="card"><h3>Top 10 CPU-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
- 287688  287687 ps -eo pid,ppid,cmd,%mem,%c  0.0  200
- 287654       1 /bin/sh -e /usr/lib/php/ses  0.0 22.2
- 186658       1 cinnamon -r                  0.8  9.5
- 282013    2979 /opt/google/chrome/chrome -  2.1  7.5
- 281825    2979 /opt/google/chrome/chrome -  1.3  4.6
- 177776  177474 /opt/google/chrome/chrome -  2.6  4.5
- 283669       1 /usr/lib/jvm/jdk-21-oracle-  1.4  4.3
- 282408    2979 /opt/google/chrome/chrome -  1.6  3.8
- 282937    2979 /opt/google/chrome/chrome -  1.6  3.6
-   2698    2234 /usr/bin/gnome-system-monit  0.6  2.6</pre></div>
+ 186658       1 cinnamon -r                  0.8  9.4
+ 293672       1 /usr/lib/jvm/jdk-21-oracle-  1.4  5.5
+ 177776  177474 /opt/google/chrome/chrome -  3.2  4.5
+ 282013    2979 /opt/google/chrome/chrome -  2.6  3.6
+   2698    2234 /usr/bin/gnome-system-monit  0.5  2.6
+ 282408    2979 /opt/google/chrome/chrome -  1.6  1.6
+ 187899       1 /usr/bin/java -Djava.awt.he  5.4  1.6
+ 282126    2979 /opt/google/chrome/chrome -  1.6  1.5
+ 282937    2979 /opt/google/chrome/chrome -  1.7  1.5
+ 297313  293864 /bin/bash /usr/local/bin/li  0.0  0.9</pre></div>
 
 </div>
 
@@ -97,7 +97,7 @@ tmpfs           1.6G   27M  1.6G   2% /run/user/1000
 window.addEventListener('load', () => {
     new Chart(document.getElementById('cpuChart'), {
         type:'bar',
-        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,0,3,0,3,3,43,-3,9,6,15,12,6,-3,39,0,-3,3,6,3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[0,-3,3,3,0,3,3,3,0,9,0,0,3,0,3,0,0,3,0,0], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
         options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true, text:'Usage %'}}}}
     });
 
@@ -109,7 +109,7 @@ window.addEventListener('load', () => {
             datasets:[
                 {
                     label:'Memory',
-                    data:[39, 61],
+                    data:[40, 60],
                     backgroundColor: ['rgba(220,53,69,0.7)', 'rgba(40,167,69,0.5)'], // Red for used, Green for free
                     borderWidth:1,
                     radius: '90%',
