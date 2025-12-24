@@ -10,8 +10,8 @@ Reports/linux_health_report.html
 # ===========================================
 
 # 1) Ignore ONLY this specific file
-Reports/linux_health_report.html
-Reports/linux_healthcheck_dashboard_report.html
+Reports/
+
 
 
 # 2) Ignore general report patterns
