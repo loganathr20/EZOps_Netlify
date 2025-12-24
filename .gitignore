@@ -15,14 +15,13 @@ Reports/linux_health_report.html
 # Reports/linux_health_report.html
 
 # 2) EXCEPTION — do NOT ignore this file
-!Reports/
-!Reports/linux_healthcheck_dashboard_report.html
-!Reports/Application_healthcheck_dashboard_report.html
+# !Reports/
+# !Reports/linux_healthcheck_dashboard_report.html
+# !Reports/Application_healthcheck_dashboard_report.html
 
 # 3) Ignore general report patterns
-Reports/*_report.html
-Reports/*health*.html
-
+# Reports/*_report.html
+# Reports/*health*.html
 
 
 
