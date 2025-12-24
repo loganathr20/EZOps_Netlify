@@ -10,17 +10,19 @@ Reports/linux_health_report.html
 # ===========================================
 
 # 1) Ignore ONLY this specific file
-Reports/
+# Reports/
+# Reports/linux_healthcheck_dashboard_report.html
+# Reports/linux_health_report.html
 
+# 2) EXCEPTION — do NOT ignore this file
+!Reports/
+!Reports/linux_healthcheck_dashboard_report.html
+!Reports/Application_healthcheck_dashboard_report.html
 
-
-# 2) Ignore general report patterns
+# 3) Ignore general report patterns
 Reports/*_report.html
 Reports/*health*.html
 
-# 3) EXCEPTION — do NOT ignore this file
-!Reports/linux_healthcheck_dashboard_report.html
-!Reports/Application_healthcheck_dashboard_report.html
 
 
 
