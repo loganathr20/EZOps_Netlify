@@ -44,17 +44,6 @@
   nav a:hover, nav a.active { text-decoration:underline; }
   nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
 
-  /* Hero Section with background image 
-  .hero {
-    text-align:center;
-    padding:100px 20px;
-    background:url('assets/images/Application-Health-Monitoring.jpg') center/cover no-repeat;
-    color:white;
-    text-shadow:0 3px 8px rgba(0,0,0,0.7);
-    border-radius:15px;
-  }
-  */
-
    /* Hero */
  .hero {
     text-align:center; 
@@ -64,6 +53,25 @@
     text-shadow:0 3px 8px rgba(0,0,0,0.7);
     border-radius:15px;
   }
+
+  .hero .btn-home {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #2d8cff;   /* blue button */
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  .hero .btn-home:hover {
+    background-color: #ffffff;
+    color: #2d8cff;
+  }
+
   .hero h1 { font-size:42px; margin-bottom:10px; }
   .hero p { font-size:18px; margin-bottom:25px; }
 
@@ -103,6 +111,7 @@
 <section class="hero">
   <h1>Application HealthCheck</h1>
   <p>Monitor services, uptime, logs, and response times with rich visual insights.</p>
+  <a href="index.html" class="btn-home">Home</a>
 </section>
 
 <div class="container">
