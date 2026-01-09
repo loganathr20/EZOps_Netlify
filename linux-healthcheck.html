@@ -4,65 +4,69 @@
 <meta http-equiv="refresh" content="200">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZOps_ThinkCentre – Linux HealthCheck</title>
-<meta name="description" content="Monitor CPU, Memory, Disk, Network, and System Load for Linux systems with visual dashboards and detailed reports.">
-<link rel="canonical" href="https://ezops-thinkcentre.netlify.app/linux-healthcheck.html">
 
-<link rel="stylesheet" href="assets/styles.css">
-<style>
-  body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
- 
-    /* Floating Back Button */
-  .floating-back-btn {
-      position:fixed;
-      top:20px;
-      left:20px;
-      width:45px;
-      height:45px;
-      background:#007bff;
-      color:white;
-      border:none;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      cursor:pointer;
-      z-index:9999;
-      box-shadow:0 4px 12px rgba(0,0,0,0.25);
-      transition:0.3s;
-  }
-  .floating-back-btn:hover {
-      transform:scale(1.1);
-      background:#005fcc;
-  }
-  
-  /* Navbar */
-  header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
-  header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
-  nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
-  nav a:hover, nav a.active { text-decoration:underline; }
-  nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
+<!-- META DESCRIPTION -->
+<meta name="description"
+    content="EZDevOps ThinkCentre provides an in-depth Linux HealthCheck guide: monitoring CPU, memory, disk, network, security, automation, optimization, and DevOps best practices with examples, scripts, and reports." />
 
-  /* Hero Section with background image 
+<meta name="keywords"
+content="DevOps tutorial, EZ Devops Tutorial, EZ Devops Learn, EZDevOps, Devops Easy, Devops EZ, EZ Devops ThinkCentre, Linux DevOps, CI/CD pipeline, Jenkins tutorial, Git automation, DevOps monitoring, operational reliability, DevOps metrics, release metrics, system monitoring, application metrics, automation logs, CI/CD metrics, Linux monitoring, Linux HealthCheck, DevOps monitoring, CPU, memory, disk, network, Linux system, DevOps tutorials, automation, server monitoring, DevOps best practices, EZDevOps, Jenkins, CI/CD, Linux commands" />
+
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+  <link rel="canonical" href="https://www.ezdevops.cloud/linux-healthcheck.html">
+
+
+<!-- Open Graph -->
+<meta property="og:title" content="EZDevOps ThinkCentre | Linux HealthCheck and Monitoring">
+<meta property="og:description" content="Comprehensive Linux HealthCheck tutorials for DevOps: monitor CPU, memory, disk, network, system load, security, alerts, automation, and optimization.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ezdevops.cloud/linux-healthcheck.html">
+<meta property="og:image" content="https://www.ezdevops.cloud/assets/images/Linux-Health-Monitoring.jpg">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+
+<script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+    crossorigin="anonymous"></script>
+
+<title>EZDevOps ThinkCentre – Linux HealthCheck | Monitoring CPU, Memory, Disk, Network & System Load</title>
+
+  <!-- Global CSS Style -->
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Page Specific Style  -->
+  <style>
+
+  .wide-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 25px 30px;
+    background-color: #d9edff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+
+  .wide-iframe {
+    width: 100%;
+    min-height: 750px;
+    border:none;
+    border-radius:15px;
+    box-shadow:0 6px 12px rgba(0,0,0,0.1);
+    margin-top:10px;
+  }
+
   .hero {
-    text-align:center;
-    padding:10px 5px;
-    background:url('assets/images/Linux-Health-Monitoring.jpg') center/cover no-repeat;
-    color:white;
-    text-shadow:0 3px 8px rgba(0,0,0,0.7);
-    border-radius:10px;
-  }
-  */
-  
-    /* Hero */
- .hero {
     text-align:center; 
     padding:20px 10px 60px 10px; 
     color:white;
-    background:url('assets/images/Linux-Health-Monitoring.jpg') center/cover no-repeat;
+    /* background:url('assets/images/Linux-Health-Monitoring.jpg') center/cover no-repeat; */
+    background:url('assets/images/Application-Health-Monitoring.jpg') center/cover no-repeat;
     text-shadow:0 3px 8px rgba(0,0,0,0.7);
     border-radius:15px;
+    min-height: 160px; /* CLS safety */
   }
   
   .hero .btn-home {
@@ -71,94 +75,251 @@
     padding: 10px 22px;
     font-weight: bold;
     color: #ffffff;
-    background-color: #2d8cff;   /* blue button */
+    background-color: #2d8cff;
     text-decoration: none;
     border-radius: 6px;
     border: 2px solid #ffffff;
     transition: all 0.3s ease;
   }
 
-  .hero .btn-home:hover {
-    background-color: #ffffff;
-    color: #2d8cff;
-  }
+  .wide-section h2 { color:#007bff; margin-bottom:10px; }
+  .wide-section p, .wide-section li { font-size:16px; line-height:1.7; color:#555; }
+  .wide-section ul { padding-left:20px; }
+  .wide-section ol { padding-left:20px; }
 
-  .hero h1 { font-size:42px; margin-bottom:2px; }
-  .hero p { font-size:18px; margin-bottom:3px; }
+  </style>
 
-  /* Container & Cards */
-  .container { max-width:800px; margin:auto; padding:10px; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:15px; margin-top:15px; }
-  .card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
-  .card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
-  .card h3 { color:#007bff; margin-top:10px; font-size:22px; }
-  .card p { font-size:16px; color:#555; }
-  .card .icon { font-size:50px; margin-bottom:15px; }
-
-  canvas { margin-top:10px; border-radius:10px; background:white; padding:10px; box-shadow:0 6px 12px rgba(0,0,0,0.1); }
-
-  iframe { width:100%; min-height:700px; border:none; border-radius:15px; box-shadow:0 6px 12px rgba(0,0,0,0.1); margin-top:10px; }
-
-  /* Footer */
-  footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
-
-  @media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
-</style>
 </head>
 <body>
-<!-- <button class="floating-back-btn" onclick="history.back()">⬅</button> -->
+
 <header class="navbar">
-  <div class="logo">⚙️ EZOps_ThinkCentre</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="linux-healthcheck.html" class="active">Linux HealthCheck</a>
-    <a href="application-healthcheck.html">Application HealthCheck</a>
-    <!--  <a href="http://linuxmint-thinkcentre:8081/" target="_blank">  Application Build Server </a> -->
-    <a href="Metrics.html">Metrics</a>
-    <a href="SOP.html">SOP</a>
-    <!-- <a href="About.html">About</a> -->
-    <a href="contact.html">SiteAdmin</a>
-    <button id="themeToggle" class="toggle-btn">🌙</button>
+  <div class="logo">
+    <span class="gear">⚙️</span> EZDevOps ThinkCentre
+  </div>
+
+<nav>
+      <a href="index.html">Home</a>
+      <a href="start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="devops_learn.html">DevOps/Linux Automations</a>
+            <a href="lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="application-healthcheck.html">Application HealthCheck</a>
+          <a href="webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="linux-basics.html">Linux</a>
+      <a href="git-basics.html">Git</a>
+      <a href="devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="metrics.html">Metrics</a>
+          <a href="sop.html">SOP</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="about.html">About Us</a> 
+      <a href="contact.html">Contact Us</a>  
   </nav>
+  
 </header>
 
 <section class="hero">
-  <h1>EZOps_ThinkCentre – Linux HealthCheck Dash Board</h1>
-  <p>Monitor CPU, Memory, Disk, Network, and System Load with visual dashboards and detailed reports.</p>
-    <a href="index.html" class="btn-home">Home</a>
+  <h1> Linux HealthCheck Dash Board</h1>
+  <p>Monitor CPU, Memory, Disk, Network, and System Load with visual dashboards, alerts, and detailed reports.</p>
 </section>
 
-<div class="section" style="margin-top:1px;">
-  <iframe src="Reports/linux_healthcheck_dashboard_report.html" title="Linux HealthCheck Dashboard"></iframe>
+
+<div class="wide-section">
+  <h2>Introduction to Linux HealthCheck</h2>
+  <p>
+    Linux HealthCheck is the backbone of reliable DevOps operations. By continuously monitoring CPU, memory, disk, network, and system load,
+    administrators can proactively prevent outages, optimize performance, and maintain service reliability.
+    A well-structured health check also ensures compliance, security, and long-term stability of DevOps platforms.
+  </p>
+  <p>
+    The report attached below is a <b>sample Linux HealthCheck dashboard report for Linux hosting the EZDevOps DevOps platform</b>.
+    It demonstrates real-world monitoring practices including alerts, automated checks, historical trends, and optimization tips.
+  </p>
 </div>
 
-<!-- This is a comment 
-  
-<div class="section" style="margin-top:1px;">
-   <h3 style="color:#007bff; text-align:center;">Detailed HealthCheck Report</h3> 
-  <iframe src="Reports/linux_health_report.html" title="HealthCheck Report"></iframe>
+  <div class="wide-section">
+    <h2>Linux HealthCheck</h2>
+    <section id="linux-healthcheck">
+      <p>Monitor CPU, Memory, Disk usage, and system logs efficiently.</p>
+
+      <!-- Diagram -->
+      <img src="assets/images/linux-healthcheck-diagram.png" 
+         alt="Linux Health Monitoring Flow" 
+         style="max-width:100%; height:auto; margin:10px 0;">
+
+      <!-- Screenshot Example -->
+      <img src="assets/images/linux-bhtop-screenshot.png" 
+         alt="HTop Command Screenshot" 
+        style="max-width:100%; height:auto; margin:10px 0;">
+
+      <ol>
+        <li>Check CPU with <code>top</code> or <code>htop</code></li>
+        <li>Monitor disk space with <code>df -h</code></li>
+        <li>Review logs using <code>journalctl</code></li>
+      </ol>
+    </section>
+  </div>
+
+  <!-- Google Adsense slot -->
+      <div class="ad-slot">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-1676512892913688"
+          data-ad-slot="1234567890"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </div>
+
+      <script>
+        window.adsbygoogle = window.adsbygoogle || [];
+        window.adsbygoogle.push({});
+      </script>
+
+
+<div class="wide-section">
+  <h2>CPU Monitoring & Analysis</h2>
+  <p>
+    CPU utilization is critical for server performance. Monitor per-core usage to identify bottlenecks and optimize scheduling.
+  </p>
+  <ul>
+    <li><code>top</code> or <code>htop</code> to view live CPU usage.</li>
+    <li><code>mpstat -P ALL 5</code> to see per-core utilization every 5 seconds.</li>
+    <li>Watch for consistently high <b>load averages</b> exceeding CPU core count.</li>
+    <li>Identify CPU-intensive processes: <code>ps aux --sort=-%cpu</code></li>
+  </ul>
 </div>
 
--->
+<div class="wide-section">
+  <h2>Memory & Swap Monitoring</h2>
+  <ul>
+    <li>Check memory usage: <code>free -h</code>, <code>vmstat 5</code></li>
+    <li>Detect memory leaks by monitoring <code>top</code> or <code>smem</code> over time</li>
+    <li>Monitor swap usage and avoid excessive swapping which degrades performance</li>
+    <li>Optimize caching and buffer usage for better memory efficiency</li>
+  </ul>
+</div>
+
+<div class="wide-section">
+  <h2>Disk Space & I/O Monitoring</h2>
+  <ul>
+    <li>Check disk usage: <code>df -h</code>, <code>du -sh /path</code></li>
+    <li>Monitor read/write operations: <code>iostat -x 5</code>, <code>iotop</code></li>
+    <li>Watch for inode exhaustion and ensure sufficient free space</li>
+    <li>Optimize logs and temp files to reduce disk usage</li>
+  </ul>
+</div>
+
+<div class="wide-section">
+  <h2>Network Monitoring & Troubleshooting</h2>
+  <ul>
+    <li>Monitor interfaces: <code>ifconfig</code> or <code>ip addr</code></li>
+    <li>Check active connections: <code>netstat -tulnp</code>, <code>ss -tulnp</code></li>
+    <li>Measure latency: <code>ping</code>, <code>mtr</code></li>
+    <li>Monitor bandwidth: <code>iftop</code>, <code>nload</code></li>
+    <li>Log suspicious traffic or unexpected connections</li>
+  </ul>
+</div>
+
+<div class="wide-section">
+  <h2>Service & Process HealthCheck</h2>
+  <ul>
+    <li>List processes by resource usage: <code>ps aux --sort=-%cpu</code>, <code>ps aux --sort=-%mem</code></li>
+    <li>Check service status: <code>systemctl status nginx</code>, <code>systemctl is-active sshd</code></li>
+    <li>Restart failing services automatically using scripts or cron</li>
+    <li>Monitor background jobs and CI/CD tasks for performance issues</li>
+  </ul>
+</div>
+
+<div class="wide-section">
+  <h2>Log Monitoring & Auditing</h2>
+  <ul>
+    <li>Check system logs: <code>/var/log/syslog</code>, <code>/var/log/messages</code></li>
+    <li>Monitor authentication: <code>/var/log/auth.log</code></li>
+    <li>Use <code>journalctl</code> for centralized log review</li>
+    <li>Automate parsing logs for errors and alerts using scripts</li>
+  </ul>
+</div>
+
+<div class="wide-section">
+  <h2>Security Checks & Compliance</h2>
+  <ul>
+    <li>Verify firewall status: <code>sudo ufw status</code> or <code>iptables -L</code></li>
+    <li>Check SELinux/AppArmor modes and alerts</li>
+    <li>Scan for vulnerable packages: <code>apt list --upgradable</code> or <code>yum check-update</code></li>
+    <li>Ensure correct file permissions and ownership on critical directories</li>
+    <li>Monitor failed login attempts and SSH brute-force attempts</li>
+  </ul>
+</div>
+
+<div class="wide-section">
+  <h2>Automation & Scheduled HealthChecks</h2>
+  <ul>
+    <li>Create cron jobs for automated health checks</li>
+    <li>Example: <code>*/5 * * * * /usr/local/bin/linux_healthcheck.sh</code></li>
+    <li>Generate daily HTML reports for review</li>
+    <li>Send alerts via email, Slack, or webhooks when thresholds are exceeded</li>
+  </ul>
+</div>
+
+<div class="wide-section">
+  <h2>Performance Optimization Tips</h2>
+  <ul>
+    <li>Limit resource-hogging processes using <code>nice</code> and <code>renice</code></li>
+    <li>Enable caching for frequently used services</li>
+    <li>Use swap efficiently and avoid overcommit</li>
+    <li>Regularly archive logs and clean temp directories</li>
+    <li>Monitor trends and scale resources proactively</li>
+  </ul>
+</div>
+
+<div class="wide-section">
+  <h2>Sample HealthCheck Dashboard Report</h2>
+  <p>
+    Below is a <b>sample Linux HealthCheck dashboard report</b> for Linux servers hosting the EZDevOps DevOps platform. 
+    It demonstrates real-time monitoring of CPU, memory, disk, network, services, and automated alerts for proactive management.
+  </p>
+</div>
+
+<div class="wide-section" style="padding:0;">
+  <iframe class="wide-iframe" src="Reports/linux_healthcheck_dashboard_report.html" title="Sample Linux HealthCheck Dashboard Report for DevOps Platform"></iframe>
+  <p style="text-align:center; font-size:14px; color:#555; margin-top:5px;">
+    Sample Linux HealthCheck Dashboard report for Linux hosting the EZDevOps DevOps platform.
+  </p>
+</div>
 
 <footer>
-  <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About Us</a> |
+  <a href="contact.html">Contact Us</a> |
+  <a href="privacy.html">Privacy Policy</a> |
+  <a href="terms.html">Terms & Conditions</a> |
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-const cpuCtx = document.getElementById('cpuChart').getContext('2d');
-new Chart(cpuCtx, { type: 'line', data: { labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'CPU %', data:[12,35,28,45,30,50,40], borderColor:'#007bff', backgroundColor:'rgba(0,123,255,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
-
-const memoryCtx = document.getElementById('memoryChart').getContext('2d');
-new Chart(memoryCtx, { type:'doughnut', data:{ labels:['Used','Free'], datasets:[{ data:[65,35], backgroundColor:['#007bff','#e0e0e0'] }] }, options:{ responsive:true } });
-
-const diskCtx = document.getElementById('diskChart').getContext('2d');
-new Chart(diskCtx, { type:'bar', data:{ labels:['C:','D:','E:'], datasets:[{ label:'Disk Usage %', data:[70,45,60], backgroundColor:'#007bff' }] }, options:{ responsive:true, plugins:{ legend:{ display:false } } } });
-
-const networkCtx = document.getElementById('networkChart').getContext('2d');
-new Chart(networkCtx, { type:'line', data:{ labels:['0s','10s','20s','30s','40s','50s','60s'], datasets:[{ label:'Network KB/s', data:[100,150,120,180,140,200,170], borderColor:'#28a745', backgroundColor:'rgba(40,167,69,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
-</script>
+<script src="assets/nav-active.js" defer></script>
 
 </body>
 </html>

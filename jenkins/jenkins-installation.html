@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <title>Lesson 4: CI/CD | EZDevOps ThinkCentre</title>
+
+  <meta name="description"
+        content="Lesson 4 of EZDevOps ThinkCentre explains CI/CD concepts, pipelines, testing, diagrams, and DevOps best practices.">
+
+  <meta name="keywords"
+        content="CI/CD tutorial, DevOps CI CD, continuous integration, continuous delivery, continuous deployment">
+
+  <link rel="canonical" href="https://www.ezdevops.cloud/jenkins/jenkins-installation.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lesson 4: Continuous Integration & Deployment">
+  <meta property="og:description" content="Learn CI/CD pipelines, automation, testing, and DevOps deployment strategies.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.ezdevops.cloud/jenkins/jenkins-installation.html">
+  <meta property="og:image" content="https://www.ezdevops.cloud/assets/images/DevOps-Hero.jpg">
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-1676512892913688">
+  <script async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+          crossorigin="anonymous"></script>
+
+  <!-- Global CSS Style -->
+  <link rel="stylesheet" href="../assets/styles.css">
+
+  <!-- PAGE-SPECIFIC STYLES -->
+  <link rel="stylesheet" href="../assets/cicd-lesson-sidebar.css">
+
+<style>
+.hero {
+    text-align: center;
+    padding: 20px 10px 60px;
+    background: url('../assets/images/cicd_new.png') center/cover no-repeat;
+    color: white;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+    border-radius: 15px;
+    min-height: 160px;
+}
+
+</style>
+
+</head>
+
+<body>
+  <a id="page-top"></a>
+
+<header class="navbar">
+  <div class="logo">
+    <span class="gear">⚙️</span> EZDevOps ThinkCentre
+  </div>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../start_learning.html">Start</a>
+
+    <div class="nav-dropdown">
+      <a><span>Automations ▾</span></a>
+      <div class="dropdown-menu">
+        <a href="../devops_learn.html">DevOps/Linux Automations</a>
+        <a href="../lightweight-automation.html">Lightweight Automation</a>
+      </div>
+    </div>
+
+    <div class="nav-dropdown">
+      <a><span>HealthChecks ▾</span></a>
+      <div class="dropdown-menu">
+        <a href="../linux-healthcheck.html">Linux HealthCheck</a>
+        <a href="../application-healthcheck.html">Application HealthCheck</a>
+        <a href="../webserver-healthcheck.html">Webserver HealthCheck</a>
+      </div>
+    </div>
+
+    <a href="../linux-basics.html">Linux</a>
+    <a href="../git-basics.html">Git</a>
+    <a href="../devops-cicd.html">CI/CD</a>
+
+    <div class="nav-dropdown">
+      <a><span>Standards/Process ▾</span></a>
+      <div class="dropdown-menu">
+        <a href="../metrics.html">Metrics</a>
+        <a href="../sop.html">SOP</a>
+        <a href="../roadmap.html">Roadmap</a>
+      </div>
+    </div>
+
+    <a href="../about.html">About Us</a>
+    <a href="../contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1 class="lesson-title">Jenkins Installation/Setup </h1>
+  <p>Automating builds, tests, and deployments for faster delivery</p>
+  <a href="../devops-cicd.html" class="back-btn">← Back to devops-cicd</a>
+</section>
+
+  
+<!-- RIGHT FLOATING SIDEBAR -->
+<aside class="lesson-sidebar" aria-label="Lesson navigation">
+
+  <h3>
+    <a href="#page-top" class="sidebar-top-link">⬆ CI/CD Topics</a>
+  </h3>
+
+  <a href="../devops-cicd.html#cicd">CI/CD Explained</a>
+  <a href="../devops-cicd.html#why">Why CI/CD</a>
+
+  <!-- Jenkins Submenu -->
+  <div class="lesson-with-submenu">
+    <a href="#" aria-expanded="false">Jenkins for DevOps</a>
+    <div class="submenu">
+      <a href="jenkins-overview.html">Jenkins Overview</a>
+      <a href="jenkins-installation.html">Installation</a>
+      <a href="jenkins-plugins.html">Plugins</a>
+      <a href="jenkins-pipeline.html">Pipelines</a>
+      <a href="jenkins-security.html">Security</a>
+    </div>
+  </div>
+
+  <!-- CI/CD Submenu -->
+  <div class="lesson-with-submenu">
+    <a href="#" aria-expanded="false">CI/CD for DevOps</a>
+    <div class="submenu">
+      <a href="../devops-cicd.html#ci">Continuous Integration</a>
+      <a href="../devops-cicd.html#cd">Continuous Delivery</a>
+      <a href="../devops-cicd.html#deploy">Continuous Deployment</a>
+      <a href="../devops-cicd.html#pipeline">CI/CD Pipeline</a>
+      <a href="../devops-cicd.html#diagram">CI/CD Diagram</a>
+      <a href="../devops-cicd.html#benefits">Benefits</a>
+      <a href="../devops-cicd.html#devops">CI/CD in DevOps</a>
+    </div>
+  </div>
+
+</aside>
+  
+  <div class="container">
+
+  <main>
+    <div class="section" id="step-1-installation">
+
+      <h2>Installation</h2>
+
+      <p><strong>Prerequisites:</strong></p>
+
+      <ul class="lesson-list">
+        <li>A machine with at least 256 MB RAM (2 GB recommended)</li>
+        <li>At least 10 GB of free disk space</li>
+        <li>Java 11 or Java 17 installed</li>
+        <li>Docker installed</li>
+      </ul>
+
+      <p>To download and run Jenkins:</p>
+
+      <ol class="lesson-steps">
+        <li>Download the Jenkins Generic Java <strong>.war</strong> package.</li>
+        <li>Open a terminal in the download directory.</li>
+        <li>Run the following command:</li>
+      </ol>
+
+      <pre class="code-block">
+    java -jar jenkins.war --httpPort=8080
+      </pre>
+
+      <p>
+        Open your browser and go to:
+        <strong>http://localhost:8080</strong>  
+        Then follow the on-screen installation instructions.
+      </p>
+
+    </div>
+
+  </main>
+
+</div>
+
+<footer>
+  <a href="../index.html">Home</a> |
+  <a href="../about.html">About Us</a> |
+  <a href="../contact.html">Contact Us</a> |
+  <a href="../privacy.html">Privacy Policy</a> |
+  <a href="../terms.html">Terms & Conditions</a> |
+  <a href="../disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+<button id="mobileSidebarBtn" class="mobile-sidebar-btn">☰ Topics</button>
+
+<script src="../assets/nav-active.js" defer></script>
+<script src="../assets/jenkins-submenu.js" defer></script>
+<script src="../assets/mobile-sidebar.js" defer></script>
+
+
+</body>
+</html>

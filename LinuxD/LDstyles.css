@@ -1,0 +1,294 @@
+/* GLOBAL STYLES */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #eef3ff;
+  color: #333;
+}
+
+
+/* HEADER */
+header.navbar {
+  background: linear-gradient(90deg,#007bff,#4da3ff);
+  padding: 12px 22px;        /* 🔹 reduced vertical padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  min-height: 40px;          /* 🔹 slimmer header */
+}
+
+nav a { 
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;          /* 🔹 increased from default */
+  letter-spacing: 0.3px;   /* 🔹 subtle polish */
+}
+
+.logo {
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 45px 20px 35px;
+  background: url("../assets/images/BLinuxforDevops.jpg") center/cover no-repeat;
+  color: black;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+  border-radius: 0 0 20px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.hero .back-btn {
+  display: inline-block;
+  padding: 9px 18px;
+  background: white;
+  color: #007bff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.hero .back-btn:hover {
+  background: #e6efff;
+}
+
+/* FLOATING SIDEBAR MENU */
+.sidebar-menu {
+  position: fixed;
+  top: 150px;
+  right: 20px;
+  width: 260px;
+  background: #8a2be2; /* medium violet */
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  z-index: 900;
+}
+
+.sidebar-menu h3 {
+  text-align: center;
+  color: white;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.sidebar-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.sidebar-menu a:hover {
+  background: #6f1fc1; /* darker violet hover */
+}
+
+/* CONTENT */
+.container {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 25px;
+  padding-right: 320px; /* leave space for sidebar */
+}
+
+.section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+.section h2 {
+  color: #007bff;
+}
+
+.section p,
+.section li {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* BOTTOM BACK BUTTON */
+.back-btn-bottom {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.back-btn-bottom:hover {
+  background: #005fcc;
+}
+
+/* FOOTER */
+footer {
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .sidebar-menu {
+    display: none;
+  }
+  .container {
+    padding-right: 25px;
+  }
+}
+
+/* FORCE ACTIVE SIDEBAR HIGHLIGHT */
+.sidebar-menu a.active {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  border-left: 4px solid #ffffff;
+}
+
+
+
+/* AdSense safe container */
+.ad-slot {
+  min-height: 280px;          /* prevents layout shift */
+  width: 100%;
+  margin: 20px 0;
+  display: block;
+}
+
+/* 🔹 DROPDOWN MENU – LIGHT BLUE + BOLD */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Parent menu should look like normal nav links */
+.nav-dropdown > span {
+  cursor: pointer;
+  padding: 8px 10px;
+  display: inline-block;
+  font-weight: inherit;   /* 🔑 key fix */
+  color: inherit;         /* ensures white text */
+}
+
+
+/* Dropdown popup */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background:linear-gradient(90deg,#007bff,#4da3ff);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  z-index: 999;
+}
+
+/* Dropdown items */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Hover inside dropdown */
+.dropdown-menu a:hover {
+  background:linear-gradient(90deg,#007bff,#4da3ff);
+}
+
+/* Show dropdown on hover */
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+/* Sidebar submenu styling (generic, reusable) */
+.lesson-with-submenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-with-submenu > a {
+  font-weight: bold;
+  position: relative;
+}
+
+/* Submenu inside main sidebar menu */
+.lesson-with-submenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-with-submenu > a {
+  font-weight: bold;
+  color: #fff; /* main menu color */
+  padding-left: 10px; /* small padding for alignment */
+}
+
+/* Submenu items inside main menu */
+.lesson-with-submenu .submenu {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px; /* indent submenu items */
+}
+
+.lesson-with-submenu .submenu a {
+  font-size: 0.95em;
+  color: #fff; /* white font for submenu */
+  text-decoration: none;
+  padding: 3px 0;
+}
+
+.lesson-with-submenu .submenu a:hover {
+  color: #00bfff; /* light blue highlight on hover */
+  font-weight: 500;
+}
+
+
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="refresh" content="200">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Monitor DevOps metrics including releases, system performance, application health, automation logs, and operational dashboards using EZDevOps ThinkCentre." />
+
+<meta name="keywords"
+content="DevOps tutorial, EZ Devops Tutorial, EZ Devops Learn, EZDevOps, Devops Easy, Devops EZ, EZ Devops ThinkCentre, Linux DevOps, CI/CD pipeline, Jenkins tutorial, Git automation, DevOps monitoring, operational reliability, DevOps metrics, release metrics, system monitoring, application metrics, automation logs, CI/CD metrics, Linux monitoring" />
+
+
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+  <link rel="canonical" href="https://www.ezdevops.cloud/metrics.html">
+
+
+<meta property="og:title" content="EZDevOps ThinkCentre | Metrics & Dashboards">
+<meta property="og:description" content="DevOps metrics dashboards for releases, systems, applications, and automation pipelines.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.ezdevops.cloud/assets/images/Documentation_metrics.jpg">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+crossorigin="anonymous"></script>
+
+<title>Metrics | EZDevOps ThinkCentre</title>
+
+
+  <!-- Global CSS Style -->
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Page Specific Style  -->
+  <style>
+  
+    .hero {
+      text-align: center;
+      padding:20px 10px 60px 10px; 
+      background: url('assets/images/Lightweight-Automation.jpg') center/cover no-repeat;
+      color: white;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+      border-radius: 15px;
+      min-height: 160px; /* CLS safety */
+  }
+
+    .section { background:white; padding:25px; border-radius:16px; margin-bottom:25px; box-shadow:0 6px 14px rgba(0,0,0,0.1); }
+    .section h2 { color:#007bff; font-size:28px; margin-bottom:10px; text-align:center; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; margin-top:25px; }
+    .card { background:#f7faff; padding:20px; border-radius:14px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
+    .card .icon { font-size:38px; margin-bottom:12px; }
+    .card h3 { color:#007bff; font-size:18px; }
+    .card p { font-size:14px; }
+
+    .card-link { text-decoration:none; color:inherit; display:block; }
+    .env-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:12px; background:#007bff; color:white; margin-bottom:10px; }
+    .automation-box { margin-top:20px; background:#f9fbff; border-left:6px solid #007bff; border-radius:12px; padding:22px; }
+    .automation-box h3 { margin-top:0; color:#0056b3; }
+    .automation-steps { list-style:none; padding:0; margin:20px 0 0; }
+    .automation-steps li { background:white; padding:16px; margin-bottom:14px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.08); display:flex; gap:12px; }
+    .step-icon { font-size:22px; min-width:30px; }
+    .step-0 { border-left:4px solid #6f42c1; }
+    .step-1 { border-left:4px solid #6f42c1; }
+    .step-2 { border-left:4px solid #28a745; }
+    .step-3 { border-left:4px solid #17a2b8; }
+    .step-4 { border-left:4px solid #ffc107; }
+    .step-5 { border-left:4px solid #dc3545; }
+    .git-link { display:inline-block; margin-top:6px; padding:6px 10px; background:#24292e; color:white; border-radius:6px; font-size:13px; text-decoration:none; word-break:break-all; }
+    .inline-code { background:#eef2ff; padding:3px 6px; border-radius:6px; font-family:Consolas, monospace; color:#5c2d91; font-weight:bold; }
+
+
+  </style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <span class="gear">⚙️</span> EZDevOps ThinkCentre
+  </div>
+
+<nav>
+      <a href="index.html">Home</a>
+      <a href="start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="devops_learn.html">DevOps/Linux Automations</a>
+            <a href="lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="application-healthcheck.html">Application HealthCheck</a>
+          <a href="webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="linux-basics.html">Linux</a>
+      <a href="git-basics.html">Git</a>
+      <a href="devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="metrics.html">Metrics</a>
+          <a href="sop.html">SOP</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="about.html">About Us</a> 
+      <a href="contact.html">Contact Us</a>  
+  </nav>
+  
+</header>
+
+
+<section class="hero">
+  <h1> Metrics & Observability</h1>
+  <p>Clear insights, contextual explanations, and operational visibility for modern DevOps teams.</p>
+</section>
+
+<div class="container">
+<!-- Publisher Content -->
+<section class="publisher-content">
+  <h2>📌 Publisher Content</h2>
+  <p>
+    DevOps metrics provide measurable insight into how infrastructure,
+    applications, and delivery pipelines behave in real-world environments.
+    These indicators help teams evaluate reliability, performance, and
+    operational efficiency using objective data.
+  </p>
+  <p>
+    This page is designed as an educational reference explaining commonly used
+    DevOps metrics, dashboards, and automation patterns. The examples shown
+    here are illustrative and are not intended to function as live monitoring
+    or alerting systems.
+  </p>
+</section>
+
+
+<div class="container">
+
+<section id="metrics" class="section">
+  <h2>Metrics Overview</h2>
+  <p>Visualize your system and application metrics for better decisions.</p>
+
+  <p>
+    Metrics provide objective insight into system behavior by capturing trends
+    over time. Infrastructure indicators such as CPU, memory, and disk usage
+    help identify capacity constraints, while application metrics expose
+    performance bottlenecks and user-impacting issues.
+  </p>
+
+  <p>
+    In mature DevOps practices, these measurements are continuously reviewed
+    to support proactive optimization, incident response, and long-term
+    planning across environments.
+  </p>
+
+  <img src="assets/images/metrics-graph1.png" alt="CPU usage trends graph over 24 hours" style="max-width:100%;height:auto;margin:10px 0;">
+  <img src="assets/images/metrics-graph2.png" alt="Memory and disk usage comparison chart" style="max-width:100%;height:auto;margin:10px 0;">
+
+
+  <p>
+    Key performance indicators (KPIs) summarize the most important operational
+    signals in a compact format. Defined thresholds help teams quickly identify
+    abnormal conditions before they escalate into production incidents.
+  </p>
+
+  <table border="1" cellpadding="8" style="width:100%;margin-top:10px;">
+    <thead>
+      <tr><th>Metric</th><th>Current Value</th><th>Threshold</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CPU Usage</td><td>45%</td><td>80%</td></tr>
+      <tr><td>Memory Usage</td><td>3.2 GB</td><td>8 GB</td></tr>
+      <tr><td>Disk Space</td><td>120 GB Free</td><td>50 GB Free</td></tr>
+    </tbody>
+  </table>
+</section>
+
+  <!-- Google Adsense slot -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-1676512892913688"
+      data-ad-slot="1234567890"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+  </div>
+
+  <script>
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.push({});
+  </script>
+
+<div class="section">
+  <h2>Operational Metrics Overview</h2>
+  <p>Operational metrics provide visibility into platform stability, delivery efficiency, and overall system health.</p>
+  <p>
+    These metrics are widely referenced in DevOps and SRE frameworks to measure
+    deployment confidence, failure rates, and recovery capabilities during
+    service disruptions.
+  </p>
+  <div class="cards">
+    <div class="card"><div class="icon">⏱️</div><h3>Deployment Frequency</h3><p>How often releases are deployed.</p></div>
+    <div class="card"><div class="icon">🛑</div><h3>Change Failure Rate</h3><p>Percentage of deployments causing incidents.</p></div>
+    <div class="card"><div class="icon">🔁</div><h3>Mean Time to Recovery</h3><p>Average time to restore service after failures.</p></div>
+  </div>
+</div>
+
+ 
+<div class="section">
+  <h2>Advanced DevOps Metrics</h2>
+  <div class="cards">
+    <a href="cicd-metrics.html" class="card-link"><div class="card"><div class="icon">📱</div><h3>CI/CD Metrics</h3></div></a>
+    <a href="application-metrics.html" class="card-link"><div class="card"><div class="icon">📱</div><h3>Application Metrics</h3></div></a>
+    <a href="infrastructure-metrics.html" class="card-link"><div class="card"><div class="icon">🖥️</div><h3>Infrastructure Metrics</h3></div></a>
+    <a href="deployment-metrics.html" class="card-link"><div class="card"><div class="icon">🚀</div><h3>Deployment Metrics</h3></div></a>
+    <a href="security-metrics.html" class="card-link"><div class="card"><div class="icon">🛡️</div><h3>Security Metrics</h3></div></a>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<footer>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About Us</a> |
+  <a href="contact.html">Contact Us</a> |
+  <a href="privacy.html">Privacy Policy</a> |
+  <a href="terms.html">Terms & Conditions</a> |
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+<script src="assets/nav-active.js" defer></script>
+
+</body>
+</html>

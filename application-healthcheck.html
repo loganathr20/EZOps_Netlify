@@ -4,165 +4,229 @@
 <meta http-equiv="refresh" content="200">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZOps_ThinkCentre – Application HealthCheck</title>
-<meta name="description" content="Monitor services, uptime, logs, and response times with rich visual insights for Linux applications.">
-<link rel="canonical" href="https://ezops-thinkcentre.netlify.app/application-healthcheck.html">
+
+<!-- META DESCRIPTION -->
+<meta name="description"
+content="Application health monitoring dashboard for DevOps. Track uptime, response time, service status, logs, and performance metrics." />
+
+<meta name="keywords"
+content="DevOps tutorial, EZ Devops Tutorial, EZ Devops Learn, EZDevOps, Devops Easy, Devops EZ, EZ Devops ThinkCentre, Linux DevOps, CI/CD pipeline, Jenkins tutorial, Git automation, DevOps monitoring, operational reliability" />
+
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://www.ezdevops.cloud/application-healthcheck.html">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+crossorigin="anonymous"></script>
+
+<title>EZDevOps ThinkCentre – Application HealthCheck</title>
 
 <link rel="stylesheet" href="assets/styles.css">
-<style>
-  body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
 
-      /* Floating Back Button */
-  .floating-back-btn {
-      position:fixed;
-      top:20px;
-      left:20px;
-      width:45px;
-      height:45px;
-      background:#007bff;
-      color:white;
-      border:none;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      cursor:pointer;
-      z-index:9999;
-      box-shadow:0 4px 12px rgba(0,0,0,0.25);
-      transition:0.3s;
-  }
-  .floating-back-btn:hover {
-      transform:scale(1.1);
-      background:#005fcc;
-  }
-  
-  /* Navbar */
-  header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
-  header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
-  nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
-  nav a:hover, nav a.active { text-decoration:underline; }
-  nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
+  <!-- Global CSS Style -->
+  <link rel="stylesheet" href="assets/styles.css">
 
-   /* Hero */
- .hero {
-    text-align:center; 
-    padding:20px 10px 60px 10px; 
+  <!-- Page Specific Style  -->
+  <style>
+    .hero {
+    text-align:center;
+    padding:20px 10px 60px 10px;
     color:white;
     background:url('assets/images/Application-Health-Monitoring.jpg') center/cover no-repeat;
     text-shadow:0 3px 8px rgba(0,0,0,0.7);
     border-radius:15px;
-  }
+    min-height: 160px; /* CLS safety */
+    }
+  </style>
 
-  .hero .btn-home {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 22px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #2d8cff;   /* blue button */
-    text-decoration: none;
-    border-radius: 6px;
-    border: 2px solid #ffffff;
-    transition: all 0.3s ease;
-  }
-
-  .hero .btn-home:hover {
-    background-color: #ffffff;
-    color: #2d8cff;
-  }
-
-  .hero h1 { font-size:42px; margin-bottom:10px; }
-  .hero p { font-size:18px; margin-bottom:25px; }
-
-  /* Container & Cards */
-  .container { max-width:1150px; margin:auto; padding:30px; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; margin-top:25px; }
-  .card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
-  .card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
-  .card h3 { color:#007bff; margin-top:15px; font-size:22px; }
-  .card p { font-size:16px; color:#555; }
-  .card .icon { font-size:50px; margin-bottom:15px; }
-
-  canvas { margin-top:30px; border-radius:12px; background:white; padding:20px; box-shadow:0 6px 12px rgba(0,0,0,0.1); }
-
-  footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
-
-  @media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
-</style>
 </head>
+
 <body>
-<!-- <button class="floating-back-btn" onclick="history.back()">⬅</button> -->
+
 <header class="navbar">
-  <div class="logo">⚙️ EZOps_ThinkCentre</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="linux-healthcheck.html">Linux HealthCheck</a>
-    <a href="application-healthcheck.html" class="active">Application HealthCheck</a>
-    <!--  <a href="http://linuxmint-thinkcentre:8081/" target="_blank">  Application Build Server </a> -->
-    <a href="Metrics.html">Metrics</a>
-    <a href="SOP.html">SOP</a>
-    <!-- <a href="About.html">About</a> -->
-    <a href="contact.html">SiteAdmin</a>
-    <button id="themeToggle" class="toggle-btn">🌙</button>
+  <div class="logo">
+    <span class="gear">⚙️</span> EZDevOps ThinkCentre
+  </div>
+
+<nav>
+      <a href="index.html">Home</a>
+      <a href="start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="devops_learn.html">DevOps/Linux Automations</a>
+            <a href="lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="application-healthcheck.html">Application HealthCheck</a>
+          <a href="webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="linux-basics.html">Linux</a>
+      <a href="git-basics.html">Git</a>
+      <a href="devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="metrics.html">Metrics</a>
+          <a href="sop.html">SOP</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="about.html">About Us</a> 
+      <a href="contact.html">Contact Us</a>  
   </nav>
+
 </header>
 
 <section class="hero">
-  <h1>Application HealthCheck</h1>
-  <p>Monitor services, uptime, logs, and response times with rich visual insights.</p>
-  <a href="index.html" class="btn-home">Home</a>
+<h1> Application HealthCheck Dashboard </h1>
+<p>Monitor uptime, response time, service health, logs, and performance metrics.</p>
+<a href="index.html" class="btn-home">Home</a>
 </section>
 
 <div class="container">
-  <div class="cards">
-    <div class="card">
-      <div class="icon">⏱️</div>
-      <h3>Uptime Monitoring</h3>
-      <p>Track uptime percentage of critical applications.</p>
-      <canvas id="uptimeChart" width="300" height="200"></canvas>
+
+<h2 style="color:#007bff;">Application Health Monitoring Overview</h2>
+
+<p>
+Application health monitoring is a critical DevOps practice focused on ensuring
+that applications remain available, responsive, and reliable in production
+environments. Unlike infrastructure monitoring, application monitoring focuses
+on user-facing behavior and service-level health.
+</p>
+
+<p>
+This page presents a <b>sample application healthcheck dashboard</b> used for
+educational purposes on the EZDevOps ThinkCentre platform. The metrics and charts
+shown here reflect real-world monitoring patterns commonly implemented in
+production DevOps systems.
+</p>
+
+<h2 style="color:#007bff;">What Is Monitored</h2>
+<ul>
+<li>Application uptime and availability</li>
+<li>Response time and latency</li>
+<li>Service health and dependencies</li>
+<li>Error rates and log patterns</li>
+<li>Operational stability over time</li>
+</ul>
+
+<h2 style="color:#007bff;">Why This Matters in DevOps</h2>
+<p>
+In CI/CD-driven environments, frequent deployments can introduce risk.
+Continuous application monitoring ensures that deployments do not negatively
+impact system health and user experience.
+</p>
+
+<section id="application-healthcheck">
+  <h2 style="color:#007bff;">Application HealthCheck </h2>
+  <p>Track application performance and detect errors early.</p>
+
+  <!-- Pipeline Flowchart -->
+  <img src="assets/images/app-healthcheck-flow.png" 
+       alt="Application Monitoring Pipeline" 
+       style="max-width:100%; height:auto; margin:10px 0;">
+
+  <!-- Dashboard Screenshot -->
+  <img src="assets/images/app-dashboard-screenshot.png" 
+       alt="Application Dashboard Screenshot" 
+       style="max-width:100%; height:auto; margin:10px 0;">
+</section>
+
+<!-- Google Adsense slot -->
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-1676512892913688"
+        data-ad-slot="1234567890"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
     </div>
-    <div class="card">
-      <div class="icon">⚡</div>
-      <h3>Response Time</h3>
-      <p>Measure average response times and latency.</p>
-      <canvas id="responseChart" width="300" height="200"></canvas>
-    </div>
-    <div class="card">
-      <div class="icon">📊</div>
-      <h3>Service Status</h3>
-      <p>Visualize active vs inactive services in real time.</p>
-      <canvas id="serviceChart" width="300" height="200"></canvas>
-    </div>
-    <div class="card">
-      <div class="icon">📂</div>
-      <h3>Log Analysis</h3>
-      <p>Track error logs and service events visually.</p>
-      <canvas id="logsChart" width="300" height="200"></canvas>
-    </div>
-  </div>
+
+    <script>
+      window.adsbygoogle = window.adsbygoogle || [];
+      window.adsbygoogle.push({});
+    </script>
+
+<h2 style="color:#007bff;">Sample Application Health Dashboard</h2>
+<p>
+The charts below demonstrate how application metrics are visualized for
+Linux servers hosting the EZDevOps platform. These dashboards help DevOps teams
+identify anomalies, troubleshoot incidents, and maintain service reliability.
+</p>
+
+<div class="cards">
+<div class="card">
+<div class="icon">⏱️</div>
+<h3>Uptime Monitoring</h3>
+<p>Track uptime percentage of critical applications.</p>
+<canvas id="uptimeChart"></canvas>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Response Time</h3>
+<p>Monitor average response times.</p>
+<canvas id="responseChart"></canvas>
+</div>
+
+<div class="card">
+<div class="icon">📊</div>
+<h3>Service Status</h3>
+<p>Active vs inactive services.</p>
+<canvas id="serviceChart"></canvas>
+</div>
+
+<div class="card">
+<div class="icon">📂</div>
+<h3>Log Analysis</h3>
+<p>Error and event tracking.</p>
+<canvas id="logsChart"></canvas>
+</div>
+</div>
+
 </div>
 
 <footer>
-  <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About Us</a> |
+  <a href="contact.html">Contact Us</a> |
+  <a href="privacy.html">Privacy Policy</a> |
+  <a href="terms.html">Terms & Conditions</a> |
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
 </footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-const uptimeCtx = document.getElementById('uptimeChart').getContext('2d');
-new Chart(uptimeCtx, { type: 'line', data: { labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], datasets:[{ label:'Uptime %', data:[99,98,100,97,99,100,98], borderColor:'#28a745', backgroundColor:'rgba(40,167,69,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
-
-const responseCtx = document.getElementById('responseChart').getContext('2d');
-new Chart(responseCtx, { type:'bar', data:{ labels:['API','Web','DB','Cache'], datasets:[{ label:'Response ms', data:[120,150,90,70], backgroundColor:'#007bff' }] }, options:{ responsive:true, plugins:{ legend:{ display:false } } } });
-
-const serviceCtx = document.getElementById('serviceChart').getContext('2d');
-new Chart(serviceCtx, { type:'doughnut', data:{ labels:['Active','Inactive'], datasets:[{ data:[15,3], backgroundColor:['#28a745','#dc3545'] }] }, options:{ responsive:true } });
-
-const logsCtx = document.getElementById('logsChart').getContext('2d');
-new Chart(logsCtx, { type:'line', data:{ labels:['0h','4h','8h','12h','16h','20h','24h'], datasets:[{ label:'Errors', data:[2,1,0,3,1,0,2], borderColor:'#ffc107', backgroundColor:'rgba(255,193,7,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
+new Chart(uptimeChart,{type:'line',data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],datasets:[{data:[99,98,100,97,99,100,98],borderColor:'#28a745',fill:true}]}})
+new Chart(responseChart,{type:'bar',data:{labels:['API','Web','DB','Cache'],datasets:[{data:[120,150,90,70],backgroundColor:'#007bff'}]}})
+new Chart(serviceChart,{type:'doughnut',data:{labels:['Active','Inactive'],datasets:[{data:[15,3],backgroundColor:['#28a745','#dc3545']}]}})
+new Chart(logsChart,{type:'line',data:{labels:['0h','4h','8h','12h','16h','20h','24h'],datasets:[{data:[2,1,0,3,1,0,2],borderColor:'#ffc107',fill:true}]}})
 </script>
+
+
+<script src="assets/nav-active.js" defer></script>
+
 
 </body>
 </html>
-
-

@@ -1,236 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta name="google-site-verification" content="-qONme6zpmPD3BLMexAP72vGITm0Pag8wUY2ef_RwFA" />
-<meta http-equiv="refresh" content="200">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZOps_ThinkCentre – Home</title>
-<meta name="description" content="Visual health monitoring & automation guidance for Linux systems and applications.">
-<link rel="canonical" href="https://ezops-thinkcentre.netlify.app/index.html">
 
-<link rel="stylesheet" href="assets/styles.css">
-<style>
-  body {
-    margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background:#eef3ff;
-    color:#333;
-  }
+<meta name="description" 
+content="EZDevOps ThinkCentre offers hands-on DevOps and Linux automation learning: CI/CD, Jenkins, monitoring, and real-world operational practices for engineers. Learn DevOps/Linux Automations and  Learning Sessions, Devops Automations, Linux Automations for Devoops, Linux Automations" />
 
-  /* Navbar */
-  header.navbar {
-    background:linear-gradient(90deg,#007bff,#3399ff);
-    padding:18px 25px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    color:white;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-  }
-  header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
-  nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
-  nav a:hover, nav a.active { text-decoration:underline; }
-  nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
+<meta name="keywords"
+content="DevOps tutorial, EZ Devops Tutorial, EZ Devops Learn, EZDevOps, Devops Easy, Devops EZ, EZ Devops ThinkCentre, Linux DevOps, CI/CD pipeline, Jenkins tutorial, Git automation, DevOps monitoring, operational reliability" />
 
-  /* Hero Section */
-  .hero {
-    text-align:center;
-    padding:120px 20px;
-    background:url('assets/images/DevOps-Hero.jpg') center/cover no-repeat;
-    color:white;
-    text-shadow:0 3px 8px rgba(0,0,0,0.7);
-    border-radius:15px;
-  }
-  .hero h1 { font-size:48px; margin-bottom:8px; }
-  .hero p { font-size:20px; margin-bottom:25px; }
+<meta name="robots" content="index, follow">
 
-  /* Container & Cards */
-  .container { max-width:1500px; margin:auto; padding:10px; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:8px; margin-top:10px; }
+<!-- Canonical -->
+  <link rel="canonical" href="https://www.ezdevops.cloud/">
 
-  /* Clickable Cards */
-  .card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    position: relative;
-  }
-  .card-link .card {
-    background: linear-gradient(145deg,#ffffff,#f3f7ff);
-    border-radius: 15px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-    border: 1px solid #e5e5e5;
-    padding: 25px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .card-link .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-  }
-  .icon img {
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    background:white;
-    padding:6px;
-    box-shadow:0 3px 6px rgba(0,0,0,0.2);
-  }
-  .card-link h3 { color:#007bff; font-size:22px; margin:10px 0; }
-  .card-link p { font-size:15px; color:#555; min-height:60px; }
+<meta property="og:title" content="EZDevOps ThinkCentre | Learn DevOps the Easy Way">
+<meta property="og:description" content="Learn DevOps step-by-step with Linux, CI/CD, Jenkins, Git, automation, and monitoring tutorials with deep context. DevOps/Linux Automations Learning Sessions, Devops Automations, Linux Automations for Devoops, Linux Automations">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ezdevops.cloud/">
+<meta property="og:image" content="https://www.ezdevops.cloud/assets/images/DevOps-Hero.jpg">
 
-  /* Hover arrow */
-  .card-link::after {
-    content: '→';
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 22px;
-    color: #007bff;
-    opacity: 0;
-    transition: opacity 0.3s ease, right 0.3s ease;
-  }
-  .card-link:hover::after {
-    opacity: 1;
-    right: 20px;
-  }
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
 
-  footer {
-    background:#007bff;
-    color:white;
-    text-align:center;
-    padding:18px;
-    margin-top:50px;
-    box-shadow:0 -4px 12px rgba(0,0,0,0.2);
-    font-size:16px;
-    border-radius:8px;
-  }
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+  crossorigin="anonymous">
+</script>
 
-  @media(max-width:768px) {
-    .hero h1 { font-size:36px; }
-    .hero p { font-size:18px; }
-  }
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
-  .try-it {
-    color: red;
-    font-weight: bold;
-    margin-left: 6px;
-    animation: blink 1s infinite;
-  }
+<title>EZDevOps ThinkCentre – Learn DevOps Easily | Linux, CI/CD & Automation</title>
 
-  @keyframes blink {
-    0%   { opacity: 1; }
-    50%  { opacity: 0; }
-    100% { opacity: 1; }
-  }
 
-</style>
+   <!-- Global CSS Style -->
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Page-specific styles -->
+  <style>
+    .hero {
+      text-align: center;
+      padding:20px 10px 60px 10px; 
+      background: url('assets/images/Lightweight-Automation.jpg') center/cover no-repeat;
+      color: white;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+      border-radius: 15px;
+      min-height: 160px; /* CLS safety */
+    }
+  </style>
+
 </head>
+
 <body>
 
 <header class="navbar">
-  <div class="logo">⚙️ EZOps_ThinkCentre</div>
+  <div class="logo">
+    <span class="gear">⚙️</span> EZDevOps ThinkCentre
+  </div>
+  
   <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="linux-healthcheck.html">Linux HealthCheck</a>
-    <a href="application-healthcheck.html">Application HealthCheck</a>
-    <!--  <a href="http://linuxmint-thinkcentre:8081/" target="_blank">  Application Build Server </a> -->
-    <a href="Metrics.html">Metrics</a>
-    <a href="SOP.html">SOP</a>
-    <a href="devops_learn.html">Learn Devops</a>
-    <!-- <a href="About.html">About</a> -->
-    <a href="contact.html">SiteAdmin</a>
-    <button id="themeToggle" class="toggle-btn">🌙</button>
+      <a href="index.html">Home</a>
+      <a href="start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="devops_learn.html">DevOps/Linux Automations</a>
+            <a href="lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthCheck ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="application-healthcheck.html">Application HealthCheck</a>
+          <a href="webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="linux-basics.html">Linux</a>
+      <a href="git-basics.html">Git</a>
+      <a href="devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="metrics.html">Metrics</a>
+          <a href="sop.html">SOP</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="about.html">About Us</a> 
+      <a href="contact.html">Contact Us</a>  
   </nav>
+
 </header>
 
-<section class="hero">
-  <h1>EZOps_ThinkCentre</h1>
-  <p>Visual health monitoring & automation guidance for Linux and Applications.</p>
-</section>
+<main>
 
-<section class="cards container">
+  <section class="hero">
+    <h1>Practical DevOps & Linux Learning Platform </h1>
+    <p>
+        Learn DevOps the real-world way — monitoring, automation, CI/CD, reliability engineering, and operational thinking
+    </p>
 
-  <!-- Linux -->
-  <a href="linux-healthcheck.html" class="card-link">
+  </section>
+
+  <section class="cards container">
+    <a href="linux-healthcheck.html" class="card-link">
+      <div class="card">
+        <div class="icon">
+          <img
+            src="assets/images/Linuxhealth-emoji.jpg"
+            alt="Linux Health Monitoring"
+            width="96"
+            height="96"
+            loading="lazy"
+          >
+
+        </div>
+        <h3>Linux HealthCheck</h3>
+        <p>CPU, memory, disk, network, and process monitoring</p>
+      </div>
+    </a>
+
+    <a href="application-healthcheck.html" class="card-link">
+      <div class="card">
+        <div class="icon">
+          <img
+            src="assets/images/Apphealth-emoji.jpg"
+            alt="Application Health Monitoring"
+            width="96"
+            height="96"
+            loading="lazy"
+          >
+        </div>
+        <h3>Application Health</h3>
+        <p>Service uptime, logs, dependencies, and errors</p>
+      </div>
+    </a>
+
+    <!-- For Future addition 
+    <a href="webserver-healthcheck.html" class="card-link">
+      <div class="card">
+        <div class="icon">
+          <img src="assets/images/Webhealth-emoji.jpg" alt="Web Server Health">
+        </div>
+        <h3>Web Server Health</h3>
+        <p>HTTP status, response time, and traffic visibility</p>
+      </div>
+    </a>
+  -->
+
+    <a href="lightweight-automation.html" class="card-link">
+      <div class="card">
+        <div class="icon">
+          <img
+            src="assets/images/optimized/jenkins-emoji-64.webp"
+            width="55"
+            height="55"
+            alt="Lightweight Automation"
+            loading="lazy"
+            decoding="async"
+          >
+
+        </div>
+        <h3>Lightweight Automation</h3>
+        <p>Lightweight Automation and CI/CD triggers</p>
+      </div>
+    </a>
+
+  <a href="devops_learn.html" class="card-link">
     <div class="card">
       <div class="icon">
-        <img src="assets/images/Linuxhealth-emoji.jpg" alt="App Health Icon" width="30" height="40">
-      </div>
-     <h3>Linux server HealthCheck</h3>
-      <p>CPU, Memory, Disk, Network — full system diagnostics with rich insights.</p>
-    </div>
-  </a>
+        <img
+          src="assets/images/optimized/devops_icon-64.webp"
+          width="55"
+          height="55"
+          alt="DevOps Learning Sessions"
+          loading="lazy"
+          decoding="async"
+        >
 
-  <!-- Application -->
-  <a href="application-healthcheck.html" class="card-link">
-    <div class="card">
-      <div class="icon">
-        <img src="assets/images/Apphealth-emoji.jpg" alt="App Health Icon" width="30" height="30">
       </div>
-      <h3>Application HealthCheck</h3>
-      <p>Service uptime, logs, dependencies, response monitoring and Application Health.</p>
-    </div>
-  </a>
-
-<!-- Web Server HealthCheck  -->
-  <a href="application-healthcheck.html" class="card-link">
-    <div class="card">
-      <div class="icon">
-        <img src="assets/images/Webhealth-emoji.jpg" alt="Web Health Icon" width="30" height="30">
-      </div>
-      <h3>Web Server Healthcheck</h3>
-      <p>Service uptime, logs, dependencies, response monitoring and Web server health.</p>
-    </div>
-  </a>
-
-  <!-- Jenkins -->
-  <a href="http://localhost:8081/" target="_blank" class="card-link">
-    <div class="card">
-      <div class="icon">
-        <img src="assets/images/jenkins-emoji.jpg" alt="Jenkins Icon" width="30" height="30">
-      </div>
-      <h3>Jenkins Build Systems</h3>
-      <p>Automations, Jenkins jobs, pipelines, logs & service monitoring.</p>
-    </div>
-  </a>
-
-  <!-- Lightweight Automation  -->
-  <a href="Metrics.html" class="card-link">
-    <div class="card">
-      <div class="icon">
-        <img src="assets/images/jenkins-emoji.jpg" alt="Jenkins Icon" width="30" height="30">
-      </div>
-      <h3>Lightweight Automation</h3>
+      <h3>DevOps Learning Sessions</h3>
       <p>
-        Lightweight Automation uses Github triggers to build Jenkins Jobs.
-        <span class="try-it">*** Try it *** </span>
+        Step-by-step DevOps tutorials covering CI/CD, automation.
       </p>
     </div>
   </a>
 
-  <!-- Standard Operating Procedures  -->
-  <a href="SOP.html"  class="card-link">
-    <div class="card">
-      <div class="icon">
-        <img src="assets/images/SOP-icon.jpg" alt="SOP Icon" width="30" height="20">
+  </section>
+
+  <section class="platform-wrapper">
+    <div class="platform-content">
+
+      <div class="platform-sidebar">
+        <h4>Contents</h4>
+        <a href="#vision">Platform Vision</a>
+        <a href="#linux">Linux Infrastructure</a>
+        <a href="#monitoring">Monitoring & Observability</a>
+        <a href="#app">Application Reliability</a>
+        <a href="#web">Web Server & UX</a>
+        <a href="#cicd">CI/CD & Jenkins</a>
+        <a href="#sop">Standard Operating Procedures</a>
+        <a href="#learning">Real-World Learning</a>
+        <a href="#benefit">Who Benefits</a>
+        <a href="#value">Long-Term Value</a>
       </div>
-      <h3>Standard Operating Procedures</h3>
-      <p>Standard Operating Procedures Documents </p>
+
+
+      <div class="platform-main">
+        <h2>Practical DevOps & Linux Learning Platform.</h2>
+
+        <div class="platform-intro">
+          <p>
+          EZDevOps ThinkCentre is a practical learning platform for DevOps engineers,
+          Linux administrators, and cloud practitioners who want to understand how
+          real production systems work.
+          </p>
+
+          <p>
+          The platform focuses on real-world operational knowledge such as Linux system
+          health checks, monitoring and observability, CI/CD pipelines, automation,
+          and incident responsiveness. The goal is to help learners build strong
+          foundational skills that are actually used in day-to-day engineering roles.
+          </p>
+
+          <p>
+          All content is designed for beginners to intermediate professionals and is
+          presented in a structured, easy-to-follow format based on real operational
+          scenarios rather than theory alone.
+          </p>
+
+        </div>
+
+        <!-- SECTION: PLATFORM VISION -->
+        <h3 id="vision">Platform Vision</h3>
+        <p>
+          At its core, EZDevOps ThinkCentre was created to fill a gap in traditional technical
+          education. Most learning resources introduce tools—Git, Jenkins, Docker—without
+          explaining how those tools behave in real production conditions. The vision here is
+          to teach operational thinking: how systems behave under load, how failures propagate,
+          how dependencies interact, and how to recover reliably and predictably when issues arise.
+        </p>
+
+        <p>
+          This platform encourages learners to shift their mindset from tool‑centric to system‑centric.
+          Instead of memorizing commands, engineers learn how to analyze signals that indicate
+          system health or failure. Instead of following tutorials blindly, learners build a
+          mental model of how infrastructure components interact, what kinds of failures are
+          possible, and which metrics truly matter for proactive maintenance.
+        </p>
+
+        <p>
+          To achieve this vision, content here is not just long text. It is structured explanations,
+          real outputs, annotated logs, performance patterns, and scenario explanations that help
+          translate theory into everyday operational reasoning. Over time, learners will spend
+          less time debugging and more time improving reliability.
+        </p>
+
+        <p>
+          This philosophy applies not just to monitoring and troubleshooting, but to all DevOps
+          practices taught here: automation, continuous integration, deployment strategies,
+          standard operating procedures, performance analysis, and much more. You’ll learn the
+          why and the when — not just the how.
+        </p>
+
+        <!-- GOOGLE ADS - SNIPPET -- STARTS  -->
+        <div class="ad-slot">
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-1676512892913688"
+            data-ad-slot="1234567890"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        </div>
+
+        <script>
+          window.adsbygoogle = window.adsbygoogle || [];
+          window.adsbygoogle.push({});
+        </script>
+        <!-- GOOGLE ADS - SNIPPET -- ENDS  -->
+
+        <!-- SECTION: LINUX INFRASTRUCTURE -->
+        <h3 id="linux">Linux Infrastructure</h3>
+        <p>
+          Linux is the most widely used operating system in server environments, cloud infrastructure,
+          container hosts, CI/CD runners, and edge devices. Understanding Linux internals is not
+          optional for DevOps professionals — it is foundational. This section dives into why this
+          is true and how to build practical expertise.
+        </p>
+
+        <p>
+          At the core of Linux is the kernel — the part that interacts directly with hardware.
+          The kernel manages processes, memory allocation, I/O operations, and system calls from
+          applications. To understand performance, engineers must learn how the kernel schedules
+          processes, how memory is shared and swapped, and how I/O is prioritized under load.
+        </p>
+
+        <p>
+          Process scheduling determines how CPU time is allocated across running tasks.
+          Under normal conditions, the scheduler ensures responsiveness. Under heavy load,
+          however, processes can starve or compete aggressively for CPU shares. Recognizing
+          this pattern by watching metrics such as run queue length, context switch rates, and CPU
+          steal percentages informs decisions like scaling out workloads or optimizing code.
+        </p>
+
+        <p>
+          Memory management is another area that beginners often misunderstand. Linux uses free
+          memory aggressively for caching to improve performance. This can cause naive observers
+          to conclude “memory is full,” even when the system is healthy. Learning to interpret
+          cache, buffer, and swap usage correctly helps differentiate between expected behavior
+          and a memory pressure situation that needs eviction or application reconfiguration.
+        </p>
+
+        <p>
+          Disk I/O is often the bottleneck in real systems. Metrics like IOPS (I/O operations
+          per second), average wait times, and queue lengths reveal hot spots. Engineers must
+          understand when to provision faster storage, when to rebalance workloads, and when
+          to introduce caching layers or CDNs for improved throughput.
+        </p>
+
+        <p>
+          Networking on Linux involves interfaces, routing tables, firewall rules, and kernel
+          buffers. Latency, dropped packets, and retransmissions can be symptoms of congestion
+          upstream or misconfigured routes. Tools such as netstat, ss, and ip provide visibility
+          into active connections and port states. Advanced tools like tcpdump help diagnose
+          deeper packet-level issues.
+        </p>
+
+        
+        <!-- SECTION: MONITORING & OBSERVABILITY -->
+        <h3 id="monitoring">Monitoring & Observability</h3>
+        <p>
+          Monitoring is the foundation of operational awareness. Without visibility into system
+          behavior over time, teams react to incidents instead of preventing them. Good monitoring
+          captures metrics, logs, and traces that reveal patterns — both healthy and anomalous.
+        </p>
+
+        <p>
+          Metrics, such as CPU usage, memory pressure, disk I/O, network throughput, and load
+          averages, should be collected, stored, and visualized over time. Time-series databases
+          such as Prometheus or InfluxDB are commonly used to store this data. Dashboards built
+          with Grafana help humans interpret trends and set thresholds for alerting.
+        </p>
+
+        <p>
+          Alert fatigue is a real problem. Too many alerts without context cause engineers to
+          ignore notifications. The platform teaches how to define meaningful alerts: those that
+          signify actionable conditions. Instead of alerting on raw thresholds, alerts should
+          represent meaningful deviations from expected baselines or combinations of symptoms
+          that indicate real problems.
+        </p>
+
+        <p>
+          Logs provide a narrative of what happened. Structured logs, correlation IDs, and contextual
+          metadata enable efficient troubleshooting. The platform shows how log aggregation tools
+          such as Elasticsearch, Logstash, and Kibana (ELK stack) or Fluentd and Graylog can help
+          uncover root cause when combined with metric spikes and alert histories.
+        </p>
+
+        <p>
+          Traces represent distributed transaction paths through microservices. They are essential
+          in modern distributed systems to understand where latency or errors occur. Tools like
+          Jaeger and Zipkin capture spans and help pinpoint performance bottlenecks across services.
+        </p>
+
+        
+        <!-- SECTION: APPLICATION RELIABILITY -->
+        <h3 id="app">Application Reliability</h3>
+        <p>
+          Application reliability depends on both the application code and the environment it runs
+          in. This section explores patterns that improve reliability and resilience in real systems.
+        </p>
+
+        <p>
+          Resilience patterns such as retries with exponential backoff, circuit breakers, bulkheads,
+          and graceful degradation help applications withstand transient failures without catastrophic
+          system impact. The platform includes practical examples and scenarios where these patterns
+          are applied in real workloads.
+        </p>
+
+        <p>
+          Error budgets and SLOs (Service Level Objectives) are important operational constructs.
+          They help balance velocity and reliability by quantifying acceptable failure rates and
+          guiding where engineering focus should be applied to improve outcomes.
+        </p>
+
+        
+        <!-- SECTION: WEB SERVER & USER EXPERIENCE -->
+        <h3 id="web">Web Server & User Experience</h3>
+        <p>
+          Web servers are the gateway to users. Ensuring low latency, high throughput, and error
+          minimization correlates directly to positive user experience. Tools like NGINX and Apache
+          remain essential components in modern operational stacks.
+        </p>
+
+        <p>
+          Performance optimizations such as compression, caching, connection pooling, and TLS
+          tuning reduce server load and improve latency. The platform demonstrates real examples
+          of configuring these settings and interpreting performance metrics under load.
+        </p>
+
+        
+        <!-- SECTION: CI/CD & JENKINS -->
+        <h3 id="cicd">CI/CD & Jenkins</h3>
+        <p>
+          Continuous Integration and Continuous Delivery (CI/CD) accelerate delivery but must be
+          reliable. Jenkins pipelines should be modular, testable, and observable. Each stage
+          should provide logs and feedback so failures can be diagnosed quickly.
+        </p>
+
+        <p>
+          Rollbacks, artifact versioning, and job isolation strategies are covered with practical
+          scripts and explanations that help developers and operators maintain confidence in
+          automated workflows.
+        </p>
+
+        
+        <!-- SECTION: SOPs -->
+        <h3 id="sop">Standard Operating Procedures (SOPs)</h3>
+        <p>
+          SOPs document consistent operational tasks so teams can execute reliably under pressure.
+          Templates, checklists, and examples help learners create meaningful SOPs that reduce
+          errors and improve reproducibility during incidents.
+        </p>
+
+        
+        <!-- SECTION: REAL-WORLD LEARNING -->
+        <h3 id="learning">Real-World Learning Philosophy</h3>
+        <p>
+          The best learning comes from doing. Lab environments, simulated outages, game days,
+          and practice drills help internalize concepts. This platform includes guidance for
+          setting up local labs and running controlled tests.
+        </p>
+
+        
+        <!-- SECTION: WHO BENEFITS -->
+        <h3 id="benefit">Who Benefits from This Platform</h3>
+        <p>
+          Whether you are a novice starting with Linux, an engineer transitioning to DevOps, or
+          an experienced operator improving reliability, this platform provides layered insights
+          to help you grow.
+        </p>
+
+        
+        <!-- SECTION: LONG TERM VALUE -->
+        <h3 id="value">Long-Term Value</h3>
+        <p>
+          Long-term success in DevOps comes from continuous improvement, feedback loops, and
+          community learning. This section ties together all lessons into a strategy for
+          ongoing career growth.
+        </p>
+
+        
+      </div>
     </div>
-  </a>
 
-</section>
+        <div class="ad-slot">
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-1676512892913688"
+            data-ad-slot="1234567890"
+            data-ad-format="auto"
+            data-full-width-responsive="true">
+          </ins>
+        </div>
 
-<footer>
-  <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
-</footer>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="assets/script.js"></script>
-<script src="assets/charts.js"></script>
+    </section>
+  </main>
+
+
+  <footer>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms & Conditions</a> |
+    <a href="disclaimer.html">Disclaimer</a>
+    <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+  </footer>
+
+
+
+<script>
+    // Smooth scroll
+    document.querySelectorAll('.platform-sidebar a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Active link on scroll
+    const sections = document.querySelectorAll('.platform-main h3');
+    const sidebarLinks = document.querySelectorAll('.platform-sidebar a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        const sectionTop = sec.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = sec.getAttribute('id');
+        }
+      });
+      sidebarLinks.forEach(link => {
+        link.classList.remove('active-section');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active-section');
+        }
+      });
+    });
+</script>
+
+  <script src="assets/nav-active.js" defer></script>
+  
+
 </body>
 </html>
 

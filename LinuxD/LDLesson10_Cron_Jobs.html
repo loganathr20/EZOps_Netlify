@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Lesson 10: Cron Jobs for DevOps | EZDevOps ThinkCentre</title>
+
+<meta name="description" content="Lesson 10 explains cron jobs in Linux for DevOps including scheduling syntax, crontab usage, automation examples, and best practices.">
+
+<link rel="canonical" href="https://www.ezdevops.cloud/LinuxD/LDLesson10_Cron_Jobs.html">
+
+<meta property="og:title" content="Lesson 10: Cron Jobs for DevOps">
+<meta property="og:description" content="Linux cron jobs scheduling, automation, and DevOps use cases.">
+<meta property="og:type" content="article">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+  crossorigin="anonymous"></script>
+
+<!-- CSS in same folder -->
+<link rel="stylesheet" href="LDstyles.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">⚙️ EZDevOps ThinkCentre</div>
+  <nav>
+      <a href="../index.html">Home</a>
+      <a href="../start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="../devops_learn.html">DevOps/Linux Automations</a>
+            <a href="../lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="../application-healthcheck.html">Application HealthCheck</a>
+          <a href="../webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="../linux-basics.html">Linux</a>
+      <a href="../git-basics.html">Git</a>
+      <a href="../devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../metrics.html">Metrics</a>
+          <a href="../sop.html">SOP</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="../about.html">About Us</a> 
+      <a href="../contact.html">Contact Us</a>  
+  </nav>
+  
+</header>
+
+<!-- FLOATING SIDEBAR MENU -->
+<div class="sidebar-menu">
+  <h3>Linux DevOps Lessons</h3>
+  <a href="LDLesson1_Introduction.html" >Lesson 1 – Linux for Devops. </a>
+  <a href="LDLesson2_Linux_Basics.html">Lesson 2 – Linux Basics</a>
+  <a href="LDLesson3_Shell_Scripting.html">Lesson 3 – Shell Scripting</a>
+  <a href="LDLesson4_File_Operations.html">Lesson 4 – File Operations</a>
+  <a href="LDLesson5_Permissions_Ownership.html">Lesson 5 – Permissions & Ownership</a>
+  <a href="LDLesson6_Package_Management.html">Lesson 6 – Package Management</a>
+  <a href="LDLesson7_Process_Monitoring.html">Lesson 7 – Process Monitoring</a>
+  <a href="LDLesson8_Networking.html">Lesson 8 – Linux Networking</a>
+  <a href="LDLesson9_Advanced_Bash.html">Lesson 9 – Advanced Bash</a>
+
+  <!-- ACTIVE -->
+  <a href="LDLesson10_Cron_Jobs.html" class="active">
+    Lesson 10 – Cron Jobs
+  </a>
+
+  <a href="LDLesson11_Service_Automation.html">Lesson 11 – Service Automation</a>
+  <a href="LDLesson14_Monitoring_SelfHealing.html">Lesson 12 – Monitoring & Self-Healing</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Lesson 10: Cron Jobs</h1>
+  <p>Automating repetitive tasks with Linux schedulers</p>
+  <a href="../linux-basics.html" class="back-btn-bottom">
+    ← Back to Linux Basics and DevOps Automations Page
+  </a>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <div class="section">
+    <h2>What is a Cron Job?</h2>
+    <p>
+      Cron is a time-based job scheduler in Linux.
+      It allows DevOps engineers to automate repetitive tasks
+      such as backups, log cleanup, monitoring, and report generation.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Understanding Cron Syntax</h2>
+    <pre><code>
+* * * * * command
+| | | | |
+| | | | └── Day of week (0–7)
+| | | └──── Month (1–12)
+| | └────── Day of month (1–31)
+| └──────── Hour (0–23)
+└────────── Minute (0–59)
+    </code></pre>
+  </div>
+
+  <div class="section">
+    <h2>Managing Crontab</h2>
+    <ul>
+      <li><code>crontab -e</code> – Edit cron jobs</li>
+      <li><code>crontab -l</code> – List cron jobs</li>
+      <li><code>crontab -r</code> – Remove all cron jobs</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Common Cron Examples</h2>
+    <pre><code>
+# Run backup every day at 2 AM
+0 2 * * * /scripts/backup.sh
+
+# Clean logs every Sunday
+0 3 * * 0 /scripts/cleanup.sh
+
+# Check disk usage every 5 minutes
+*/5 * * * * /scripts/disk_check.sh
+    </code></pre>
+  </div>
+
+  <div class="section">
+    <h2>Cron Jobs in DevOps</h2>
+    <ul>
+      <li>Database and filesystem backups</li>
+      <li>Log rotation and cleanup</li>
+      <li>Health checks and monitoring</li>
+      <li>Triggering automation scripts</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Best Practices</h2>
+    <ul>
+      <li>Always use full paths in cron jobs</li>
+      <li>Redirect output to log files</li>
+      <li>Test scripts manually before scheduling</li>
+      <li>Avoid running heavy jobs during peak hours</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>What You Learned</h2>
+    <ul>
+      <li>How cron works in Linux</li>
+      <li>Cron syntax and scheduling</li>
+      <li>Real-world DevOps automation examples</li>
+      <li>Best practices for reliable cron jobs</li>
+    </ul>
+  </div>
+
+  
+  <a href="LDLesson11_Service_Automation.html" class="back-btn-bottom">→ Next: Lesson 11 - Service Automation </a>
+  
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="../index.html"><strong>Home</strong></a> |
+  <a href="../about.html"><strong>About Us</strong></a> |
+  <a href="../contact.html"><strong>Contact Us</strong></a> |
+  <a href="../privacy.html"><strong>Privacy Policy</strong></a> |
+  <a href="../terms.html"><strong>Terms & Conditions</strong></a> |
+  <a href="../disclaimer.html"><strong>Disclaimer</strong></a>
+  <p>© 2026 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+</body>
+</html>
+

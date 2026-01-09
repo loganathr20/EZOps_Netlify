@@ -1,0 +1,354 @@
+/* =========================================================
+   COMPLETE CI/CD LESSON SIDEBAR + LAYOUT + SUBMENU STYLES
+   ========================================================= */
+
+/* LAYOUT */
+.lesson-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+}
+
+/* ================= SIDEBAR ================= */
+
+
+.lesson-sidebar {
+  width: 260px;
+  position: fixed;
+  right: 20px;
+  left: auto;
+  top: 120px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  background: linear-gradient(180deg, #8A2BE2, #9370DB);
+  border-radius: 16px;
+  padding: 18px 16px 22px;
+  box-shadow: 0 8px 18px rgba(138,43,226,0.35);
+  scroll-behavior: smooth;
+}
+
+/* Sidebar title */
+.lesson-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.lesson-sidebar h3 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.lesson-sidebar h3 a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar links */
+.lesson-sidebar a {
+  display: block;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #fff3e6;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.lesson-sidebar a:hover {
+  background: rgba(255,255,255,0.25);
+  color: #ffffff;
+}
+
+/* Active section */
+.lesson-sidebar a.active {
+  background: #ffffff;
+  color: #ff7a18;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Sidebar top link */
+.sidebar-top-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Custom scrollbar */
+.lesson-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lesson-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+}
+
+.lesson-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ================= SUBMENU ================= */
+
+.lesson-with-submenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-with-submenu > a {
+  font-weight: bold;
+  color: #ffffff;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+/* Submenu container */
+.lesson-with-submenu .submenu {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  gap: 4px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+/* When submenu is open */
+.lesson-with-submenu .submenu.open {
+  max-height: 500px;
+}
+
+/* Submenu links */
+.lesson-with-submenu .submenu a {
+  font-size: 0.95em;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 3px 0;
+  font-weight: 500;
+}
+
+/* Hover effect */
+.lesson-with-submenu .submenu a:hover {
+  color: #00bfff;
+  font-weight: 600;
+}
+
+.lesson-with-submenu .submenu a.active {
+  background: #ffffff;
+  color: #8A2BE2;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* ================= DIAGRAM ================= */
+
+.diagram {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.diagram-box {
+  background: #eef3ff;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  color: #0056b3;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.diagram-arrow {
+  font-size: 22px;
+  font-weight: bold;
+  align-self: center;
+  color: #007bff;
+}
+
+/* ================= CI/CD FLOW ================= */
+
+.cicd-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #e6f0ff, #f4f8ff);
+  color: #0056b3;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: 800;
+  min-width: 110px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.flow-arrow {
+  font-size: 26px;
+  font-weight: 900;
+  color: #007bff;
+}
+
+/* ================= HEADER / HERO / FOOTER SAFETY ================= */
+
+header.navbar {
+  position: relative;
+  z-index: 1000;
+}
+
+.hero {
+  margin-top: 20px;
+  z-index: 1;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* ================= Lesson stlyes - custom ================= */
+
+.lesson-list {
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.lesson-list li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.lesson-list,
+.lesson-steps {
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.lesson-list li,
+.lesson-steps li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.code-block {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  margin: 15px 0;
+}
+
+.terminal-box {
+  background: #0f172a;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  margin: 20px 0;
+}
+
+.terminal-header {
+  background: #1e293b;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red { background: #ef4444; }
+.yellow { background: #facc15; }
+.green { background: #22c55e; }
+
+.terminal-title {
+  margin-left: auto;
+  color: #cbd5f5;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.terminal-content {
+  color: #e5e7eb;
+  padding: 18px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+
+/* ================= MOBILE SLIDE-IN SIDEBAR ================= */
+
+.mobile-sidebar-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #8A2BE2, #9370DB);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  z-index: 2000;
+  cursor: pointer;
+}
+
+/* Mobile behavior */
+@media (max-width: 900px) {
+  .mobile-sidebar-btn {
+    display: block;
+  }
+
+  .lesson-sidebar {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 70vh;
+    background: linear-gradient(180deg, #8A2BE2, #9370DB);
+    z-index: 1500;
+    transition: right 0.35s ease;
+    padding-top: 80px;
+  }
+
+  .lesson-sidebar.open {
+    right: 0;
+  }
+}
+
+/* desktop only behavior */
+@media (min-width: 901px) {
+  .container {
+    margin-right: 300px;
+  }
+}

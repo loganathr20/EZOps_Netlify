@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linux Commands Cheat Sheet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Lesson 2: Linux Basics | EZDevOps ThinkCentre</title>
+
+<meta name="description" content="Lesson 2 covers Linux basics for DevOps, including filesystem, commands, users, groups, and permissions.">
+
+<link rel="canonical" href="https://www.ezdevops.cloud/LinuxD/ldlesson2_4_linux_users.html">
+
+<meta property="og:title" content="Lesson 2: Linux Basics">
+<meta property="og:description" content="Learn Linux basics for DevOps: filesystem, commands, users, groups, and permissions.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="BLinuxforDevops.jpg">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+  crossorigin="anonymous"></script>
+
+<!-- LD pages css file  -->
+<link rel="stylesheet" href="LDstyles.css">
+
+<!-- Page specific styles -->
+<style>
+
+.container {
+  max-width:1100px;
+  margin:auto;
+}
+h1 {
+  text-align:center;
+}
+h2 {
+  margin-top:40px;
+  padding:12px;
+  border-radius:10px;
+  background:#e3f2fd;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+  background:white;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+th {
+  background:#1e88e5;
+  color:white;
+  padding:10px;
+  text-align:left;
+}
+td {
+  padding:10px;
+  border-bottom:1px solid #ddd;
+  vertical-align:top;
+}
+code {
+  background:#f1f1f1;
+  padding:3px 6px;
+  border-radius:4px;
+}
+a {
+  color:#1565c0;
+  font-weight:bold;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+<header class="navbar">
+  <div class="logo">⚙️ EZDevOps ThinkCentre</div>
+  <nav>
+      <a href="../index.html">Home</a>
+      <a href="../start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="../devops_learn.html">DevOps/Linux Automations</a>
+            <a href="../lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="../application-healthcheck.html">Application HealthCheck</a>
+          <a href="../webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="../linux-basics.html">Linux</a>
+      <a href="../git-basics.html">Git</a>
+      <a href="../devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../metrics.html">Metrics</a>
+          <a href="../sop.html">SOP</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="../about.html">About Us</a> 
+      <a href="../contact.html">Contact Us</a>  
+  </nav>
+  
+</header>
+
+<!-- FLOATING SIDEBAR MENU -->
+<div class="sidebar-menu">
+  <h3>Linux DevOps Lessons</h3>
+  <a href="LDLesson1_Introduction.html" >Lesson 1 – Linux for Devops. </a>
+  
+  <!-- Lesson 2 with submenu inside main menu -->
+  <div class="lesson-with-submenu">
+    <a href="LDLesson2_Linux_Basics.html" class="active">Lesson 2 – Linux Basics</a>
+    <div class="submenu">
+      <a href="ldlesson2_1_linux_overview.html">2.1 Linux Overview</a>
+      <a href="ldlesson2_2_linux_filesystem.html">2.2 Linux File System</a>
+      <a href="ldlesson2_3_linux_commands.html">2.3 Basic Commands</a>
+      <a href="ldlesson2_4_linux_users.html">2.4 Users & Groups</a>
+      <a href="ldlesson2_5_linux_permissions.html">2.5 File Permissions Basics & Group Ownership</a>
+    </div>
+  </div>
+
+  <a href="LDLesson3_Shell_Scripting.html">Lesson 3 – Shell Scripting</a>
+  <a href="LDLesson4_File_Operations.html">Lesson 4 – File Operations</a>
+  <a href="LDLesson5_Permissions_Ownership.html">Lesson 5 – Permissions & Ownership</a>
+  <a href="LDLesson6_Package_Management.html">Lesson 6 – Package Management</a>
+  <a href="LDLesson7_Process_Monitoring.html">Lesson 7 – Process Monitoring</a>
+  <a href="LDLesson8_Networking.html">Lesson 8 – Linux Networking</a>
+  <a href="LDLesson9_Advanced_Bash.html">Lesson 9 – Advanced Bash</a>
+  <a href="LDLesson10_Cron_Jobs.html">Lesson 10 – Cron Jobs</a>
+  <a href="LDLesson11_Service_Automation.html">Lesson 11 – Service Automation</a>
+  <a href="LDLesson14_Monitoring_SelfHealing.html">Lesson 12 – Monitoring & Self-Healing</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Linux Users and Groups</h1>
+  <p>User and group management in Linux is fundamental to security and access control in the multi-user environment. </p>
+  <a href="LDLesson2_Linux_Basics.html" class="back-btn-bottom">← Back to Linux Basics</a>
+</section>
+
+ <!-- MAIN CONTENT -->
+<div class="container">
+
+    <div class="section">
+    
+    <p>User and group management in Linux is fundamental to security and access control in the multi-user environment. It involves managing accounts, organizing users into groups, and assigning permissions to control access to files and resources.&nbsp;</p>
+
+    <h2>Key Concepts </h2>
+    <p>
+
+    <p>
+      Users: Each user has a unique username and a User ID (UID). The root user is the superuser with administrative privileges.<br />Groups: Groups are collections of users that simplify permission management. Each user belongs to a primary group (often their own name by default) and can belong to multiple secondary (supplementary) groups. Groups have a unique Group ID (GID).<br />Permissions: Access rights (read, write, execute) are assigned to three categories: the file owner, the file's group, and others (everyone else).<br />Configuration Files: Key information is stored in plain text files:<br />/etc/passwd: Stores user account information (except passwords).<br />/etc/shadow: Stores encrypted user passwords.<br />/etc/group: Stores group information and members.<br />/etc/sudoers: Defines which users or groups have sudo (superuser) privileges.&nbsp;
+    </p>
+        
+
+    <h2>Administrative Commands (User, Group & Permissions)</h2>
+    <p>
+      Administrative tasks typically require <code>sudo</code> or root privileges.
+      These commands are essential for managing users, groups, and permissions in Linux.
+    </p>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Command</th>
+          <th>Purpose</th>
+          <th>Example</th>
+          <th>Man</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- User Management -->
+        <tr>
+          <td>User Management</td>
+          <td><code>useradd</code></td>
+          <td>Creates a new user account. Use <code>-m</code> to create the home directory.</td>
+          <td><code>sudo useradd -m devuser</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man8/useradd.8.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>User Management</td>
+          <td><code>passwd</code></td>
+          <td>Sets or changes a user’s password.</td>
+          <td><code>sudo passwd devuser</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man1/passwd.1.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>User Management</td>
+          <td><code>usermod</code></td>
+          <td>Modifies user properties such as groups or home directory.</td>
+          <td><code>sudo usermod -aG sudo devuser</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man8/usermod.8.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>User Management</td>
+          <td><code>userdel</code></td>
+          <td>Deletes a user account. Use <code>-r</code> to remove home directory.</td>
+          <td><code>sudo userdel -r devuser</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man8/userdel.8.html" target="_blank">man</a></td>
+        </tr>
+
+        <!-- Group Management -->
+        <tr>
+          <td>Group Management</td>
+          <td><code>groupadd</code></td>
+          <td>Creates a new group.</td>
+          <td><code>sudo groupadd devops</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man8/groupadd.8.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>Group Management</td>
+          <td><code>usermod -aG</code></td>
+          <td>Adds a user to a supplementary group.</td>
+          <td><code>sudo usermod -aG devops devuser</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man8/usermod.8.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>Group Management</td>
+          <td><code>groupmod</code></td>
+          <td>Modifies group properties such as name or GID.</td>
+          <td><code>sudo groupmod -n devops-team devops</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man8/groupmod.8.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>Group Management</td>
+          <td><code>groupdel</code></td>
+          <td>Deletes a group.</td>
+          <td><code>sudo groupdel devops</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man8/groupdel.8.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>Group Management</td>
+          <td><code>gpasswd -d</code></td>
+          <td>Removes a user from a specific group.</td>
+          <td><code>sudo gpasswd -d devuser devops</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man1/gpasswd.1.html" target="_blank">man</a></td>
+        </tr>
+
+        <!-- Permissions & Ownership -->
+        <tr>
+          <td>Permissions & Ownership</td>
+          <td><code>ls -l</code></td>
+          <td>Lists file details including permissions and ownership.</td>
+          <td><code>ls -l /var/www</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man1/ls.1.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>Permissions & Ownership</td>
+          <td><code>chown</code></td>
+          <td>Changes file or directory owner and group.</td>
+          <td><code>sudo chown user:group file</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man1/chown.1.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>Permissions & Ownership</td>
+          <td><code>chmod</code></td>
+          <td>Changes file or directory permissions.</td>
+          <td><code>chmod 755 script.sh</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man1/chmod.1.html" target="_blank">man</a></td>
+        </tr>
+        <tr>
+          <td>Permissions & Ownership</td>
+          <td><code>id</code> / <code>groups</code></td>
+          <td>Displays user UID, GID, and group memberships.</td>
+          <td><code>id devuser</code></td>
+          <td><a href="https://man7.org/linux/man-pages/man1/id.1.html" target="_blank">man</a></td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+      <h2>Best Practices </h2>
+      <p>
+        <ul>
+        <li>Principle of Least Privilege:</li>
+        <li>Grant users only the minimum access necessary for their tasks to enhance security.</li>
+        <li>Use sudo:</li>
+        <li>Avoid using the root account directly. Instead, manage privileges via the /etc/sudoers file and the sudo command.</li>
+        <li>Regular Auditing: Periodically review user accounts and group memberships to remove unneeded access.</li>
+        <li>Automation: Use Bash scripts to automate routine user management tasks for efficiency and consistency.</li>
+        </ul>
+      </p>
+</div>
+</div>
+<!-- FOOTER -->
+<footer>
+  <a href="../index.html">Home</a> |
+  <a href="../about.html">About Us</a> |
+  <a href="../contact.html">Contact Us</a> |
+  <a href="../privacy.html">Privacy Policy</a> |
+  <a href="../terms.html">Terms & Conditions</a> |
+  <a href="../disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+</body>
+
+</html>
+

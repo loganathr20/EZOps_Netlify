@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="refresh" content="200">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- META DESCRIPTION (CTR BOOSTER) -->
+    <meta name="description"
+        content="EZDevOps ThinkCentre is a beginner-friendly DevOps learning platform covering Linux basics, DevOps tutorials, CI/CD pipelines, Git, Jenkins, automation, monitoring, and real-world DevOps workflows." />
+
+    <!-- Keywords (Optional – not used by Google, but harmless) -->
+    <meta name="keywords"
+        content="DevOps tutorial, EZDevOps, EZOPS, EZDevOps_ThinkCentre, DevOps, Linux DevOps, CI/CD pipeline, Jenkins tutorial, Git DevOps, DevOps automation, monitoring tools, DevOps for beginners, EZDevOps, EZOps" />
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+  <link rel="canonical" href="https://www.ezdevops.cloud/webserver-healthcheck.html">
+
+    <!-- Open Graph (Social Sharing) -->
+    <meta property="og:title" content="EZDevOps ThinkCentre | Learn DevOps the Easy Way">
+    <meta property="og:description" content="Learn DevOps step-by-step with Linux, CI/CD, Jenkins, Git, automation, and monitoring tutorials.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ezdevops.cloud/">
+    <meta property="og:image" content="https://www.ezdevops.cloud/assets/images/DevOps-Hero.jpg">
+
+    <!-- Google AdSense -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+        crossorigin="anonymous"></script>
+
+
+  <title> EZDevOps ThinkCentre – Learn DevOps Easily | Linux, CI/CD & Automation </title>
+     <meta name="description" content="Monitor CPU, Memory, Disk, Network, and System Load for Linux systems with visual dashboards and detailed reports." />
+
+   <!-- Global CSS Style -->
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Page-specific styles -->
+    <style>
+      /* Hero */
+      .hero {
+        text-align:center; 
+        padding:20px 10px 60px 10px; 
+        color:white;
+        background:url('assets/images/Application-Health-Monitoring.jpg') center/cover no-repeat;
+        text-shadow:0 3px 8px rgba(0,0,0,0.7);
+        border-radius:15px;
+        min-height: 160px; /* CLS safety */
+      }
+    </style>
+
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <span class="gear">⚙️</span> EZDevOps ThinkCentre
+  </div>
+
+<nav>
+      <a href="index.html">Home</a>
+      <a href="start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="devops_learn.html">DevOps/Linux Automations</a>
+            <a href="lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="application-healthcheck.html">Application HealthCheck</a>
+          <a href="webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="linux-basics.html">Linux</a>
+      <a href="git-basics.html">Git</a>
+      <a href="devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="metrics.html">Metrics</a>
+          <a href="sop.html">SOP</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="about.html">About Us</a> 
+      <a href="contact.html">Contact Us</a>  
+  </nav>
+  
+</header>
+
+<section class="hero">
+  <h1>EZDevOps_ThinkCentre – Web Server HealthCheck</h1>
+  <p>Monitor services, uptime, logs, and response times with rich visual insights.</p>
+  <a href="index.html" class="btn-home">Home</a>
+</section>
+
+<div class="container">
+  <div class="cards">
+    <div class="card">
+      <div class="icon">⏱️</div>
+      <h3>Uptime Monitoring</h3>
+      <p>Track uptime percentage of critical applications.</p>
+      <canvas id="uptimeChart" width="300" height="200"></canvas>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Response Time</h3>
+      <p>Measure average response times and latency.</p>
+      <canvas id="responseChart" width="300" height="200"></canvas>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Service Status</h3>
+      <p>Visualize active vs inactive services in real time.</p>
+      <canvas id="serviceChart" width="300" height="200"></canvas>
+    </div>
+    <div class="card">
+      <div class="icon">📂</div>
+      <h3>Log Analysis</h3>
+      <p>Track error logs and service events visually.</p>
+      <canvas id="logsChart" width="300" height="200"></canvas>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About Us</a> |
+  <a href="contact.html">Contact Us</a> |
+  <a href="privacy.html">Privacy Policy</a> |
+  <a href="terms.html">Terms & Conditions</a> |
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const uptimeCtx = document.getElementById('uptimeChart').getContext('2d');
+new Chart(uptimeCtx, { type: 'line', data: { labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], datasets:[{ label:'Uptime %', data:[99,98,100,97,99,100,98], borderColor:'#28a745', backgroundColor:'rgba(40,167,69,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
+
+const responseCtx = document.getElementById('responseChart').getContext('2d');
+new Chart(responseCtx, { type:'bar', data:{ labels:['API','Web','DB','Cache'], datasets:[{ label:'Response ms', data:[120,150,90,70], backgroundColor:'#007bff' }] }, options:{ responsive:true, plugins:{ legend:{ display:false } } } });
+
+const serviceCtx = document.getElementById('serviceChart').getContext('2d');
+new Chart(serviceCtx, { type:'doughnut', data:{ labels:['Active','Inactive'], datasets:[{ data:[15,3], backgroundColor:['#28a745','#dc3545'] }] }, options:{ responsive:true } });
+
+const logsCtx = document.getElementById('logsChart').getContext('2d');
+new Chart(logsCtx, { type:'line', data:{ labels:['0h','4h','8h','12h','16h','20h','24h'], datasets:[{ label:'Errors', data:[2,1,0,3,1,0,2], borderColor:'#ffc107', backgroundColor:'rgba(255,193,7,0.2)', fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:true } } } });
+</script>
+
+<script src="assets/nav-active.js" defer></script>
+
+</body>
+</html>
+
+

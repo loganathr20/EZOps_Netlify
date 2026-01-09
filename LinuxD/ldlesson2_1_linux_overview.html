@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linux Commands Cheat Sheet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Lesson 2: Linux Basics | EZDevOps ThinkCentre</title>
+
+<meta name="description" content="Lesson 2 covers Linux basics for DevOps, including filesystem, commands, users, groups, and permissions.">
+
+<link rel="canonical" href="https://www.ezdevops.cloud/LinuxD/ldlesson2_1_linux_overview.html">
+
+<meta property="og:title" content="Lesson 2: Linux Basics">
+<meta property="og:description" content="Learn Linux basics for DevOps: filesystem, commands, users, groups, and permissions.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="BLinuxforDevops.jpg">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+  crossorigin="anonymous"></script>
+
+<!-- LD pages css file  -->
+<link rel="stylesheet" href="LDstyles.css">
+
+<!-- Page specific styles -->
+<style>
+
+.container {
+  max-width:1100px;
+  margin:auto;
+}
+h1 {
+  text-align:center;
+}
+h2 {
+  margin-top:40px;
+  padding:12px;
+  border-radius:10px;
+  background:#e3f2fd;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+  background:white;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+th {
+  background:#1e88e5;
+  color:white;
+  padding:10px;
+  text-align:left;
+}
+td {
+  padding:10px;
+  border-bottom:1px solid #ddd;
+  vertical-align:top;
+}
+code {
+  background:#f1f1f1;
+  padding:3px 6px;
+  border-radius:4px;
+}
+a {
+  color:#1565c0;
+  font-weight:bold;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+<header class="navbar">
+  <div class="logo">⚙️ EZDevOps ThinkCentre</div>
+  <nav>
+      <a href="../index.html">Home</a>
+      <a href="../start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="../devops_learn.html">DevOps/Linux Automations</a>
+            <a href="../lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="../application-healthcheck.html">Application HealthCheck</a>
+          <a href="../webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="../linux-basics.html">Linux</a>
+      <a href="../git-basics.html">Git</a>
+      <a href="../devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../metrics.html">Metrics</a>
+          <a href="../sop.html">SOP</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="../about.html">About Us</a> 
+      <a href="../contact.html">Contact Us</a>  
+  </nav>
+  
+</header>
+
+<!-- FLOATING SIDEBAR MENU -->
+<div class="sidebar-menu">
+  <h3>Linux DevOps Lessons</h3>
+  <a href="LDLesson1_Introduction.html" >Lesson 1 – Linux for Devops. </a>
+  
+  <!-- Lesson 2 with submenu inside main menu -->
+  <div class="lesson-with-submenu">
+    <a href="LDLesson2_Linux_Basics.html" class="active">Lesson 2 – Linux Basics</a>
+    <div class="submenu">
+      <a href="ldlesson2_1_linux_overview.html">2.1 Linux Overview</a>
+      <a href="ldlesson2_2_linux_filesystem.html">2.2 Linux File System</a>
+      <a href="ldlesson2_3_linux_commands.html">2.3 Basic Commands</a>
+      <a href="ldlesson2_4_linux_users.html">2.4 Users & Groups</a>
+      <a href="ldlesson2_5_linux_permissions.html">2.5 File Permissions Basics & Group Ownership</a>
+    </div>
+  </div>
+
+  <a href="LDLesson3_Shell_Scripting.html">Lesson 3 – Shell Scripting</a>
+  <a href="LDLesson4_File_Operations.html">Lesson 4 – File Operations</a>
+  <a href="LDLesson5_Permissions_Ownership.html">Lesson 5 – Permissions & Ownership</a>
+  <a href="LDLesson6_Package_Management.html">Lesson 6 – Package Management</a>
+  <a href="LDLesson7_Process_Monitoring.html">Lesson 7 – Process Monitoring</a>
+  <a href="LDLesson8_Networking.html">Lesson 8 – Linux Networking</a>
+  <a href="LDLesson9_Advanced_Bash.html">Lesson 9 – Advanced Bash</a>
+  <a href="LDLesson10_Cron_Jobs.html">Lesson 10 – Cron Jobs</a>
+  <a href="LDLesson11_Service_Automation.html">Lesson 11 – Service Automation</a>
+  <a href="LDLesson14_Monitoring_SelfHealing.html">Lesson 12 – Monitoring & Self-Healing</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Linux  Overview </h1>
+  <p>Overview of Linux -- Flavors,  Shells, Terminal </p>
+  <a href="LDLesson2_Linux_Basics.html" class="back-btn-bottom">← Back to Linux Basics</a>
+</section>
+
+ <!-- MAIN CONTENT -->
+<div class="container">
+    <div class="section">
+
+    <p><strong>Linux Overview:</strong><br /><br />Linux is a free, open-source, Unix-like operating system kernel and family of OSes known for its stability, security, and flexibility, powering everything from smartphones (Android) and servers to supercomputers and desktops, offering users powerful customization and control through various "distributions" (distros) like Ubuntu or Fedora. It provides core system management (kernel) and a vast software ecosystem, making it a dominant force in cloud, web, and enterprise computing.&nbsp;<br />Linux is a family of free and open-source operating systems based on the Linux kernel. Operating systems based on Linux are known as Linux distributions or distros. Examples include Debian, Ubuntu, Fedora, CentOS, Gentoo, Arch Linux, and many others.</p>
+    <p><strong>Linux Flavors / Distros:</strong><br />"Flavors of Linux," also known as Linux Distributions (Distros) are complete operating systems built around the Linux kernel, packaging it with software, a package manager, and a desktop environment (like GNOME, KDE) for different user needs, with popular examples including Ubuntu, Fedora, Debian, Linux Mint, Arch Linux, openSUSE, and Manjaro, offering variety from user-friendly desktops to specialized server or minimal systems.&nbsp;<br />This video provides a brief overview of several popular Linux distributions:<br /><br /><strong>Debian-based:</strong> Known for stability and large software repositories.</p>
+    <ul>
+    <li>Ubuntu: Very popular, user-friendly, with official flavors like Kubuntu (KDE), Xubuntu (Xfce), Lubuntu (LXQt).</li>
+    <li>Linux Mint: Based on Ubuntu, offers a familiar Windows-like interface.</li>
+    <li>Pop!_OS, Zorin OS: User-focused, often for beginners or specific workflows</li>
+    </ul>
+    <p><br /><strong>Key Aspects of Linux:</strong><br />&nbsp; &nbsp; Open Source: Its source code is freely available for anyone to view, modify, and distribute, fostering massive global collaboration.<br />&nbsp; &nbsp; Kernel-Based: At its core is the Linux kernel, which manages hardware, while distributions bundle it with user interfaces (Desktop Environments like GNOME, KDE) and tools (like the Bash shell).<br />&nbsp; &nbsp; Distributions (Distros): Different versions (e.g., Ubuntu, Debian, Fedora, Arch) package the kernel and software for specific needs, from user-friendly desktops to server management.<br />&nbsp; &nbsp; Versatility: Runs on virtually anything, from tiny embedded devices and Android phones to vast server farms and the world's fastest supercomputers.<br />&nbsp; &nbsp; Security &amp; Stability: Renowned for robust security features and reliability, making it ideal for critical infrastructure and development.&nbsp;<br />&nbsp; &nbsp; Common Uses:<br />&nbsp; &nbsp; Servers &amp; Cloud: The backbone of most web servers, cloud infrastructure, and enterprise systems.<br />&nbsp; &nbsp; Mobile: Powers Android, the most popular smartphone OS.<br />&nbsp; &nbsp; Supercomputers: Dominates the world's most powerful supercomputers.<br />&nbsp; &nbsp; Desktop &amp; Development: Popular among developers for its powerful command-line tools, scripting (Python, Go), containers (Docker, Kubernetes), and customization.&nbsp;<br /><br /><strong>Prerequisites</strong><br />To follow along with this guide, you will need access to a computer running a Linux-based operating system.&nbsp;<br /><br /><strong>The Terminal</strong><br />A terminal is an input and output environment typically a text-only window running a shell.<br />A shell is a program that exposes the computer&rsquo;s operating system to a user or program. In Linux systems, the shell presented in a terminal is a command line interpreter. These are the shells availble.</p>
+    <ul>
+    <li>Csh - C shell</li>
+    <li>Bash- Most Commonly used</li>
+    <li>Ksh - Korn shell</li>
+    <li>zsh - Latest one with increasing number of users.</li>
+    </ul>
+
+    <p>A command line interface is a user interface (managed by a command line interpreter program) which processes commands to a computer program and outputs the results.<br />When someone refers to one of these three terms in the context of Linux, they generally mean a terminal environment where you can run commands and see the results printed out to the terminal, such as this:<br /><br />Terminal window example<br /><br />Becoming a Linux expert requires you to be comfortable with using a terminal. Any administrative task, including file manipulation, package installation, and user management, can be accomplished through the terminal. The terminal is interactive: you specify commands to run and the terminal outputs the results of those commands. To execute any command, you type it into the prompt and press ENTER.</p>
+    <img src="../assets/images/terminal.png" alt="Linux terminal Structure">
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="../index.html">Home</a> |
+  <a href="../about.html">About Us</a> |
+  <a href="../contact.html">Contact Us</a> |
+  <a href="../privacy.html">Privacy Policy</a> |
+  <a href="../terms.html">Terms & Conditions</a> |
+  <a href="../disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+</body>
+
+</html>

@@ -1,134 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta http-equiv="refresh" content="200">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZOps_ThinkCentre – Linux HealthCheck</title>
-<meta name="description" content="Monitor CPU, Memory, Disk, Network, and System Load for Linux systems with visual dashboards and detailed reports.">
-<link rel="canonical" href="https://ezops-thinkcentre.netlify.app/linux-healthcheck.html">
 
-<link rel="stylesheet" href="assets/styles.css">
-<style>
-  body { margin:0; font-family:'Segoe UI', sans-serif; background:#eef3ff; color:#333; }
- 
-    /* Floating Back Button */
-  .floating-back-btn {
-      position:fixed;
-      top:20px;
-      left:20px;
-      width:45px;
-      height:45px;
-      background:#007bff;
-      color:white;
-      border:none;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      cursor:pointer;
-      z-index:9999;
-      box-shadow:0 4px 12px rgba(0,0,0,0.25);
-      transition:0.3s;
-  }
-  .floating-back-btn:hover {
-      transform:scale(1.1);
-      background:#005fcc;
-  }
-  
-  /* Navbar */
-  header.navbar { background:linear-gradient(90deg,#007bff,#3399ff); padding:18px 25px; display:flex; justify-content:space-between; align-items:center; color:white; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
-  header .logo { font-size:26px; font-weight:bold; letter-spacing:1px; }
-  nav a { color:white; margin-left:22px; text-decoration:none; font-weight:bold; transition:0.3s; }
-  nav a:hover, nav a.active { text-decoration:underline; }
-  nav .toggle-btn { background:none; border:none; color:white; font-size:20px; cursor:pointer; margin-left:20px; }
+   <!-- META DESCRIPTION (CTR BOOSTER) -->
+    <meta name="description"
+        content="EZDevOps ThinkCentre is a beginner-friendly DevOps learning platform covering Linux basics, DevOps tutorials, CI/CD pipelines, Git, Jenkins, automation, monitoring, and real-world DevOps workflows." />
 
-  /* Hero Section with background image 
-  .hero {
-    text-align:center;
-    padding:10px 5px;
-    background:url('assets/images/Linux-Health-Monitoring.jpg') center/cover no-repeat;
-    color:white;
-    text-shadow:0 3px 8px rgba(0,0,0,0.7);
-    border-radius:10px;
-  }
-  */
-  
-    /* Hero */
- .hero {
-    text-align:center; 
-    padding:20px 10px 60px 10px; 
-    color:white;
-    background:url('assets/images/Application-Builds.jpg') center/cover no-repeat;
-    text-shadow:0 3px 8px rgba(0,0,0,0.7);
-    border-radius:15px;
-  }
-  
-    .hero .btn-home {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 22px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #2d8cff;   /* blue button */
-    text-decoration: none;
-    border-radius: 6px;
-    border: 2px solid #ffffff;
-    transition: all 0.3s ease;
-  }
+    <!-- Keywords (Optional – not used by Google, but harmless) -->
+    <meta name="keywords"
+        content="DevOps tutorial, EZDevOps, EZOPS, EZDevOps_ThinkCentre, DevOps, Linux DevOps, CI/CD pipeline, Jenkins tutorial, Git DevOps, DevOps automation, monitoring tools, DevOps for beginners, EZDevOps, EZOps" />
 
-  .hero .btn-home:hover {
-    background-color: #ffffff;
-    color: #2d8cff;
-  }
+    <meta name="robots" content="index, follow">
 
-  .hero h1 { font-size:42px; margin-bottom:2px; }
-  .hero p { font-size:18px; margin-bottom:3px; }
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.ezdevops.cloud/application-build.html">
+    
 
-  /* Container & Cards */
-  .container { max-width:800px; margin:auto; padding:10px; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:15px; margin-top:15px; }
-  .card { background:white; padding:25px; border-radius:15px; box-shadow:0 6px 14px rgba(0,0,0,0.15); border:1px solid #e5e5e5; background-image:linear-gradient(145deg,#ffffff,#f3f7ff); transition:0.3s; text-align:center; }
-  .card:hover { transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
-  .card h3 { color:#007bff; margin-top:10px; font-size:22px; }
-  .card p { font-size:16px; color:#555; }
-  .card .icon { font-size:50px; margin-bottom:15px; }
+    <!-- Open Graph (Social Sharing) -->
+    <meta property="og:title" content="EZDevOps ThinkCentre | Learn DevOps the Easy Way">
+    <meta property="og:description" content="Learn DevOps step-by-step with Linux, CI/CD, Jenkins, Git, automation, and monitoring tutorials.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ezdevops.cloud/">
+    <meta property="og:image" content="https://www.ezdevops.cloud/assets/images/DevOps-Hero.jpg">
 
-  canvas { margin-top:10px; border-radius:10px; background:white; padding:10px; box-shadow:0 6px 12px rgba(0,0,0,0.1); }
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-1676512892913688">
 
-  iframe { width:100%; min-height:700px; border:none; border-radius:15px; box-shadow:0 6px 12px rgba(0,0,0,0.1); margin-top:10px; }
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+        crossorigin="anonymous"></script>
 
-  /* Footer */
-  footer { background:#007bff; color:white; text-align:center; padding:18px; margin-top:50px; box-shadow:0 -4px 12px rgba(0,0,0,0.2); font-size:16px; border-radius:8px; }
 
-  @media(max-width:768px) { .hero h1 { font-size:32px; } .hero p { font-size:16px; } }
-</style>
+  <title> EZDevOps ThinkCentre – Learn DevOps Easily | Linux, CI/CD & Automation </title>
+     <meta name="description" content="Monitor CPU, Memory, Disk, Network, and System Load for Linux systems with visual dashboards and detailed reports." />
+  <h1>EZOps_ThinkCentre – Jenkins Build System </h1>
+
+
+  <!-- Global CSS Style -->
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Page Specific Style  -->
+  <style></style>
+
 </head>
 <body>
 <button class="floating-back-btn" onclick="history.back()">⬅</button> 
+
 <header class="navbar">
-  <div class="logo">⚙️ EZOps_ThinkCentre</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="linux-healthcheck.html" class="active">Linux HealthCheck</a>
-    <a href="application-healthcheck.html">Application HealthCheck</a>
-    <!--  <a href="http://linuxmint-thinkcentre:8081/" target="_blank">  Application Build Server </a> -->
-    <a href="Metrics.html">Metrics</a>
-    <a href="SOP.html">SOP</a>
-    <!-- <a href="About.html">About</a> -->
-    <a href="contact.html">SiteAdmin</a>
-    <button id="themeToggle" class="toggle-btn">🌙</button>
+  <div class="logo">
+    <span class="gear">⚙️</span> EZDevOps ThinkCentre
+  </div>
+
+<nav>
+      <a href="index.html">Home</a>
+      <a href="start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="devops_learn.html">DevOps/Linux Automations</a>
+            <a href="lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="application-healthcheck.html">Application HealthCheck</a>
+          <a href="webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="linux-basics.html">Linux</a>
+      <a href="git-basics.html">Git</a>
+      <a href="devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="metrics.html">Metrics</a>
+          <a href="sop.html">SOP</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="about.html">About Us</a> 
+      <a href="contact.html">Contact Us</a>  
   </nav>
+
 </header>
 
-
-<!--
-<section class="hero">
-  <h1>EZOps_ThinkCentre – Jenkins Application Build Dashboard</h1>
-  <p>Monitor CPU, Memory, Disk, Network, and System Load with visual dashboards and detailed reports.</p> 
-</section> 
--->
 
 <div class="section" style="margin-top:1px;">
   <iframe src="http://linuxmint-thinkcentre:8081/" title="Application Build Dashboard"></iframe>
@@ -138,9 +107,18 @@
 
 </section>
 
+
 <footer>
-  <p>© 2025 EZOps_ThinkCentre · Simplifying DevOps for Everyone</p>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About Us</a> |
+  <a href="contact.html">Contact Us</a> |
+  <a href="privacy.html">Privacy Policy</a> |
+  <a href="terms.html">Terms & Conditions</a> |
+  <a href="disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
 </footer>
+
+<script src="assets/nav-active.js" defer></script>
 
 </body>
 </html>

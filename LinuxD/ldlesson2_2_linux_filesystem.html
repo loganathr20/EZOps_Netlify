@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linux Commands Cheat Sheet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Lesson 2: Linux Basics | EZDevOps ThinkCentre</title>
+
+<meta name="description" content="Lesson 2 covers Linux basics for DevOps, including filesystem, commands, users, groups, and permissions.">
+
+<link rel="canonical" href="https://www.ezdevops.cloud/LinuxD/ldlesson2_2_linux_filesystem.html">
+
+<meta property="og:title" content="Lesson 2: Linux Basics">
+<meta property="og:description" content="Learn Linux basics for DevOps: filesystem, commands, users, groups, and permissions.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="BLinuxforDevops.jpg">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+  crossorigin="anonymous"></script>
+
+<!-- LD pages css file  -->
+<link rel="stylesheet" href="LDstyles.css">
+
+<!-- Page specific styles -->
+<style>
+
+.container {
+  max-width:1100px;
+  margin:auto;
+}
+h1 {
+  text-align:center;
+}
+h2 {
+  margin-top:40px;
+  padding:12px;
+  border-radius:10px;
+  background:#e3f2fd;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+  background:white;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+th {
+  background:#1e88e5;
+  color:white;
+  padding:10px;
+  text-align:left;
+}
+td {
+  padding:10px;
+  border-bottom:1px solid #ddd;
+  vertical-align:top;
+}
+code {
+  background:#f1f1f1;
+  padding:3px 6px;
+  border-radius:4px;
+}
+a {
+  color:#1565c0;
+  font-weight:bold;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+<header class="navbar">
+  <div class="logo">⚙️ EZDevOps ThinkCentre</div>
+  <nav>
+      <a href="../index.html">Home</a>
+      <a href="../start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="../devops_learn.html">DevOps/Linux Automations</a>
+            <a href="../lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="../application-healthcheck.html">Application HealthCheck</a>
+          <a href="../webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="../linux-basics.html">Linux</a>
+      <a href="../git-basics.html">Git</a>
+      <a href="../devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../metrics.html">Metrics</a>
+          <a href="../sop.html">SOP</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="../about.html">About Us</a> 
+      <a href="../contact.html">Contact Us</a>  
+  </nav>
+  
+</header>
+
+<!-- FLOATING SIDEBAR MENU -->
+<div class="sidebar-menu">
+  <h3>Linux DevOps Lessons</h3>
+  <a href="LDLesson1_Introduction.html" >Lesson 1 – Linux for Devops. </a>
+  
+  <!-- Lesson 2 with submenu inside main menu -->
+  <div class="lesson-with-submenu">
+    <a href="LDLesson2_Linux_Basics.html" class="active">Lesson 2 – Linux Basics</a>
+    <div class="submenu">
+      <a href="ldlesson2_1_linux_overview.html">2.1 Linux Overview</a>
+      <a href="ldlesson2_2_linux_filesystem.html">2.2 Linux File System</a>
+      <a href="ldlesson2_3_linux_commands.html">2.3 Basic Commands</a>
+      <a href="ldlesson2_4_linux_users.html">2.4 Users & Groups</a>
+      <a href="ldlesson2_5_linux_permissions.html">2.5 File Permissions Basics & Group Ownership</a>
+    </div>
+  </div>
+
+  <a href="LDLesson3_Shell_Scripting.html">Lesson 3 – Shell Scripting</a>
+  <a href="LDLesson4_File_Operations.html">Lesson 4 – File Operations</a>
+  <a href="LDLesson5_Permissions_Ownership.html">Lesson 5 – Permissions & Ownership</a>
+  <a href="LDLesson6_Package_Management.html">Lesson 6 – Package Management</a>
+  <a href="LDLesson7_Process_Monitoring.html">Lesson 7 – Process Monitoring</a>
+  <a href="LDLesson8_Networking.html">Lesson 8 – Linux Networking</a>
+  <a href="LDLesson9_Advanced_Bash.html">Lesson 9 – Advanced Bash</a>
+  <a href="LDLesson10_Cron_Jobs.html">Lesson 10 – Cron Jobs</a>
+  <a href="LDLesson11_Service_Automation.html">Lesson 11 – Service Automation</a>
+  <a href="LDLesson14_Monitoring_SelfHealing.html">Lesson 12 – Monitoring & Self-Healing</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Linux Filesystem </h1>
+  <p>Filesystem, commands, users, groups, and permissions essentials for DevOps</p>
+  <a href="LDLesson2_Linux_Basics.html" class="back-btn-bottom">← Back to Linux Basics</a>
+</section>
+
+ <!-- MAIN CONTENT -->
+<div class="container">
+
+    <div class="section">
+     
+    <p>Understanding the Linux filesystem hierarchy is essential for navigating and managing resources effectively.</p>
+    <ul>
+    <li>/ &ndash; Root directory</li>
+    <li>/home &ndash; User home directories</li>
+    <li>/etc &ndash; Configuration files</li>
+    <li>/var &ndash; Variable data like logs</li>
+    <li>/usr &ndash; User applications and binaries&nbsp;</li>
+    </ul>
+    </div>
+    <div class="section">
+    <div class="bzXtMb M8OgIe dRpWwb">
+      <h3 class="Y3BBE" data-hveid="CAQQAA" data-processed="true"><span style="background-color: #99cc00;"><strong>The structure follows the Filesystem Hierarchy Standard (FHS). Here are some of the essential directories:<span class="uJ19be notranslate" data-wiz-uids="Q6AaY_s,Q6AaY_t" data-processed="true"><span class="vKEkVd" data-animation-atomic="" data-wiz-attrbind="class=Q6AaY_r/TKHnVd" data-processed="true">&nbsp;</span></span></strong></span></h3>
+    </div>
+    <div id="center_col" class="s6JM6d ufC5Cb ZPOWwb EYIWQc">&nbsp;</div>
+    <div>
+    <div>
+    <div>
+    <section>
+    <div data-host-wiz-contract-name="gws_wizbind">
+    <div>
+    <div class="qRuFed" data-complete="true">
+    <div class="CKgc1d" data-scope-id="turn">
+    <div class="FkX2oe" dir="ltr" data-subtree="aimc" data-aimmrs="true" data-wiz-uids="Q6AaY_2" data-ved="2ahUKEwjJ-ouNnvaRAxVkaCoJHYbcCqIQ2O0OegQIABAA" data-hveid="CAAQAA">
+    <div class="pWvJNd">
+    <div class="mZJni" dir="ltr" data-container-id="main-col" data-xid="VpUvz" data-ved="2ahUKEwjJ-ouNnvaRAxVkaCoJHYbcCqIQ3KYQegQIABAB">
+    <div style="display: contents;" data-container-id="5">
+    <div class="Y3BBE" data-sfc-cp="" data-hveid="CAEQAA" data-processed="true">
+    <h3 style="display: contents;" data-subtree="aimfl,mfl" data-processed="true">The Linux file system is organized in a tree-like hierarchy that begins at the</h3>
+    <h3><strong class="Yjhzub" data-processed="true">root directory (<code class="o8j0Mc" dir="ltr" data-processed="true">/</code>)</strong>. All other directories and files branch from this single point.<span class="uJ19be notranslate" data-wiz-uids="Q6AaY_d,Q6AaY_e" data-processed="true"><span class="vKEkVd" data-animation-atomic="" data-wiz-attrbind="class=Q6AaY_c/TKHnVd" data-processed="true">&nbsp;</span></span>&nbsp;</h3>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    <h3 class="Y3BBE" data-hveid="CAIQAA" data-processed="true">Here are visual examples of the Linux file system structure and descriptions of the common directories:</h3>
+    <h3 class="otQkpb" data-processed="true"><span style="text-decoration: underline;">Key Linux Directories</span></h3>
+    <h3 class="Y3BBE" data-hveid="CAQQAA" data-processed="true">The structure follows the Filesystem Hierarchy Standard (FHS). Here are some of the essential directories:<span class="uJ19be notranslate" data-wiz-uids="Q6AaY_s,Q6AaY_t" data-processed="true"><span class="vKEkVd" data-animation-atomic="" data-wiz-attrbind="class=Q6AaY_r/TKHnVd" data-processed="true">&nbsp;</span></span></h3>
+    <ul>
+    <ul>
+    <ul>
+    <ul class="KsbFXc U6u95" data-processed="true">
+    <li data-hveid="CAYQAA" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/</code> (Root):</strong> The primary directory from which all other files and directories originate.</span></li>
+    <li data-hveid="CAYQAQ" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/bin</code> (Binaries):</strong> Contains essential user command binaries (e.g., <code class="o8j0Mc" dir="ltr" data-processed="true">ls</code>, <code class="o8j0Mc" dir="ltr" data-processed="true">cat</code>, <code class="o8j0Mc" dir="ltr" data-processed="true">mv</code>) that are needed for the system to boot and run.</span></li>
+    <li data-hveid="CAYQAg" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/boot</code>:</strong> Stores files required for booting the system, such as the Linux kernel, initial RAM disk image (<code class="o8j0Mc" dir="ltr" data-processed="true">initramfs</code>), and boot loader configuration files.</span></li>
+    <li data-hveid="CAYQAw" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/dev</code> (Devices):</strong> A virtual directory containing special files that represent hardware devices (e.g., hard drives, terminals).</span></li>
+    <li data-hveid="CAYQBA" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/etc</code> (Etcetera):</strong> Contains system-wide configuration files and scripts.</span></li>
+    <li data-hveid="CAYQBQ" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/home</code>:</strong> Contains the personal directories for regular users. For example, a user named <code class="o8j0Mc" dir="ltr" data-processed="true">user01</code> would have their home directory at <code class="o8j0Mc" dir="ltr" data-processed="true">/home/user01</code>.</span></li>
+    <li data-hveid="CAYQBg" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/lib</code> (Libraries):</strong> Contains essential shared libraries needed by the binaries in <code class="o8j0Mc" dir="ltr" data-processed="true">/bin</code> and <code class="o8j0Mc" dir="ltr" data-processed="true">/sbin</code>.</span></li>
+    <li data-hveid="CAYQBw" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/media</code>:</strong> A mount point for removable media devices such as USB drives and CDs.</span></li>
+    <li data-hveid="CAYQCA" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/mnt</code> (Mount):</strong> A temporary mount point for mounting file systems, such as network shares.</span></li>
+    <li data-hveid="CAYQCQ" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/opt</code> (Optional):</strong> Used for installing optional application software that is not part of the core system.</span></li>
+    <li data-hveid="CAYQCg" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/proc</code> (Processes):</strong> A virtual filesystem that provides a window into the kernel and active processes, containing real-time system information.</span></li>
+    <li data-hveid="CAYQCw" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/root</code>:</strong> The home directory for the <code class="o8j0Mc" dir="ltr" data-processed="true">root</code> superuser, separate from other user home directories.</span></li>
+    <li data-hveid="CAYQDA" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/sbin</code> (System Binaries):</strong> Contains essential system administration binaries (e.g., <code class="o8j0Mc" dir="ltr" data-processed="true">fdisk</code>, <code class="o8j0Mc" dir="ltr" data-processed="true">mke2fs</code>, <code class="o8j0Mc" dir="ltr" data-processed="true">shutdown</code>) that typically only the root user can run.</span></li>
+    <li data-hveid="CAYQDQ" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/tmp</code> (Temporary):</strong> A directory for temporary files created by various programs and users. These files are often deleted upon system reboot.</span></li>
+    <li data-hveid="CAYQDg" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/usr</code> (Unix System Resources):</strong> The largest portion of the file system hierarchy, containing secondary hierarchy for user data, programs, and libraries (e.g., <code class="o8j0Mc" dir="ltr" data-processed="true">/usr/bin</code>, <code class="o8j0Mc" dir="ltr" data-processed="true">/usr/lib</code>, <code class="o8j0Mc" dir="ltr" data-processed="true">/usr/share</code>).</span></li>
+    <li data-hveid="CAYQDw" data-processed="true"><span class="T286Pc" data-sfc-cp="" data-processed="true"><strong class="Yjhzub" data-processed="true"><code class="o8j0Mc" dir="ltr" data-processed="true">/var</code> (Variable):</strong> Stores variable data files, such as system logs (<code class="o8j0Mc" dir="ltr" data-processed="true">/var/log</code>), databases, and temporary files that are not deleted on reboot.</span><span class="uJ19be notranslate" data-wiz-uids="Q6AaY_45,Q6AaY_46" data-processed="true"><span class="vKEkVd" data-animation-atomic="" data-wiz-attrbind="class=Q6AaY_44/TKHnVd" data-processed="true">&nbsp;</span></span></li>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+      <img src="../assets/images/linux_filestructure.png" alt="Linux Filesystem Structure">
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="../index.html">Home</a> |
+  <a href="../about.html">About Us</a> |
+  <a href="../contact.html">Contact Us</a> |
+  <a href="../privacy.html">Privacy Policy</a> |
+  <a href="../terms.html">Terms & Conditions</a> |
+  <a href="../disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+</body>
+
+</html>

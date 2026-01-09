@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Lesson 2: Linux Basics | EZDevOps ThinkCentre</title>
+
+<meta name="description" content="Lesson 2 covers Linux basics for DevOps, including filesystem, commands, users, groups, and permissions.">
+
+<link rel="canonical" href="https://www.ezdevops.cloud/LinuxD/LDLesson2_Linux_Basics.html">
+
+<meta property="og:title" content="Lesson 2: Linux Basics">
+<meta property="og:description" content="Learn Linux basics for DevOps: filesystem, commands, users, groups, and permissions.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="BLinuxforDevops.jpg">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+  crossorigin="anonymous"></script>
+
+<!-- Link CSS in same folder -->
+<link rel="stylesheet" href="LDstyles.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">⚙️ EZDevOps ThinkCentre</div>
+  <nav>
+      <a href="../index.html">Home</a>
+      <a href="../start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="../devops_learn.html">DevOps/Linux Automations</a>
+            <a href="../lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="../application-healthcheck.html">Application HealthCheck</a>
+          <a href="../webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="../linux-basics.html">Linux</a>
+      <a href="../git-basics.html">Git</a>
+      <a href="../devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../metrics.html">Metrics</a>
+          <a href="../sop.html">SOP</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="../about.html">About Us</a> 
+      <a href="../contact.html">Contact Us</a>  
+  </nav>
+  
+</header>
+
+<!-- FLOATING SIDEBAR MENU -->
+<div class="sidebar-menu">
+  <h3>Linux DevOps Lessons</h3>
+  <a href="LDLesson1_Introduction.html" >Lesson 1 – Linux for Devops. </a>
+
+  <!-- Lesson 2 with submenu inside main menu -->
+  <div class="lesson-with-submenu">
+    <a href="LDLesson2_Linux_Basics.html" class="active">Lesson 2 – Linux Basics</a>
+    <div class="submenu">
+      <a href="ldlesson2_1_linux_overview.html">2.1 Linux Overview</a>
+      <a href="ldlesson2_2_linux_filesystem.html">2.2 Linux File System</a>
+      <a href="ldlesson2_3_linux_commands.html">2.3 Basic Commands</a>
+      <a href="ldlesson2_4_linux_users.html">2.4 Users & Groups</a>
+      <a href="ldlesson2_5_linux_permissions.html">2.5 File Permissions Basics & Group Ownership</a>
+    </div>
+  </div>
+
+  <a href="LDLesson3_Shell_Scripting.html">Lesson 3 – Shell Scripting</a>
+  <a href="LDLesson4_File_Operations.html">Lesson 4 – File Operations</a>
+  <a href="LDLesson5_Permissions_Ownership.html">Lesson 5 – Permissions & Ownership</a>
+  <a href="LDLesson6_Package_Management.html">Lesson 6 – Package Management</a>
+  <a href="LDLesson7_Process_Monitoring.html">Lesson 7 – Process Monitoring</a>
+  <a href="LDLesson8_Networking.html">Lesson 8 – Linux Networking</a>
+  <a href="LDLesson9_Advanced_Bash.html">Lesson 9 – Advanced Bash</a>
+  <a href="LDLesson10_Cron_Jobs.html">Lesson 10 – Cron Jobs</a>
+  <a href="LDLesson11_Service_Automation.html">Lesson 11 – Service Automation</a>
+  <a href="LDLesson14_Monitoring_SelfHealing.html">Lesson 12 – Monitoring & Self-Healing</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Linux Basics </h1>
+  <p>Filesystem, commands, users, groups, and permissions essentials for DevOps</p>
+  <a href="../linux-basics.html" class="back-btn-bottom">← Back to Linux Basics and DevOps Automations Page</a>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+<div class="section">
+<h2>Linux Overview </h2>
+<p> Linux is a powerful, open-source operating system (OS) kernel that, when combined with other software, forms complete OSes called distributions (distros), known for being free, secure, stable, and highly customizable, powering everything from servers, supercomputers, and Android devices to personal desktops, offering unparalleled control and flexibility for developers, businesses, and general users. </p>
+</div>
+
+
+<div class="section">
+<h2>Filesystem Structure</h2>
+<p>Understanding the Linux filesystem hierarchy is essential for navigating and managing resources effectively.</p>
+<ul>
+<li>/ – Root directory</li>
+<li>/home – User home directories</li>
+<li>/etc – Configuration files</li>
+<li>/var – Variable data like logs</li>
+<li>/usr – User applications and binaries</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Basic Linux Commands</h2>
+<p>Essential commands every DevOps engineer should know:</p>
+<ul>
+<li><code>ls</code> – List directory contents</li>
+<li><code>cd</code> – Change directory</li>
+<li><code>pwd</code> – Show current directory</li>
+<li><code>cp</code> – Copy files and directories</li>
+<li><code>mv</code> – Move or rename files</li>
+<li><code>rm</code> – Remove files or directories</li>
+<li><code>mkdir</code> – Create directories</li>
+<li><code>cat</code>, <code>less</code>, <code>head</code>, <code>tail</code> – View file contents</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>User and Group Management</h2>
+<p>Managing users and groups is critical for permissions and security:</p>
+<ul>
+<li><code>useradd</code>, <code>usermod</code>, <code>userdel</code> – Manage users</li>
+<li><code>groupadd</code>, <code>groupmod</code>, <code>groupdel</code> – Manage groups</li>
+<li><code>passwd</code> – Set user passwords</li>
+<li>Checking users: <code>id</code>, <code>who</code>, <code>groups</code></li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Permissions Basics</h2>
+<p>Linux uses read, write, and execute permissions to control access:</p>
+<ul>
+<li><code>chmod</code> – Change file/directory permissions</li>
+<li><code>chown</code> – Change owner and group</li>
+<li><code>ls -l</code> – View permissions and ownership</li>
+<li><code>sudo</code> – Execute commands with superuser privileges</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Package Management Overview</h2>
+<p>Install, update, and remove software using package managers:</p>
+<ul>
+<li><code>apt</code> (Debian/Ubuntu)</li>
+<li><code>yum</code> (RHEL/CentOS 7)</li>
+<li><code>dnf</code> (Fedora/RHEL 8+)</li>
+<li>Update system packages regularly for security</li>
+</ul>
+</div>
+
+<a href="LDLesson3_Shell_Scripting.html" class="back-btn-bottom">→ Next: Lesson 3: Shell Scripting</a>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="../index.html">Home</a> |
+  <a href="../about.html">About Us</a> |
+  <a href="../contact.html">Contact Us</a> |
+  <a href="../privacy.html">Privacy Policy</a> |
+  <a href="../terms.html">Terms & Conditions</a> |
+  <a href="../disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+</body>
+</html>

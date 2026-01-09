@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Lesson 4: Linux File Operations | EZDevOps ThinkCentre</title>
+
+<meta name="description" content="Lesson 4 explains Linux file and directory operations including creation, deletion, copying, moving, searching, and DevOps best practices.">
+
+<link rel="canonical" href="https://www.ezdevops.cloud/LinuxD/LDLesson4_File_Operations.html">
+
+<meta property="og:title" content="Lesson 4: Linux File Operations">
+<meta property="og:description" content="Learn Linux file and directory operations essential for DevOps engineers.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="BLinuxforDevops.jpg">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+  crossorigin="anonymous"></script>
+
+<!-- Link CSS in same folder -->
+<link rel="stylesheet" href="LDstyles.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">⚙️ EZDevOps ThinkCentre</div>
+  <nav>
+      <a href="../index.html">Home</a>
+      <a href="../start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="../devops_learn.html">DevOps/Linux Automations</a>
+            <a href="../lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="../application-healthcheck.html">Application HealthCheck</a>
+          <a href="../webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="../linux-basics.html">Linux</a>
+      <a href="../git-basics.html">Git</a>
+      <a href="../devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../metrics.html">Metrics</a>
+          <a href="../sop.html">SOP</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="../about.html">About Us</a> 
+      <a href="../contact.html">Contact Us</a>  
+  </nav>
+  
+</header>
+
+<!-- FLOATING SIDEBAR MENU -->
+<div class="sidebar-menu">
+  <h3>Linux DevOps Lessons</h3>
+  <a href="LDLesson1_Introduction.html" >Lesson 1 – Linux for Devops. </a>
+  <a href="LDLesson2_Linux_Basics.html">Lesson 2 – Linux Basics</a>
+  <a href="LDLesson3_Shell_Scripting.html">Lesson 3 – Shell Scripting</a>
+  <a href="LDLesson4_File_Operations.html" class="active">Lesson 4 – File Operations</a>
+  <a href="LDLesson5_Permissions_Ownership.html">Lesson 5 – Permissions & Ownership</a>
+  <a href="LDLesson6_Package_Management.html">Lesson 6 – Package Management</a>
+  <a href="LDLesson7_Process_Monitoring.html">Lesson 7 – Process Monitoring</a>
+  <a href="LDLesson8_Networking.html">Lesson 8 – Linux Networking</a>
+  <a href="LDLesson9_Advanced_Bash.html">Lesson 9 – Advanced Bash</a>
+  <a href="LDLesson10_Cron_Jobs.html">Lesson 10 – Cron Jobs</a>
+  <a href="LDLesson11_Service_Automation.html">Lesson 11 – Service Automation</a>
+  <a href="LDLesson14_Monitoring_SelfHealing.html">Lesson 12 – Monitoring & Self-Healing</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Lesson 4: Linux File Operations</h1>
+  <p>Managing files and directories efficiently in Linux</p>
+  <a href="../linux-basics.html" class="back-btn-bottom">← Back to Linux Basics and DevOps Automations Page</a>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+<div class="section">
+<h2>Introduction to File Operations</h2>
+<p>Linux file operations allow DevOps engineers to manage configuration files, logs, scripts, and application data efficiently across servers.</p>
+</div>
+
+<div class="section">
+<h2>Creating Files and Directories</h2>
+<ul>
+<li><code>touch</code> – create empty files</li>
+<li><code>mkdir</code> – create directories</li>
+<li><code>mkdir -p</code> – create nested directories</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Viewing File Contents</h2>
+<ul>
+<li><code>cat</code> – display file content</li>
+<li><code>less</code> and <code>more</code> – paginated viewing</li>
+<li><code>head</code> and <code>tail</code> – view beginning or end of files</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Copying and Moving Files</h2>
+<ul>
+<li><code>cp</code> – copy files and directories</li>
+<li><code>cp -r</code> – recursive directory copy</li>
+<li><code>mv</code> – move or rename files</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Deleting Files and Directories</h2>
+<ul>
+<li><code>rm</code> – remove files</li>
+<li><code>rm -r</code> – remove directories recursively</li>
+<li><code>rm -f</code> – force delete without confirmation</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Searching Files in Linux</h2>
+<ul>
+<li><code>find</code> – search files by name, type, size</li>
+<li><code>locate</code> – fast file search using index</li>
+<li><code>grep</code> – search text inside files</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>File Operations in DevOps Use Cases</h2>
+<ul>
+<li>Managing application configuration files</li>
+<li>Log file analysis and cleanup</li>
+<li>Backup and restore operations</li>
+<li>Deployment artifact handling</li>
+</ul>
+</div>
+
+<a href="LDLesson5_Permissions_Ownership.html" class="back-btn-bottom">→ Next: Lesson 5: Permissions & Ownership</a>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="../index.html">Home</a> |
+  <a href="../about.html">About Us</a> |
+  <a href="../contact.html">Contact Us</a> |
+  <a href="../privacy.html">Privacy Policy</a> |
+  <a href="../terms.html">Terms & Conditions</a> |
+  <a href="../disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+</body>
+</html>

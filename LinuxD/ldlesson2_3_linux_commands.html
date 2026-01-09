@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linux Commands Cheat Sheet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
+<title>Lesson 2: Linux Basics | EZDevOps ThinkCentre</title>
+
+<meta name="description" content="Lesson 2 covers Linux basics for DevOps, including filesystem, commands, users, groups, and permissions.">
+
+<link rel="canonical" href="https://www.ezdevops.cloud/LinuxD/ldlesson2_3_linux_commands.html">
+
+<meta property="og:title" content="Lesson 2: Linux Basics">
+<meta property="og:description" content="Learn Linux basics for DevOps: filesystem, commands, users, groups, and permissions.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="BLinuxforDevops.jpg">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-1676512892913688">
+<script async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1676512892913688"
+  crossorigin="anonymous"></script>
+
+<!-- LD pages css file  -->
+<link rel="stylesheet" href="LDstyles.css">
+
+<!-- Page specific styles -->
+<style>
+
+.container {
+  max-width:1100px;
+  margin:auto;
+}
+h1 {
+  text-align:center;
+}
+h2 {
+  margin-top:40px;
+  padding:12px;
+  border-radius:10px;
+  background:#e3f2fd;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+  background:white;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+th {
+  background:#1e88e5;
+  color:white;
+  padding:10px;
+  text-align:left;
+}
+td {
+  padding:10px;
+  border-bottom:1px solid #ddd;
+  vertical-align:top;
+}
+code {
+  background:#f1f1f1;
+  padding:3px 6px;
+  border-radius:4px;
+}
+a {
+  color:#1565c0;
+  font-weight:bold;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+<header class="navbar">
+  <div class="logo">⚙️ EZDevOps ThinkCentre</div>
+  <nav>
+      <a href="../index.html">Home</a>
+      <a href="../start_learning.html">Start</a>
+  
+      <!-- ✅ Automations Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Automations ▾</span> </a>
+        <div class="dropdown-menu">
+            <a href="../devops_learn.html">DevOps/Linux Automations</a>
+            <a href="../lightweight-automation.html">Lightweight-Automation</a>
+        </div>
+      </div>
+
+      <!-- ✅ HealthCheck Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>HealthChecks ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../linux-healthcheck.html">Linux HealthCheck</a>
+          <a href="../application-healthcheck.html">Application HealthCheck</a>
+          <a href="../webserver-healthcheck.html">Webserver HealthCheck</a>
+        </div>
+      </div>
+      
+      <a href="../linux-basics.html">Linux</a>
+      <a href="../git-basics.html">Git</a>
+      <a href="../devops-cicd.html">CI/CD</a>
+      
+      <!-- ✅ Standard / Process Dropdown -->
+      <div class="nav-dropdown">
+        <a> <span>Standards/Process ▾</span> </a>
+        <div class="dropdown-menu">
+          <a href="../metrics.html">Metrics</a>
+          <a href="../sop.html">SOP</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+      </div>
+      
+      <a href="../about.html">About Us</a> 
+      <a href="../contact.html">Contact Us</a>  
+  </nav>
+  
+</header>
+
+<!-- FLOATING SIDEBAR MENU -->
+<div class="sidebar-menu">
+  <h3>Linux DevOps Lessons</h3>
+  <a href="LDLesson1_Introduction.html" >Lesson 1 – Linux for Devops. </a>
+  
+  <!-- Lesson 2 with submenu inside main menu -->
+  <div class="lesson-with-submenu">
+    <a href="LDLesson2_Linux_Basics.html" class="active">Lesson 2 – Linux Basics</a>
+    <div class="submenu">
+      <a href="ldlesson2_1_linux_overview.html">2.1 Linux Overview</a>
+      <a href="ldlesson2_2_linux_filesystem.html">2.2 Linux File System</a>
+      <a href="ldlesson2_3_linux_commands.html">2.3 Basic Commands</a>
+      <a href="ldlesson2_4_linux_users.html">2.4 Users & Groups</a>
+      <a href="ldlesson2_5_linux_permissions.html">2.5 File Permissions Basics & Group Ownership</a>
+    </div>
+  </div>
+
+  <a href="LDLesson3_Shell_Scripting.html">Lesson 3 – Shell Scripting</a>
+  <a href="LDLesson4_File_Operations.html">Lesson 4 – File Operations</a>
+  <a href="LDLesson5_Permissions_Ownership.html">Lesson 5 – Permissions & Ownership</a>
+  <a href="LDLesson6_Package_Management.html">Lesson 6 – Package Management</a>
+  <a href="LDLesson7_Process_Monitoring.html">Lesson 7 – Process Monitoring</a>
+  <a href="LDLesson8_Networking.html">Lesson 8 – Linux Networking</a>
+  <a href="LDLesson9_Advanced_Bash.html">Lesson 9 – Advanced Bash</a>
+  <a href="LDLesson10_Cron_Jobs.html">Lesson 10 – Cron Jobs</a>
+  <a href="LDLesson11_Service_Automation.html">Lesson 11 – Service Automation</a>
+  <a href="LDLesson14_Monitoring_SelfHealing.html">Lesson 12 – Monitoring & Self-Healing</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Linux Commands Cheat Sheet</h1>
+  <p>Filesystem, commands, users, groups, and permissions essentials for DevOps</p>
+  <a href="LDLesson2_Linux_Basics.html" class="back-btn-bottom">← Back to Linux Basics</a>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+      <h1><span style="color: #0000ff; background-color: #99ccff;">🐧 Linux Commands Cheat Sheet</span>&nbsp;</h1>
+        <h2><span style="background-color: #99ccff;">File Commands</span></h2>
+        <table>
+        <tbody>
+        <tr style="height: 15px;">
+        <th style="height: 15px;">Command</th>
+        <th style="height: 15px;">Description</th>
+        <th style="height: 15px;">Options</th>
+        <th style="height: 15px;">Example</th>
+        <th style="height: 15px;">&nbsp;</th>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>ls</strong></td>
+        <td style="height: 15px;">List files</td>
+        <td style="height: 15px;"><code>-lah</code></td>
+        <td style="height: 15px;"><code>ls -lah</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>cd</strong></td>
+        <td style="height: 15px;">Change directory</td>
+        <td style="height: 15px;"><code>.. ~</code></td>
+        <td style="height: 15px;"><code>cd /var/log</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>pwd</strong></td>
+        <td style="height: 15px;">Current directory</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>pwd</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>cp</strong></td>
+        <td style="height: 15px;">Copy files</td>
+        <td style="height: 15px;"><code>-rv</code></td>
+        <td style="height: 15px;"><code>cp -r a b</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>mv</strong></td>
+        <td style="height: 15px;">Move files</td>
+        <td style="height: 15px;"><code>-iv</code></td>
+        <td style="height: 15px;"><code>mv a b</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>rm</strong></td>
+        <td style="height: 15px;">Delete files</td>
+        <td style="height: 15px;"><code>-rf</code></td>
+        <td style="height: 15px;"><code>rm -rf tmp</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>mkdir</strong></td>
+        <td style="height: 15px;">Create directory</td>
+        <td style="height: 15px;"><code>-p</code></td>
+        <td style="height: 15px;"><code>mkdir -p a/b</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>rmdir</strong></td>
+        <td style="height: 15px;">Remove empty dir</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>rmdir test</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>touch</strong></td>
+        <td style="height: 15px;">Create empty file</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>touch f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>stat</strong></td>
+        <td style="height: 15px;">File stats</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>stat f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>file</strong></td>
+        <td style="height: 15px;">Detect file type</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>file f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>tree</strong></td>
+        <td style="height: 15px;">Directory tree</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>tree .</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>basename</strong></td>
+        <td style="height: 15px;">Filename only</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>basename /a/b</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>dirname</strong></td>
+        <td style="height: 15px;">Directory path</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>dirname /a/b</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>realpath</strong></td>
+        <td style="height: 15px;">Resolve path</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>realpath f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>readlink</strong></td>
+        <td style="height: 15px;">Read symlink</td>
+        <td style="height: 15px;"><code>-f</code></td>
+        <td style="height: 15px;"><code>readlink -f f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>ln</strong></td>
+        <td style="height: 15px;">Create links</td>
+        <td style="height: 15px;"><code>-s</code></td>
+        <td style="height: 15px;"><code>ln -s a b</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>statx</strong></td>
+        <td style="height: 15px;">Extended stats</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>statx f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>du</strong></td>
+        <td style="height: 15px;">Dir size</td>
+        <td style="height: 15px;"><code>-sh</code></td>
+        <td style="height: 15px;"><code>du -sh .</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>df</strong></td>
+        <td style="height: 15px;">Disk usage</td>
+        <td style="height: 15px;"><code>-h</code></td>
+        <td style="height: 15px;"><code>df -h</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>watch</strong></td>
+        <td style="height: 15px;">Repeat command</td>
+        <td style="height: 15px;"><code>-n</code></td>
+        <td style="height: 15px;"><code>watch ls</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>find</strong></td>
+        <td style="height: 15px;">Search files</td>
+        <td style="height: 15px;"><code>-name</code></td>
+        <td style="height: 15px;"><code>find . -name '*.log'</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>locate</strong></td>
+        <td style="height: 15px;">Fast search</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>locate ssh</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>which</strong></td>
+        <td style="height: 15px;">Binary path</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>which ls</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>whereis</strong></td>
+        <td style="height: 15px;">Binary locations</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>whereis bash</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>chown</strong></td>
+        <td style="height: 15px;">Change owner</td>
+        <td style="height: 15px;"><code>-R</code></td>
+        <td style="height: 15px;"><code>chown user f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>chgrp</strong></td>
+        <td style="height: 15px;">Change group</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>chgrp dev f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>chmod</strong></td>
+        <td style="height: 15px;">Change perms</td>
+        <td style="height: 15px;"><code>755</code></td>
+        <td style="height: 15px;"><code>chmod 755 f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>setfacl</strong></td>
+        <td style="height: 15px;">Set ACL</td>
+        <td style="height: 15px;"><code>-m</code></td>
+        <td style="height: 15px;"><code>setfacl -m u:a:r f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>getfacl</strong></td>
+        <td style="height: 15px;">Get ACL</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>getfacl f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>sync</strong></td>
+        <td style="height: 15px;">Flush writes</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>sync</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>copy-progress</strong></td>
+        <td style="height: 15px;">Copy progress</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>cp -rv</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>statfs</strong></td>
+        <td style="height: 15px;">FS stats</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>stat -f .</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>pathchk</strong></td>
+        <td style="height: 15px;">Path validity</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>pathchk f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>vdir</strong></td>
+        <td style="height: 15px;">Verbose ls</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>vdir</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>dir</strong></td>
+        <td style="height: 15px;">List dir</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>dir</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>statx</strong></td>
+        <td style="height: 15px;">File ext stats</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>statx f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>shred</strong></td>
+        <td style="height: 15px;">Overwrite file</td>
+        <td style="height: 15px;"><code>-u</code></td>
+        <td style="height: 15px;"><code>shred f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>unlink</strong></td>
+        <td style="height: 15px;">Remove file</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>unlink f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>fallocate</strong></td>
+        <td style="height: 15px;">Preallocate file</td>
+        <td style="height: 15px;"><code>-l</code></td>
+        <td style="height: 15px;"><code>fallocate -l 1G f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>stat</strong></td>
+        <td style="height: 15px;">Metadata</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>stat f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>tempfile</strong></td>
+        <td style="height: 15px;">Create temp file</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>tempfile</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>chattr</strong></td>
+        <td style="height: 15px;">File attrs</td>
+        <td style="height: 15px;"><code>+i</code></td>
+        <td style="height: 15px;"><code>chattr +i f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>lsattr</strong></td>
+        <td style="height: 15px;">List attrs</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>lsattr f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>rename</strong></td>
+        <td style="height: 15px;">Batch rename</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>rename s/a/b/ *</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15.7667px;">
+        <td style="height: 15.7667px;"><strong>stat</strong></td>
+        <td style="height: 15.7667px;">File info</td>
+        <td style="height: 15.7667px;"><code>-</code></td>
+        <td style="height: 15.7667px;"><code>stat f</code></td>
+        <td style="height: 15.7667px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>statx</strong></td>
+        <td style="height: 15px;">Kernel stats</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>statx f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2><span style="background-color: #99ccff;">Text Commands</span></h2>
+        <table>
+        <tbody>
+        <tr style="height: 15px;">
+        <th style="height: 15px;">Command</th>
+        <th style="height: 15px;">Description</th>
+        <th style="height: 15px;">Options</th>
+        <th style="height: 15px;">Example</th>
+        <th style="height: 15px;">&nbsp;</th>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>cat</strong></td>
+        <td style="height: 15px;">View file</td>
+        <td style="height: 15px;"><code>-n</code></td>
+        <td style="height: 15px;"><code>cat f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>tac</strong></td>
+        <td style="height: 15px;">Reverse cat</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>tac f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>less</strong></td>
+        <td style="height: 15px;">Pager</td>
+        <td style="height: 15px;"><code>-N</code></td>
+        <td style="height: 15px;"><code>less f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>more</strong></td>
+        <td style="height: 15px;">Pager</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>more f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>head</strong></td>
+        <td style="height: 15px;">First lines</td>
+        <td style="height: 15px;"><code>-n</code></td>
+        <td style="height: 15px;"><code>head -10 f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>tail</strong></td>
+        <td style="height: 15px;">Last lines</td>
+        <td style="height: 15px;"><code>-f</code></td>
+        <td style="height: 15px;"><code>tail -f f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>wc</strong></td>
+        <td style="height: 15px;">Count text</td>
+        <td style="height: 15px;"><code>-l</code></td>
+        <td style="height: 15px;"><code>wc -l f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>grep</strong></td>
+        <td style="height: 15px;">Search text</td>
+        <td style="height: 15px;"><code>-ir</code></td>
+        <td style="height: 15px;"><code>grep err f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>egrep</strong></td>
+        <td style="height: 15px;">Regex grep</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>egrep a|b f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>fgrep</strong></td>
+        <td style="height: 15px;">Fixed grep</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>fgrep a f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>sed</strong></td>
+        <td style="height: 15px;">Stream edit</td>
+        <td style="height: 15px;"><code>-i</code></td>
+        <td style="height: 15px;"><code>sed 's/a/b/' f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>awk</strong></td>
+        <td style="height: 15px;">Text processing</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>awk '{print }' f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>sort</strong></td>
+        <td style="height: 15px;">Sort text</td>
+        <td style="height: 15px;"><code>-nr</code></td>
+        <td style="height: 15px;"><code>sort -nr f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>uniq</strong></td>
+        <td style="height: 15px;">Unique lines</td>
+        <td style="height: 15px;"><code>-c</code></td>
+        <td style="height: 15px;"><code>uniq -c f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>column</strong></td>
+        <td style="height: 15px;">Align output</td>
+        <td style="height: 15px;"><code>-t</code></td>
+        <td style="height: 15px;"><code>column -t f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>fmt</strong></td>
+        <td style="height: 15px;">Format text</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>fmt f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>nl</strong></td>
+        <td style="height: 15px;">Number lines</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>nl f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>cut</strong></td>
+        <td style="height: 15px;">Cut fields</td>
+        <td style="height: 15px;"><code>-d</code></td>
+        <td style="height: 15px;"><code>cut -d: -f1 f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>paste</strong></td>
+        <td style="height: 15px;">Merge lines</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>paste f1 f2</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>join</strong></td>
+        <td style="height: 15px;">Join files</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>join f1 f2</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>split</strong></td>
+        <td style="height: 15px;">Split files</td>
+        <td style="height: 15px;"><code>-l</code></td>
+        <td style="height: 15px;"><code>split -l 100 f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>tr</strong></td>
+        <td style="height: 15px;">Translate chars</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>tr a b</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>iconv</strong></td>
+        <td style="height: 15px;">Charset convert</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>iconv -f a -t b</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>dos2unix</strong></td>
+        <td style="height: 15px;">CRLF fix</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>dos2unix f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>unix2dos</strong></td>
+        <td style="height: 15px;">LF to CRLF</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>unix2dos f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>strings</strong></td>
+        <td style="height: 15px;">Extract strings</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>strings bin</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>hexdump</strong></td>
+        <td style="height: 15px;">Hex view</td>
+        <td style="height: 15px;"><code>-C</code></td>
+        <td style="height: 15px;"><code>hexdump -C f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>xxd</strong></td>
+        <td style="height: 15px;">Hex editor</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>xxd f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>rev</strong></td>
+        <td style="height: 15px;">Reverse text</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>rev f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>fold</strong></td>
+        <td style="height: 15px;">Line wrap</td>
+        <td style="height: 15px;"><code>-w</code></td>
+        <td style="height: 15px;"><code>fold -w 80 f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>pr</strong></td>
+        <td style="height: 15px;">Pretty print</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>pr f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>expand</strong></td>
+        <td style="height: 15px;">Tabs to spaces</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>expand f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>unexpand</strong></td>
+        <td style="height: 15px;">Spaces to tabs</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>unexpand f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>sha1sum</strong></td>
+        <td style="height: 15px;">SHA1 hash</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>sha1sum f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>sha256sum</strong></td>
+        <td style="height: 15px;">SHA256 hash</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>sha256sum f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>md5sum</strong></td>
+        <td style="height: 15px;">MD5 hash</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>md5sum f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>cksum</strong></td>
+        <td style="height: 15px;">CRC checksum</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>cksum f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 17px;">
+        <td style="height: 17px;"><strong>base64</strong></td>
+        <td style="height: 17px;">Encode/decode</td>
+        <td style="height: 17px;"><code>-d</code></td>
+        <td style="height: 17px;"><code>base64 f</code></td>
+        <td style="height: 17px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>watch</strong></td>
+        <td style="height: 15px;">Watch output</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>watch wc f</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>yes</strong></td>
+        <td style="height: 15px;">Repeat output</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>yes y</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15.5667px;">
+        <td style="height: 15.5667px;"><strong>col</strong></td>
+        <td style="height: 15.5667px;">Filter output</td>
+        <td style="height: 15.5667px;"><code>-b</code></td>
+        <td style="height: 15.5667px;"><code>col -b</code></td>
+        <td style="height: 15.5667px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>script</strong></td>
+        <td style="height: 15px;">Record terminal</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>script out</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>scriptreplay</strong></td>
+        <td style="height: 15px;">Replay session</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>scriptreplay</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2><span style="background-color: #99ccff;">Process Commands</span></h2>
+        <table>
+        <tbody>
+        <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Options</th>
+        <th>Example</th>
+        <th>&nbsp;</th>
+        </tr>
+        <tr>
+        <td><strong>ps</strong></td>
+        <td>Process list</td>
+        <td><code>aux</code></td>
+        <td><code>ps aux</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>top</strong></td>
+        <td>Live monitor</td>
+        <td><code>-</code></td>
+        <td><code>top</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>htop</strong></td>
+        <td>Enhanced top</td>
+        <td><code>-</code></td>
+        <td><code>htop</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>atop</strong></td>
+        <td>Advanced monitor</td>
+        <td><code>-</code></td>
+        <td><code>atop</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>htop</strong></td>
+        <td>Interactive monitor</td>
+        <td><code>-</code></td>
+        <td><code>htop</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>kill</strong></td>
+        <td>Kill PID</td>
+        <td><code>-9</code></td>
+        <td><code>kill -9 123</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>pkill</strong></td>
+        <td>Kill by name</td>
+        <td><code>-f</code></td>
+        <td><code>pkill nginx</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>killall</strong></td>
+        <td>Kill all</td>
+        <td><code>-</code></td>
+        <td><code>killall bash</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>bg</strong></td>
+        <td>Background job</td>
+        <td><code>-</code></td>
+        <td><code>bg %1</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>fg</strong></td>
+        <td>Foreground job</td>
+        <td><code>-</code></td>
+        <td><code>fg %1</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>jobs</strong></td>
+        <td>List jobs</td>
+        <td><code>-</code></td>
+        <td><code>jobs</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>uptime</strong></td>
+        <td>System uptime</td>
+        <td><code>-</code></td>
+        <td><code>uptime</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>tload</strong></td>
+        <td>Terminal load</td>
+        <td><code>-</code></td>
+        <td><code>tload</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>watch</strong></td>
+        <td>Repeat command</td>
+        <td><code>-</code></td>
+        <td><code>watch free</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>nice</strong></td>
+        <td>Set priority</td>
+        <td><code>-</code></td>
+        <td><code>nice -n 10 cmd</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>renice</strong></td>
+        <td>Change priority</td>
+        <td><code>-</code></td>
+        <td><code>renice 10 123</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>strace</strong></td>
+        <td>Syscall trace</td>
+        <td><code>-</code></td>
+        <td><code>strace ls</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>ltrace</strong></td>
+        <td>Library trace</td>
+        <td><code>-</code></td>
+        <td><code>ltrace ls</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>time</strong></td>
+        <td>Time command</td>
+        <td><code>-</code></td>
+        <td><code>time ls</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>vmstat</strong></td>
+        <td>Memory stats</td>
+        <td><code>-</code></td>
+        <td><code>vmstat</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>iostat</strong></td>
+        <td>IO stats</td>
+        <td><code>-</code></td>
+        <td><code>iostat</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>mpstat</strong></td>
+        <td>CPU stats</td>
+        <td><code>-</code></td>
+        <td><code>mpstat</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>free</strong></td>
+        <td>Memory usage</td>
+        <td><code>-h</code></td>
+        <td><code>free -h</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>uptime</strong></td>
+        <td>Runtime</td>
+        <td><code>-</code></td>
+        <td><code>uptime</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>watch</strong></td>
+        <td>Refresh output</td>
+        <td><code>-</code></td>
+        <td><code>watch df</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2><span style="background-color: #99ccff;">Network Commands</span></h2>
+        <table>
+        <tbody>
+        <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Options</th>
+        <th>Example</th>
+        <th>&nbsp;</th>
+        </tr>
+        <tr>
+        <td><strong>ip</strong></td>
+        <td>Network config</td>
+        <td><code>addr</code></td>
+        <td><code>ip a</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>ifconfig</strong></td>
+        <td>Legacy net</td>
+        <td><code>-</code></td>
+        <td><code>ifconfig</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>ping</strong></td>
+        <td>Connectivity</td>
+        <td><code>-c</code></td>
+        <td><code>ping -c 4 google.com</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>curl</strong></td>
+        <td>HTTP client</td>
+        <td><code>-I</code></td>
+        <td><code>curl -I site</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>wget</strong></td>
+        <td>Download</td>
+        <td><code>-c</code></td>
+        <td><code>wget url</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>ss</strong></td>
+        <td>Socket stats</td>
+        <td><code>-tulnp</code></td>
+        <td><code>ss -tulnp</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>netstat</strong></td>
+        <td>Legacy stats</td>
+        <td><code>-tulnp</code></td>
+        <td><code>netstat -tulnp</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>traceroute</strong></td>
+        <td>Route trace</td>
+        <td><code>-</code></td>
+        <td><code>traceroute google.com</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>tracepath</strong></td>
+        <td>Trace path</td>
+        <td><code>-</code></td>
+        <td><code>tracepath google.com</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>nslookup</strong></td>
+        <td>DNS lookup</td>
+        <td><code>-</code></td>
+        <td><code>nslookup google.com</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>dig</strong></td>
+        <td>DNS query</td>
+        <td><code>-</code></td>
+        <td><code>dig google.com</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>tcpdump</strong></td>
+        <td>Packet capture</td>
+        <td><code>-i</code></td>
+        <td><code>tcpdump -i eth0</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>nmap</strong></td>
+        <td>Port scan</td>
+        <td><code>-</code></td>
+        <td><code>nmap localhost</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>arp</strong></td>
+        <td>ARP table</td>
+        <td><code>-a</code></td>
+        <td><code>arp -a</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>route</strong></td>
+        <td>Routing table</td>
+        <td><code>-n</code></td>
+        <td><code>route -n</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>nmcli</strong></td>
+        <td>NetworkManager</td>
+        <td><code>-</code></td>
+        <td><code>nmcli dev status</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>iw</strong></td>
+        <td>WiFi config</td>
+        <td><code>-</code></td>
+        <td><code>iw dev</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>iwconfig</strong></td>
+        <td>Wireless legacy</td>
+        <td><code>-</code></td>
+        <td><code>iwconfig</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>bluetoothctl</strong></td>
+        <td>Bluetooth</td>
+        <td><code>-</code></td>
+        <td><code>bluetoothctl</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>ssh</strong></td>
+        <td>Remote shell</td>
+        <td><code>-i</code></td>
+        <td><code>ssh user@host</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>scp</strong></td>
+        <td>Secure copy</td>
+        <td><code>-r</code></td>
+        <td><code>scp a host:/tmp</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>rsync</strong></td>
+        <td>File sync</td>
+        <td><code>-avz</code></td>
+        <td><code>rsync -avz a b</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>ftp</strong></td>
+        <td>FTP client</td>
+        <td><code>-</code></td>
+        <td><code>ftp host</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>sftp</strong></td>
+        <td>Secure FTP</td>
+        <td><code>-</code></td>
+        <td><code>sftp host</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>nc</strong></td>
+        <td>Netcat</td>
+        <td><code>-</code></td>
+        <td><code>nc -l 8080</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>socat</strong></td>
+        <td>Socket relay</td>
+        <td><code>-</code></td>
+        <td><code>socat TCP-LISTEN:80 STDOUT</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>ufw</strong></td>
+        <td>Firewall</td>
+        <td><code>allow</code></td>
+        <td><code>ufw allow 22</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>iptables</strong></td>
+        <td>Firewall rules</td>
+        <td><code>-</code></td>
+        <td><code>iptables -L</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2><span style="background-color: #99ccff; color: #0000ff;">User Commands</span></h2>
+        <table>
+        <tbody>
+        <tr style="height: 15px;">
+        <th style="height: 15px;">Command</th>
+        <th style="height: 15px;">Description</th>
+        <th style="height: 15px;">Options</th>
+        <th style="height: 15px;">Example</th>
+        <th style="height: 15px;">&nbsp;</th>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>whoami</strong></td>
+        <td style="height: 15px;">Current user</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>whoami</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>id</strong></td>
+        <td style="height: 15px;">User ID</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>id</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>who</strong></td>
+        <td style="height: 15px;">Logged users</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>who</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>w</strong></td>
+        <td style="height: 15px;">Who is logged</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>w</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>last</strong></td>
+        <td style="height: 15px;">Login history</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>last</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>lastlog</strong></td>
+        <td style="height: 15px;">Last login</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>lastlog</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>su</strong></td>
+        <td style="height: 15px;">Switch user</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>su -</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>sudo</strong></td>
+        <td style="height: 15px;">Run as root</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>sudo cmd</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>adduser</strong></td>
+        <td style="height: 15px;">Add user</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>adduser test</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>deluser</strong></td>
+        <td style="height: 15px;">Delete user</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>deluser test</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>passwd</strong></td>
+        <td style="height: 15px;">Change password</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>passwd user</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>groups</strong></td>
+        <td style="height: 15px;">User groups</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>groups</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>usermod</strong></td>
+        <td style="height: 15px;">Modify user</td>
+        <td style="height: 15px;"><code>-aG</code></td>
+        <td style="height: 15px;"><code>usermod -aG sudo user</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>login</strong></td>
+        <td style="height: 15px;">Login shell</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>login</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>logout</strong></td>
+        <td style="height: 15px;">Logout shell</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>logout</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>chsh</strong></td>
+        <td style="height: 15px;">Change shell</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>chsh user</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15.4833px;">
+        <td style="height: 15.4833px;"><strong>ulimit</strong></td>
+        <td style="height: 15.4833px;">Resource limits</td>
+        <td style="height: 15.4833px;"><code>-a</code></td>
+        <td style="height: 15.4833px;"><code>ulimit -a</code></td>
+        <td style="height: 15.4833px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>crontab</strong></td>
+        <td style="height: 15px;">Schedule jobs</td>
+        <td style="height: 15px;"><code>-e</code></td>
+        <td style="height: 15px;"><code>crontab -e</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 15px;">
+        <td style="height: 15px;"><strong>at</strong></td>
+        <td style="height: 15px;">One-time job</td>
+        <td style="height: 15px;"><code>-</code></td>
+        <td style="height: 15px;"><code>at now+1min</code></td>
+        <td style="height: 15px;">&nbsp;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2><span style="background-color: #99ccff;">Package Commands</span></h2>
+        <table>
+        <tbody>
+        <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Options</th>
+        <th>Example</th>
+        <th>&nbsp;</th>
+        </tr>
+        <tr>
+        <td><strong>apt</strong></td>
+        <td>Package manager</td>
+        <td><code>-</code></td>
+        <td><code>apt install nginx</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>apt-get</strong></td>
+        <td>Legacy apt</td>
+        <td><code>-</code></td>
+        <td><code>apt-get update</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>apt-cache</strong></td>
+        <td>APT cache</td>
+        <td><code>-</code></td>
+        <td><code>apt-cache search nginx</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>dpkg</strong></td>
+        <td>Deb tool</td>
+        <td><code>-i</code></td>
+        <td><code>dpkg -i a.deb</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>snap</strong></td>
+        <td>Snap packages</td>
+        <td><code>-</code></td>
+        <td><code>snap list</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>snapctl</strong></td>
+        <td>Snap control</td>
+        <td><code>-</code></td>
+        <td><code>snapctl services</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>flatpak</strong></td>
+        <td>Flatpak mgr</td>
+        <td><code>-</code></td>
+        <td><code>flatpak list</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        </tbody>
+        </table>
+        <h2><span style="background-color: #99ccff;">Archive Commands</span></h2>
+        <table>
+        <tbody>
+        <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Options</th>
+        <th>Example</th>
+        <th>&nbsp;</th>
+        </tr>
+        <tr>
+        <td><strong>tar</strong></td>
+        <td>Archive files</td>
+        <td><code>-czf</code></td>
+        <td><code>tar -czf a.tgz dir</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>gzip</strong></td>
+        <td>Compress file</td>
+        <td><code>-</code></td>
+        <td><code>gzip f</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>gunzip</strong></td>
+        <td>Decompress</td>
+        <td><code>-</code></td>
+        <td><code>gunzip f.gz</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>zcat</strong></td>
+        <td>View gzip</td>
+        <td><code>-</code></td>
+        <td><code>zcat f.gz</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>zip</strong></td>
+        <td>Zip files</td>
+        <td><code>-r</code></td>
+        <td><code>zip -r a.zip dir</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>unzip</strong></td>
+        <td>Extract zip</td>
+        <td><code>-</code></td>
+        <td><code>unzip a.zip</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>7z</strong></td>
+        <td>7zip archive</td>
+        <td><code>a x</code></td>
+        <td><code>7z x a.7z</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>ar</strong></td>
+        <td>Archive tool</td>
+        <td><code>-</code></td>
+        <td><code>ar x a.a</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <td><strong>cpio</strong></td>
+        <td>Copy IO</td>
+        <td><code>-</code></td>
+        <td><code>cpio -id</code></td>
+        <td>&nbsp;</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>&nbsp;</p>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <a href="../index.html">Home</a> |
+  <a href="../about.html">About Us</a> |
+  <a href="../contact.html">Contact Us</a> |
+  <a href="../privacy.html">Privacy Policy</a> |
+  <a href="../terms.html">Terms & Conditions</a> |
+  <a href="../disclaimer.html">Disclaimer</a>
+  <p>© 2025 EZDevOps ThinkCentre · Simplifying DevOps for Everyone</p>
+</footer>
+
+</body>
+
+</html>
