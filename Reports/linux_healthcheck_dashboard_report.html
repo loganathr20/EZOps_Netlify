@@ -27,24 +27,24 @@ footer { background:#007bff; color:white; text-align:center; padding:18px; margi
 <body>
 <div class="info-bar">
     Host: <b>LinuxMint-Thinkcentre</b> &nbsp;&nbsp; | &nbsp;&nbsp;
-    Report Generated: <b>2026-03-12 21:55:00 +0530</b>
+    Report Generated: <b>2026-03-12 22:25:00 +0530</b>
 </div>
 
 <div class="summary-panel">
-  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 1 day, 13 hours, 52 minutes</p><p>Boot: 2026-03-11 08:02</p></div>
+  <div class="summary-card"><h4>System Uptime</h4><p>Uptime: up 1 day, 14 hours, 22 minutes</p><p>Boot: 2026-03-11 08:02</p></div>
   <div class="summary-card"><h4>Overall CPU Usage</h4><p>9%</p></div>
-  <div class="summary-card"><h4>Memory Usage</h4><p>66%</p></div>
-  <div class="summary-card"><h4>Swap Usage</h4><p>49%</p></div>
+  <div class="summary-card"><h4>Memory Usage</h4><p>47%</p></div>
+  <div class="summary-card"><h4>Swap Usage</h4><p>42%</p></div>
   <div class="summary-card"><h4>GPU</h4><p>Usage: N/A%<br>Temp: N/A°C</p></div>
-  <div class="summary-card"><h4>Overall Health</h4><div class="health-badge" style="background:#5cb85c;">Very Good (64%)</div></div>
+  <div class="summary-card"><h4>Overall Health</h4><div class="health-badge" style="background:#5cb85c;">Very Good (67%)</div></div>
 </div>
 
 <div class="container">
-<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 1.32, 1.41, 1.38</p></div>
-<div class="card"><h3>Memory & Swap Usage</h3><canvas id="memSwapChart"></canvas><p>Memory: 66% of 15662MB, Swap: 49% of 13349MB</p></div>
+<div class="card"><h3>CPU Usage per Core</h3><canvas id="cpuChart"></canvas><p>Load Average: 1.42, 1.58, 1.64</p></div>
+<div class="card"><h3>Memory & Swap Usage</h3><canvas id="memSwapChart"></canvas><p>Memory: 47% of 15662MB, Swap: 42% of 13349MB</p></div>
 <div class="card"><h3>Disk Usage</h3><pre>tmpfs           1.6G   38M  1.5G   3% /run
 /dev/sda3       285G  162G  109G  60% /
-tmpfs           7.7G  190M  7.5G   3% /dev/shm
+tmpfs           7.7G   28K  7.7G   1% /dev/shm
 tmpfs           5.0M   16K  5.0M   1% /run/lock
 efivarfs        192K  133K   55K  71% /sys/firmware/efi/efivars
 /dev/nvme0n1p1   96M   59M   38M  61% /boot/efi
@@ -56,39 +56,39 @@ tmpfs           1.6G   28M  1.6G   2% /run/user/1000
 <table class="table-fixed">
 <tr><th>Metric</th><th>Score (%)</th></tr>
 <tr><td>CPU</td><td style="color:green">91%</td></tr>
-<tr><td>Memory</td><td style="color:red">34%</td></tr>
-<tr><td>Swap</td><td style="color:orange">51%</td></tr>
+<tr><td>Memory</td><td style="color:orange">53%</td></tr>
+<tr><td>Swap</td><td style="color:orange">58%</td></tr>
 <tr><td>Disk</td><td style="color:red">40%</td></tr>
 <tr><td>SMART</td><td style="color:green">100%</td></tr>
 <tr><td>Temperature</td><td style="color:green">100%</td></tr>
 <tr><td>Failed Services</td><td style="color:green">99%</td></tr>
 <tr><td>Critical Logs</td><td style="color:red">0%</td></tr>
-<tr><th>Overall Health</th><th>64%</th></tr>
+<tr><th>Overall Health</th><th>67%</th></tr>
 </table>
 </div>
 
 <div class="card"><h3>Top 10 Memory-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
-  20415    3501 /usr/lib/firefox/firefox-bi  3.5  0.6
-1476822 1451642 java -Xms256m -Xmx2048m -ja  3.4  1.0
- 965423       1 /usr/bin/java -Djava.awt.he  3.2  0.3
-1451183 1450419 /proc/self/exe --type=utili  3.2  2.7
+  20415    3501 /usr/lib/firefox/firefox-bi  3.9  0.6
+ 965423       1 /usr/bin/java -Djava.awt.he  3.8  0.3
   20655    3501 /usr/lib/firefox/firefox-bi  3.2  0.5
+   2986    2540 /usr/lib/firefox/firefox     3.0  9.5
    2996    2540 /usr/lib/thunderbird/thunde  3.0  2.9
-1450512 1450426 /usr/share/code/code --type  3.0  5.5
-   2986    2540 /usr/lib/firefox/firefox     2.7  9.3
-   9917    3501 /usr/lib/firefox/firefox-bi  2.1  0.3
-1449079 1448749 /opt/google/chrome/chrome -  1.9  0.3</pre></div>
+   9917    3501 /usr/lib/firefox/firefox-bi  2.4  0.3
+   4682    4017 /app/whatsapp-desktop-linux  1.8  0.2
+   4848    3907 /proc/self/exe --type=rende  1.8  0.0
+  20287    3501 /usr/lib/firefox/firefox-bi  1.7  0.1
+   3013    2540 /usr/bin/gnome-system-monit  1.4  7.4</pre></div>
 <div class="card"><h3>Top 10 CPU-Consuming Processes</h3><pre>    PID    PPID CMD                         %MEM %CPU
-   2986    2540 /usr/lib/firefox/firefox     2.7  9.3
-   3013    2540 /usr/bin/gnome-system-monit  1.2  7.3
-1529778  866104 /opt/google/chrome/chrome -  1.0  5.7
-1108062       1 cinnamon -r                  1.1  5.6
-1450512 1450426 /usr/share/code/code --type  3.0  5.5
-   2094    2087 /usr/lib/xorg/Xorg -core :0  0.3  3.2
-1520001  866104 /opt/google/chrome/chrome -  1.3  3.0
- 866136  866101 /opt/google/chrome/chrome -  0.7  2.9
+   2986    2540 /usr/lib/firefox/firefox     3.0  9.5
+   3013    2540 /usr/bin/gnome-system-monit  1.4  7.4
+1108062       1 cinnamon -r                  1.1  6.2
+   2094    2087 /usr/lib/xorg/Xorg -core :0  0.2  3.2
    2996    2540 /usr/lib/thunderbird/thunde  3.0  2.9
-1451183 1450419 /proc/self/exe --type=utili  3.2  2.7</pre></div>
+1560916    2504 /usr/libexec/gnome-terminal  0.2  2.0
+   4166    3501 /usr/lib/firefox/firefox-bi  0.8  1.0
+ 518734    3501 /usr/lib/firefox/firefox-bi  1.0  0.8
+   2984    2540 /usr/bin/cairo-dock          0.3  0.7
+1536661       2 [kworker/9:0-i915-unordered  0.0  0.7</pre></div>
 
 </div>
 
@@ -97,7 +97,7 @@ tmpfs           1.6G   28M  1.6G   2% /run/user/1000
 window.addEventListener('load', () => {
     new Chart(document.getElementById('cpuChart'), {
         type:'bar',
-        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[6,3,23,10,6,0,3,3,17,16,19,20,20,0,6,-3,19,3,6,3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
+        data:{labels:["Core 1","Core 2","Core 3","Core 4","Core 5","Core 6","Core 7","Core 8","Core 9","Core 10","Core 11","Core 12","Core 13","Core 14","Core 15","Core 16","Core 17","Core 18","Core 19","Core 20"], datasets:[{label:'CPU %', data:[6,3,6,3,0,0,6,0,43,16,32,6,12,0,23,0,19,0,3,3], backgroundColor:["rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)","rgba(42,157,143,0.8)"]}]},
         options:{responsive:true, scales:{y:{beginAtZero:true, max:100, title:{display:true, text:'Usage %'}}}}
     });
 
@@ -109,7 +109,7 @@ window.addEventListener('load', () => {
             datasets:[
                 {
                     label:'Memory',
-                    data:[66, 34],
+                    data:[47, 53],
                     backgroundColor: ['rgba(220,53,69,0.7)', 'rgba(40,167,69,0.5)'], // Red for used, Green for free
                     borderWidth:1,
                     radius: '90%',
@@ -117,7 +117,7 @@ window.addEventListener('load', () => {
                 },
                 {
                     label:'Swap',
-                    data:[49, 51],
+                    data:[42, 58],
                     backgroundColor:['rgba(220,53,69,0.7)','rgba(40,167,69,0.5)'],
                     borderWidth:1,
                     radius: '85%',
